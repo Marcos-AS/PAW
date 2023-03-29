@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creación de usuario</title>
+    <title>Perfil usuario</title>
 </head>
 <body>
     
@@ -35,54 +35,26 @@
         </ul>
     </nav>
 
-    <h2>Creación de usuario</h2>
-    <form action="servidor-ejemplo.com" method="post">
-        <label for="inputNombre">
-            Nombre
-            <input type="text" required name="inputNombre" />
-        </label>
-        <label for="inputApellido">
-            Apellido
-            <input type="text" required name="inputApellido" />
-        </label>
-        <label for="inputDni">
-            DNI
-            <input type="number" required name="inputDni" maxlength="8" minlength="7"/>
-        </label>
-        <label for="inputTelefono">
-            Telefono
-            <input type="tel" required name="inputTelefono"/>
-        </label>
-        <label for="inputEmail">
-            Email
-            <input type="email" required name="inputEmail"/>
-        </label>
-        <label for="inputPasswd">
-            Contraseña
-            <input type="password" required name="inputPasswd" minlength="8" maxlength="20"/>
-        </label>
-        <label for="inputPasswd">
-            Confirmar contraseña
-            <input type="password" required name="inputPasswd" minlength="8" maxlength="20" autocomplete="off"/>
-        </label>
-        <label for="inputOS">
-            Obra Social
-            <select name="inputOS">
-                <option value="IOMA">IOMA</option>
-                <option value="OSDE">OSDE</option>
-                <option value="ASIMRA">ASIMRA</option>
-            </select>
-        </label>
-        <!--Falta el captcha-->
+    <h2>¡Hola, !</h2>
+    <h3>Tus próximos turnos</h3>
+    <a href="/./solicitarTurno.html"> Reserva tu turno</a>
+    <p>Turno 20/03 19:00 Cardiología: Dr. Juan Pérez (confirmado)</p>
+    <p>Turno 27/03 19:00 Cardiología: Dr. Juan Pérez</p>
 
-        <label for="inputCond">
-            <input type="checkbox" name="inputCond"/>
-            Acepto los <a href="terminos-y-condiciones.html">términos y condiciones</a>
-        </label>
-        <label for="inputSubmit">
-            <input type="submit" name="inputSubmit" value="Aceptar"/>
-        </label>
-    </form>
+    <nav>
+        <ul>
+            <li>Mi perfil</li>
+            <li>
+                <a href="historial-turnos.html">Historial de turnos</a>
+            </li>
+            <li>
+                <a href="estudios-realizados.html">Estudios realizados</a>
+            </li>
+            <li>
+                <a href="#">Cerrar sesión</a>
+            </li>
+        </ul>
+    </nav>
 
     <footer>
         <ul>
@@ -104,3 +76,4 @@
 
 </body>
 </html>
+
