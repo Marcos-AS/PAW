@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
+    <title>Historial de turnos</title>
 </head>
 <body>
     
     <header>
         <h1>Clínica ...</h1>
         <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
-    </header> 
-    
+    </header>
+
     <nav>
         <ul>
             <li>Institucional</li>                
@@ -35,25 +35,55 @@
         </ul>
     </nav>
 
-    <form action="servidor-ejemplo.com" method="post">
-        <label for="inputDNI">DNI:
-            <input type="text" name="inputDNI">
+    <h2>¡Hola, !</h2>
+    <h3>Historial de turnos</h3>
+    <a href="/./solicitarTurno.html"> Reserva tu turno</a>
+    
+    <form>
+        <label for="inputFDesde">
+            Fecha desde:
+            <input type="date" name="inputFDesde">
         </label>
-        <label for="inputPassword">Contraseña:
-            <input type="password" name="inputPassword">
+        <label for="inputFHasta">
+            Fecha hasta:
+            <input type="date" name="inputFHasta">
         </label>
-        <p>¿No tienes cuenta? <a href="nuevo-usuario.html">Regístrate</a></p>
-        <p>¿Olvidaste tu contraseña? <a href="recuperar_password.html">Recupérala aquí</a></p>
+        <label for="inputSubmit">
+            Filtrar
+            <input type="submit" name="inputSubmit">
+        </label>
+    </form>
 
-        <input type="submit" value="Ingresar">
-      </form>
-      <a href="/portal-pacientes/inicio-usuario.html">Link a perfil usuario temporal</a>
+    <table>
+        <thead>
+            
+        </thead>
+    </table>
+
+    <nav>
+        <ul>
+            <li>Mi perfil</li>
+            <li>
+                <a href="historial-turnos.html">Historial de turnos</a>
+            </li>
+            <li>
+                <a href="estudios-realizados.html">Estudios realizados</a>
+            </li>
+            <li>
+                <a href="#">Cerrar sesión</a>
+            </li>
+        </ul>
+    </nav>
 
     <footer>
         <ul>
             <li><h4>Teléfonos</h4></li>
-            <li><a href="tel: +5408009999999">0-800-999-9999</a></li>
-            <li><a href="tel: +54123456">123456</a></li>
+            <li>
+                <a href="tel: +5408009999999">0-800-999-9999</a>
+            </li>
+            <li>
+                <a href="tel: +54123456">123456</a>
+            </li>
         </ul>
         <p>Lunes a viernes de 8 a 21 hs.</p>
         <img src="/imgs/facebook.png" alt="logo Facebook">
@@ -65,3 +95,4 @@
 
 </body>
 </html>
+
