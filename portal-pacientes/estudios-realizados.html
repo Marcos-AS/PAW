@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil usuario</title>
+    <title>Estudios realizados</title>
 </head>
 <body>
     
@@ -35,9 +35,9 @@
         </ul>
     </nav>
 
-    <h2>Tus datos: <!--Nombre--></h2>
+    <h2>Estudios realizados</h2>
     <a href="/./solicitarTurno.html"> Reserva tu turno</a>
-
+    
     <nav>
         <ul>
             <li>
@@ -55,11 +55,54 @@
         </ul>
     </nav>
 
-    <p>Mail: juanperez25@gmail.com</p> <a href="#">Modificar</a>
-    <p>Obra social: ASIMRA</p> <a href="#">Modificar</a>
-    <p>Teléfono: 2346505152</p> <a href="#">Modificar</a>
-    <p>Contraseña: *************</p> <a href="#">Modificar</a>
+    <form>
+        <label for="inputFDesde">
+            Fecha desde:
+            <input type="date" name="inputFDesde">
+        </label>
+        <label for="inputFHasta">
+            Fecha hasta:
+            <input type="date" name="inputFHasta">
+        </label>
+        <label for="inputSubmit">
+            Filtrar
+            <input type="submit" name="inputSubmit">
+        </label>
+    </form>
 
+    <table>
+        <thead>
+            <tr>
+                <th><label for="h1">Fecha</label></th>
+                <th><label for="h2">Hora</label></th>
+                <th><label for="h3">Médico</label></th>
+                <th><label for="h4">Motivo</label></th>
+                <th><label for="h5">Servicio</label></th>
+                <th><label for="h6">Monto</label></th>
+                <th><label for="h7">Resultados</label></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20/03/2023</td>
+                <td>10:15</td>
+                <td>Pérez, Juan</td>
+                <td>Consulta</td>
+                <td>Otorrinolaringología</td>
+                <td>$1000,00</td>
+                <td><a href="#">Resultado</a></td>
+            </tr>
+            <tr>
+                <td>22/03/2023</td>
+                <td>11:15</td>
+                <td>Pérez, Juan</td>
+                <td>Consulta</td>
+                <td>Otorrinolaringología</td>
+                <td>$1100,00</td>
+                <td><a href="#">Resultado</a></td>
+            </tr>
+        </tbody>
+    </table>
 
     <footer>
         <ul>
