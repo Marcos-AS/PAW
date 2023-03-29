@@ -7,13 +7,10 @@
         <meta name="keywords" content="clinica, salud">
     </head>
     <body>
-        
         <header>
-            <address>Av. Suarez 25, Chivilcoy. CP:6620</address>
             <h1>Clínica ...</h1>
             <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
-        </header>
-        
+        </header> 
         <nav>
             <ul>
                 <li><a href="">Institucional</a></li>                
@@ -21,7 +18,7 @@
                         <li><a href="autoridades.html"><p>Autoridades</p></a></li>
                         <li><a href="historia.html"><p>Historia</p></a></li>
                         <li><a href="valores.html"><p>Valores</p></a></li>
-                         <li><a href="mision.html"><p>Misión</p></a></li>
+                        <li><a href="mision.html"><p>Misión</p></a></li>
                     </ul>
             
                 <li><a href="login.html">Portal Pacientes</a></li>
@@ -39,15 +36,19 @@
         <a href="solicitarTurno.html"> Reserva tu turno</a>
         <a href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Nececito mas informacion!"><img src="/imgs/whatsapp.png" alt="Logo de WhatsApp" /></a>
 
-        <main>
+        <section>
             <h2>Bienvenido! a nuestro sitio oficial</h2>
             <h3>Encontra a tu profesional</h3>
             <form>
-                <input type="search">
-                <input type="submit">
+                <label for="inputSearch">
+                    <input type="search" name="inputSearch">
+                </label>
+                <label for="inputSubmit">
+                    <input type="submit" name="inputSubmit">
+                </label>
             </form>
-        </main>
-
+        </section>
+        
         <section>
             <img src="/imgs/mapa.jpg" alt="mapa que muestra la ubicación de la clínica">
         </section>
@@ -55,25 +56,43 @@
         <section>
             <h3>Envianos tu consulta aquí</h3>
             <form>
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellido">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Consulta...">
-            <input type="submit">
+                <label for="inputNombre">
+                    Nombre
+                    <input type="text" name="inputNombre">
+                </label>
+                <label for="inputApellido">
+                    Apellido
+                    <input type="text" name="inputApellido">
+                </label>
+                <label for="inputEmail">
+                    Email
+                    <input type="email" name="inputEmail">
+                </label>
+                <label for="inputConsulta">
+                    Consulta
+                    <input type="text" name="inputConsulta">    
+                </label>
+                <label for="inputSubmit">
+                     <input type="submit" name="inputSubmit">
+                </label>                
             </form>
         </section>
 
         <footer>
             <ul>
-                <li><p>Teléfonos</p></li>
-                <li>0-800-999-9999</li>
-                <li>+54 2346 123456</li>
+                <li><h4>Teléfonos</h4></li>
+                <li>
+                    <a href="tel: +5408009999999">0-800-999-9999</a>
+                </li>
+                <li>
+                    <a href="tel: +54123456">123456</a>
+                </li>
             </ul>
-                Lunes a viernes de 8 a 21 hs.
-                <img src="/imgs/facebook.png" alt="logo Facebook">
-                <img src="/imgs/instagram.jpg" alt="logo Instagram">
-                <img src="/imgs/linkedin.png" alt="logo Linkedin">
-            Clínica ... Todos los derechos reservados &#169; <br>
+            <p>Lunes a viernes de 8 a 21 hs.</p>
+            <img src="/imgs/facebook.png" alt="logo Facebook">
+            <img src="/imgs/instagram.jpg" alt="logo Instagram">
+            <img src="/imgs/linkedin.png" alt="logo Linkedin">
+            <p>Clínica ... Todos los derechos reservados &#169;</p>   
             <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
         </footer>
     </body>

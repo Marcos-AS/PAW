@@ -1,12 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-419">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solicitar Turno</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Clínica ...</h1>
+        <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">Institucional</a></li>                
+                <ul>
+                    <li><a href="autoridades.html"><p>Autoridades</p></a></li>
+                    <li><a href="historia.html"><p>Historia</p></a></li>
+                    <li><a href="valores.html"><p>Valores</p></a></li>
+                    <li><a href="mision.html"><p>Misión</p></a></li>
+                </ul>
+        
+            <li><a href="login.html">Portal Pacientes</a></li>
+            <li><a href="profyesp.html">Profesionales y Especialidades</a></li>
+        
+            <li><a href="">Información Útil</a></li>
+                <ul>
+                    <li><a href="#Coberturas-medicas"><p>Coberturas médicas</p></a></li>
+                    <li><a href="#Novedades"><p>Novedades</p></a></li>
+                    <li><a href="#Patologias-y-tratamientos"><p>Patologías y tratamientos</p></a></li>
+                </ul>
+        </ul>
+    </nav> 
+    <h2>Solicitud de Turno</h2>
+    <form action=servidor-ejemplo.com">
+        <fieldset>
+            <legend>Datos del Paciente</legend>
+            <label for="inputNombre">
+                Nombre
+                <input type="text" required name="inputNombre" />
+            </label>
+            <label for="inputApellido">
+                Apellido
+                <input type="text" required name="inputApellido" />
+            </label>
+            <label for="inputDni">
+                DNI
+                <input type="number" required name="inputDni" maxlength="8" minlength="7"/>
+            </label>
+            <label for="inputDate">
+                Fecha de nacimiento
+                <input type="date" required name="inputDate" />
+            </label>
+            <label for="inputEdad">
+                Edad
+                <input type="number" required name="inputEdad" />
+            </label>
+            <label for="inputSelect">
+                Obra Social
+                <select name="inputSelect">
+                    <option value="IOMA">IOMA</option>
+                    <option value="OSDE">OSDE</option>
+                    <option value="ASIMRA">ASIMRA</option>
+                </select>
+            </label>
+            <p>¿A donde te avisamos?</p>
+            <label for="inputEmail">
+                Email
+                <input type="email" required name="inputEmail"/>
+            </label>
+            <label for="inputTelefono">
+                Telefono
+                <input type="tel" required name="inputTelefono"/>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Datos del Turno</legend>
+            <label for="inputSelect">
+                Especialidad
+                <select name="inputSelect">
+                    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
+                    <option value="GINECOLOGIA">GINECOLOGIA</option>
+                    <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option>
+                </select>
+            </label>
+            <label for="inputSelect">
+                Profesionales
+                <select name="inputSelect">
+                    <option value="Juan Perez">Juan Perez</option>
+                    <option value="Jose Fernandez">Jose Fernandez</option>
+                </select>
+            </label>
+            <label for="inputDate">
+                Fecha
+                <input type="date" required name="inputDate" />
+            </label>
+            <label for="inputHorarios">
+                Horarios
+                <label for="opcion1">
+                    10:30
+                    <input type="radio" id="opcion1" name="opcion" value="opcion1">
+                </label>
+                <label for="opcion2">
+                    11:00
+                    <input type="radio" id="opcion2" name="opcion" value="opcion2">
+                </label>
+                <label for="opcion3">
+                    11:30
+                    <input type="radio" id="opcion3" name="opcion" value="opcion3">
+                </label>
+            </label>            
+            <label for="inputSubmit">
+                <input type="submit" name="inputSubmit" value="Reservar"/>
+            </label>
+        </fieldset>
+        <label for="inputReset">
+            <input type="reset" name="inputReset">
+        </label>
+  </form>
+
+    <footer>
+        <ul>
+            <li><h4>Teléfonos</h4></li>
+            <li>
+                <a href="tel: +5408009999999">0-800-999-9999</a>
+            </li>
+            <li>
+                <a href="tel: +54123456">123456</a>
+            </li>
+        </ul>
+        <p>Lunes a viernes de 8 a 21 hs.</p>
+        <img src="/imgs/facebook.png" alt="logo Facebook">
+        <img src="/imgs/instagram.jpg" alt="logo Instagram">
+        <img src="/imgs/linkedin.png" alt="logo Linkedin">
+        <p>Clínica ... Todos los derechos reservados &#169;</p>   
+        <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
+    </footer>  
 </body>
 </html>
