@@ -1,0 +1,16 @@
+#sBusqueda {
+    background-image: url("/imgs/portada.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+#navCentral {
+    background-color: rgb(0, 225, 255);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.753);
+    
+}

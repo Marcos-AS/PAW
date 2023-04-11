@@ -3,8 +3,12 @@
     <head>
         <title> Página de inicio </title>
         <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Página de inicio de clínica médica">
         <meta name="keywords" content="clinica, salud">
+        <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
+        <link rel="stylesheet" href="styles\style.css">
     </head>
     <body>
 
@@ -13,7 +17,7 @@
             <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
         </header> 
 
-        <nav>
+        <nav id="navCentral">
             <ul>
                 <li>Institucional</li>                
                     <ul>
@@ -38,8 +42,8 @@
         <a href="solicitarTurno.html"> Reserva tu turno</a>
         <a href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Nececito mas informacion!"><img src="/imgs/whatsapp.png" alt="Logo de WhatsApp" /></a>
 
-        <section>
-            <h2>Bienvenido! a nuestro sitio oficial</h2>
+        <section id="sBusqueda">
+            <h2 id="h2">Bienvenido! a nuestro sitio oficial</h2>
             <h3>Encontra a tu profesional</h3>
             <form>
                 <label for="inputSearch">
