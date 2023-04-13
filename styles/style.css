@@ -5,13 +5,20 @@ body {
     font-size: 15px;
 }
 
-#sBusqueda {
-    background-image: url("/imgs/portada.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 500px;
+/*SECTION HEADER-------------------------------*/
+header {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    left: 0;
+    border: black 12px;
 }
+
+.icono {
+    width: 3rem;
+}
+
+/*SECTION NAV-------------------------------------------*/
 
 #navCentral {
     background-color: rgb(0, 225, 255);
@@ -25,58 +32,6 @@ body {
     align-items: center;
 }
 
-.mapa {
-    display: inline-block;
-    width: 15rem;
-}
-
-.consulta {
-    position: relative;
-    bottom: 12.3rem;
-    left: 15rem;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0.753);    
-}
-
-.logos-redes {
-    width: 2rem;
-}
-
-.contacto {
-    display: inline-block;
-}
-
-.consulta {
-    background-color: lightgreen;
-}
-
-.consulta > input {
-    padding: 2rem;
-    margin-left: 2rem;
-}
-
-label[for="inputEmail"] {
-    display: block;
-}
-
-label[for="inputConsulta"] {
-
-}
-
-header {
-    display: inline-block;
-    z-index: 1;
-    position: relative;
-    left: 0;
-    border: black 12px;
-}
-
-.icono {
-    width: 3rem;
-}
-
 .desplegable {
     display: none;
 }
@@ -84,6 +39,8 @@ header {
 #listaNav > li {
     display: inline-block;
 }
+
+/*BOTON RESERVAR--------------------------*/
 
 .botonReservar {
     position: fixed;
@@ -105,6 +62,59 @@ header {
     width: 4rem;
     border-radius: 50%;
 }
+
+/*TITULOS Y CAMPO DE BUSQUEDA---------------------*/
+#sBusqueda {
+    background-image: url("/imgs/portada.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.mapa {
+    display: inline-block;
+    width: 15rem;
+}
+
+/*SECTION CONSULTA---------------------*/
+.consulta {
+    position: relative;
+    bottom: 12.3rem;
+    left: 15rem;
+}
+
+.consulta {
+    background-color: lightgreen;
+}
+
+.consulta > input {
+    padding: 2rem;
+    margin-left: 2rem;
+}
+
+label[for="inputEmail"] {
+    display: block;
+}
+
+label[for="inputConsulta"] {
+
+}
+
+/*SECTION FOOTER-------------------------*/
+footer {
+    background-color: rgba(0, 0, 0, 0.753);    
+}
+
+.logos-redes {
+    width: 2rem;
+}
+
+.contacto {
+    display: inline-block;
+}
+
+
 
 
 
