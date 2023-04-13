@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
 #sBusqueda {
     background-image: url("/imgs/portada.jpg");
     background-repeat: no-repeat;
@@ -8,9 +15,96 @@
 
 #navCentral {
     background-color: rgb(0, 225, 255);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 10rem;
+    font-size: 0.5rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.mapa {
+    display: inline-block;
+    width: 15rem;
+}
+
+.consulta {
+    position: relative;
+    bottom: 12.3rem;
+    left: 15rem;
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.753);
-    
+    background-color: rgba(0, 0, 0, 0.753);    
 }
+
+.logos-redes {
+    width: 2rem;
+}
+
+.contacto {
+    display: inline-block;
+}
+
+.consulta {
+    background-color: lightgreen;
+}
+
+.consulta > input {
+    padding: 2rem;
+    margin-left: 2rem;
+}
+
+label[for="inputEmail"] {
+    display: block;
+}
+
+label[for="inputConsulta"] {
+
+}
+
+header {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    left: 0;
+    border: black 12px;
+}
+
+.icono {
+    width: 3rem;
+}
+
+.desplegable {
+    display: none;
+}
+
+#listaNav > li {
+    display: inline-block;
+}
+
+.botonReservar {
+    position: fixed;
+    right: 2rem;
+    top: 20rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: #C7EFCB;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.botonReservar > a {
+    display: inline-block;
+    font-size: 0.5rem;
+}
+
+#whatsapp {
+    width: 4rem;
+    border-radius: 50%;
+}
+
+
+

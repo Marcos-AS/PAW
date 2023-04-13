@@ -14,13 +14,13 @@
 
         <header>
             <h1>Clínica ...</h1>
-            <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
+            <a href="/home.html"><img class="icono" src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
         </header> 
 
         <nav id="navCentral">
-            <ul>
+            <ul id="listaNav">
                 <li>Institucional</li>                
-                    <ul>
+                    <ul class="desplegable">
                         <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
                         <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
                         <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
@@ -31,7 +31,7 @@
                 <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
             
                 <li>Información Útil</li>
-                    <ul>
+                    <ul class="desplegable">
                         <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
                         <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
                         <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
@@ -39,9 +39,12 @@
             </ul>
         </nav>
         
-        <a href="solicitarTurno.html"> Reserva tu turno</a>
-        <a href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Nececito mas informacion!"><img src="/imgs/whatsapp.png" alt="Logo de WhatsApp" /></a>
-
+        <div class="botonReservar">
+            <a href="solicitarTurno.html"> Reserva tu turno</a>
+            <a href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Necesito mas informacion!">
+                <img id="whatsapp" src="/imgs/whatsapp.png" alt="Logo de WhatsApp" />
+            </a>
+        </div>
         <section id="sBusqueda">
             <h2 id="h2">Bienvenido! a nuestro sitio oficial</h2>
             <h3>Encontra a tu profesional</h3>
@@ -56,10 +59,10 @@
         </section>
         
         <section>
-            <img src="/imgs/mapa.jpg" alt="mapa que muestra la ubicación de la clínica">
+            <img class="mapa" src="/imgs/mapa.jpg" alt="mapa que muestra la ubicación de la clínica">
         </section>
 
-        <section>
+        <section class="consulta">
             <h3>Envianos tu consulta aquí</h3>
             <form>
                 <label for="inputNombre">
@@ -84,8 +87,8 @@
             </form>
         </section>
 
-        <footer>
-            <ul>
+        <footer >
+            <ul class="contacto">
                 <li><h4>Teléfonos</h4></li>
                 <li>
                     <a href="tel: +5408009999999">0-800-999-9999</a>
@@ -94,11 +97,11 @@
                     <a href="tel: +54123456">123456</a>
                 </li>
             </ul>
-            <p>Lunes a viernes de 8 a 21 hs.</p>
-            <a href="https://www.facebook.com.ar" target="_blank"><img src="/imgs/facebook.png" alt="Logo de Facebook"/></a>
-            <a href="https://www.linkedin.com.ar" target="_blank"><img src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a>
-            <a href="https://www.instagram.com.ar" target="_blank"><img src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a>
-            <p>Clínica ... Todos los derechos reservados &#169;</p>   
+            <p class="contacto">Lunes a viernes de 8 a 21 hs.</p>
+            <a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a>
+            <a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a>
+            <a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a>
+            <p class="contacto">Clínica ... Todos los derechos reservados &#169;</p>   
             <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
         </footer>
         
