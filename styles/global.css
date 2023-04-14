@@ -1,21 +1,21 @@
 /*SECTION HEADER-------------------------------*/
 header {
-  /*  display: inline-block; 
-    position: relative; */
+    display: flex; 
+    position: relative;
     left: 0;
     float: left;
+    z-index: 1;
 }
 
 .icono {
-    width: 250px;
-    height: 100px;
+    width: 18rem;
 }
 
 /*SECTION NAV-------------------------------------------*/
 
 nav {
-    background-color: #0077c2;
-    margin-left: 150px;
+    position: relative;
+    background-color: #d6d3ac;
     height: 150px;
     text-align: center;
   }
@@ -23,9 +23,11 @@ nav {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-top: 80px;
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    left: -30px;
 }
   
 nav li {
