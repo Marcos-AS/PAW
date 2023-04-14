@@ -7,7 +7,8 @@ header {
 }
 
 .icono {
-    width: 3rem;
+    width: 250px;
+    height: 100px;
 }
 
 /*SECTION NAV-------------------------------------------*/
@@ -65,7 +66,8 @@ nav ul ul a {
 
 /*SECTION FOOTER-------------------------*/
 footer {
-    background-color: rgba(0, 0, 0, 0.753);    
+    background-color: rgba(0, 0, 0, 0.753);
+    clear:both;
 }
 
 .logos-redes {
