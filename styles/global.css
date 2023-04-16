@@ -15,7 +15,7 @@ header {
 
 nav {
     position: relative;
-    background-color: white;
+    background-color: rgb(238, 241, 239);
     height: 150px;
     text-align: center;
   }
@@ -37,7 +37,7 @@ nav li {
   
 nav li:hover ul {
     display: block;
-    background-color: black;
+    background-color: white;
 }
 
 nav a {

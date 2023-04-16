@@ -12,7 +12,7 @@ body {
 /*BOTON RESERVAR--------------------------*/
 
 /*div boton reservar*/
-.botonReservar {
+/*.botonReservar {
     position: fixed;
     right: 2rem;
     top: 20rem;
@@ -21,17 +21,25 @@ body {
     background-color: #C7EFCB;
     border-radius: 50%;
     border: 5px solid white;
-}
+} */
 
-.botonReservar > a {
-    display: inline-block;
-    font-size: 0.5rem;
-    text-align: center;
+.botonReservar {
+    position: fixed;
+    right: 2rem;
+    top: 20rem;
+    width: 6rem;
+    height: 6rem;
+    border: 5px solid white;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
 }
 
 /*imagen whatsapp*/
 #whatsapp {
-    width: 3rem;
+    width: 6rem;
+    border-radius: 50%;
 }
 
 /*TITULOS Y CAMPO DE BUSQUEDA---------------------*/
