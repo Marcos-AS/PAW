@@ -171,6 +171,28 @@ body {
 
 .consulta form input[type="submit"]:hover {
     background-color: #2E8B57;
-  }
+}
+
+/*Coberturas Medicas---------------------*/
+
+.obras-sociales {
+    width: 100%; /* ancho fijo */
+    height: 100%; /* altura fija */
+    overflow: auto; /* permitir desplazamiento */
+    text-align: center;
+    justify-content: space-between;
+    background-color: rgb(135, 211, 226);
+}
+
+.obras-sociales a > img {
+    border-radius: 20px;
+    width: 12rem; /* ancho de cada imagen */
+    height: 8rem; /* altura de cada imagen */
+    margin: 50px 50px 50px 50px;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
+}
+
+/*Autoridades---------------------*/
+
 
 
