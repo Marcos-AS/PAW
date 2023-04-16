@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
         <link rel="stylesheet" href="styles/global.css">
         <link rel="stylesheet" href="styles\style.css">
+        <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     </head>
     <body>
 
@@ -42,29 +43,28 @@
             </ul>
         </nav>
         
-        
-
         <a class="botonReservar" href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Necesito mas informacion!">
             <img id="whatsapp" src="/imgs/whatsapp.png" alt="Logo de WhatsApp" />    
         </a>
         
         <section id="sBusqueda">
-            <h2 class="titulos">Bienvenido! a nuestro sitio oficial</h2>
-            <h3 class="titulos">Encontra a tu profesional</h3>
+            <h2>Bienvenido! a nuestro sitio oficial</h2>
+            <h3>Encontra a tu profesional</h3>
             <form>
                 <label for="inputSearch">
                     <input type="search" name="inputSearch">
                 </label>
-                <label for="inputSubmit">
-                    <input type="submit" name="inputSubmit">
-                </label>
+                <a href="">
+                    <i id="lupa" class="icono-search"></i>
+                </a>
             </form>
         </section>
         
         <section class="sMapa">
-            <img class="mapa" src="/imgs/mapa.jpg" alt="mapa que muestra la ubicación de la clínica">
+            <h3>¿Donde encontrarnos?</h3>
+            <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13088.495915509864!2d-60.01438485!3d-34.9033381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1681595424190!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
-
+        
         <section class="consulta">
             <h3>Envianos tu consulta aquí</h3>
             <form>
@@ -91,7 +91,7 @@
         </section>
 
         <footer >
-            <ul class="contacto">
+            <ul>
                 <li><h4>Teléfonos</h4></li>
                 <li>
                     <a href="tel: +5408009999999">0-800-999-9999</a>
@@ -100,11 +100,13 @@
                     <a href="tel: +54123456">123456</a>
                 </li>
             </ul>
-            <p class="contacto">Lunes a viernes de 8 a 21 hs.</p>
-            <a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a>
-            <a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a>
-            <a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a>
-            <p class="contacto">Clínica ... Todos los derechos reservados &#169;</p>   
+            <p>Lunes a viernes de 8 a 21 hs.</p>
+            <ul>
+            <li class="redSocial"><a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a></li>
+            <li class="redSocial"><a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a></li>
+            <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a></li>
+            </ul>
+            <p>Clínica ... Todos los derechos reservados &#169;</p>   
             <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
         </footer>
         
