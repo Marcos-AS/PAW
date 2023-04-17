@@ -17,6 +17,7 @@ form {
     font-size: 24px;
     color: rgb(0, 157, 218);
     margin-bottom: 20px;
+    margin-left: 1rem;
   }
   
   fieldset {
@@ -24,21 +25,23 @@ form {
     width: 100%;
     margin:0;
     padding: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid black;
     margin-top: 1rem;
-    margin-bottom: 7.2rem;
     justify-content: space-between;
     padding-top: 1rem;
+    vertical-align: middle;
   }
 
   legend {
     font-weight: bold;
     font-size: 1.2rem;
+    margin-left: 1rem;
     margin-bottom: 1rem;
   }
   
   label {
-    margin-bottom: 3rem;
+    display: inline-block;
+    padding: 2rem;
     font-weight: bold;
   }
   
@@ -56,14 +59,31 @@ form {
     background-color: #f1f1f1;
   }
   
-  label > p {
+  fieldset p {
     font-size: 18px;
     margin-bottom: 10px;
+    color: rgb(0, 157, 218);
+    margin-left: 1rem;
   }
   
   label > input[type="radio"] {
     margin-left: 5px;
     margin-right: 10px;
+  }
+
+  label[for="inputHorarios"] {
+    display: inline-block;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  label[for="inputHorarios"] > label {
+    margin-right: 10px;
+  }
+  
+  label[for="inputHorarios"] > label > input[type="radio"] {
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
   label > input[type="submit"],
@@ -74,8 +94,7 @@ form {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px;
-    padding: 10px;
+    padding: 1rem;
   }
   
   label > input[type="reset"] {
