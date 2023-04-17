@@ -1,48 +1,262 @@
+.hamburguesa {
+    display: none;
+} 
+
 @media screen and (max-width: 815px ) {
-    nav {
-        display: none;
-    }
-    
-    .menu-toggle {
+
+/* Estilos para el menú hamburguesa */
+.hamburguesa {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 6rem;
+  right: 0;
+  width: 2.5rem;
+  height: 2rem;  
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburguesa span {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu {
+  display: none;
+  left: 0;
+  width: 100%;
+  background-color: rgb(238, 241, 239);
+  z-index: 999;
+  overflow: hidden;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu.show {
+  display: block;
+  margin-top: 4rem;
+  max-height: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#menu li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+#menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(2,82,85);
+  font-size: 18px;
+}
+
+#menu li a i{
+  margin-right: 10px;
+}
+
+#desplegable1, #desplegable2 {
+  color: black;
+}
+
+/*#menu li:hover > ul {
+    display: block;
+} */
+
+#menu .dropdown-menu{
+    display: none;
+    left: 0;
+    width: 100%;
+    background-color: rgb(238, 241, 239);
+    z-index: 999;
+    overflow: hidden;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+#menu .dropdown-menu li {
+    margin: 10px 0;
+    text-align: center;
+    height: 2rem;
+
+  }
+
+#menu .dropdown-menu li a {
+    text-decoration: none;
+    color: rgb(2,82,85);
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+#menu .dropdown-menu li p {
+    text-decoration: none;
+    color: rgb(2,82,85);
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+#menu .sub-menu {
+    top: 0;
+    margin-top: -1px;
+    margin-left: 0;
+  }
+
+#menu .dropdown-menu.mostrar {
+    display: block;
+    margin-top: 0rem;
+    max-height: 500px;
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-direction: column;
+}
+  
+
+/*nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+nav ul li:hover > ul {
+    display:inherit;
+  }
+
+nav ul ul li {
+    position: relative;
+  }
+
+#menu .sub-menu {
+    top: 0;
+    margin-top: -1px;
+    margin-left: 0;
+  }
+
+#menu .dropdown-menu {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  width: 200px;
+  z-index: 999;
+  padding: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#menu .dropdown:hover .dropdown-menu {
+  position: absolute;
+  top:100%;
+  left:0;
+}
+
+#menu .dropdown-menu li {
+  margin: 10px 0;
+}
+
+#menu .dropdown-menu li a {
+  font-size: 16px;
+  color: #000;
+}
+
+#menu .dropdown-menu {
+    display: none;
+  }
+
+#menu .dropdown {
+    position: relative;
+}
+  
+#menu .dropdown-menu.mostrar {
+    display: block;
+  }
+
+    /*.hamburguesa {
         display: block;
+        flex-direction: column;
         position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 22px;
+        top: 6rem;
+        left: 48rem;
+        width: 2.5rem;
+        height: 2rem;   
         padding: 5px;
         border: none;
         background: transparent;
         cursor: pointer;
     }
 
-    .menu-toggle span {
+    .hamburguesa span {
         display: block;
         width: 100%;
         height: 2px;
-        background-color: #000;
+        background-color: rgb(2,82,85);;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
     }
 
-    .menu-toggle.active span:nth-child(2) {
+    .hamburguesa.active span:nth-child(2) {
         opacity: 0;
     }
       
-      .menu-toggle.active span:nth-child(1) {
+    .hamburguesa.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
       
-      .menu-toggle.active span:nth-child(3) {
+    .hamburguesa.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    nav {
+        display: none;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+    .menu.show {
+        display: block;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+    nav li {
+        margin: 0.5rem 0;
+      }
+      
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+      
+    nav a:hover {
+        text-decoration: underline;
+      }
+
+    */
     
-
-
-}
-
-.menu-toggle {
-    display: none;
 }
 
 /*SECTION HEADER-------------------------------*/
@@ -66,6 +280,10 @@ nav {
     height: 150px;
     text-align: center;
   }
+
+#desplegable1, #desplegable2 {
+  color: black;
+}
 
 nav ul {
     list-style-type: none;
@@ -107,7 +325,7 @@ nav ul ul {
 
 nav ul ul li {
     margin-right: 0;
-    width: 200px;
+    /*width: 200px; */
 }
 
 nav ul ul a {
@@ -121,7 +339,7 @@ nav ul ul a {
     top: 15px;
     width: 9rem;
     height: 3rem;
-    background-color: rgb(0, 157, 218);;
+    background-color: rgb(0, 157, 218);
     border: 3px solid white;
     color: white;
     font-size: 1.2rem;

@@ -5,35 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitar Turno</title>
+    <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/solicitarTurno.css">
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
 </head>
 <body>
 
     <header>
-        <h1>Clínica ...</h1>
-        <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
-    </header>
+        <a href="/home.html"><img class="icono" src="/imgs/Imagotipo_PAW_Hospitals.svg" alt="Logo de la Clinica" /></a>
+        <button class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header> 
 
-    <nav>
+    <nav id="menu">
         <ul>
-            <li>Institucional</li>                
-                <ul>
+            <li class="dropdown">
+                <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
+                <ul class="dropdown-menu sub-menu">
                     <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
                     <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
                     <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
                     <li><a href="/institucional/mision.html"><p>Misión</p></a></li>
                 </ul>
-        
+            </li> 
             <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
             <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
-        
-            <li>Información Útil</li>
-                <ul>
+            <li class="dropdown">
+                <a href="#">Información Útil<span><i id="desplegable2" class="icono-caretDown" aria-hidden="true"></i></span></a>
+                <ul class="dropdown-menu sub-menu">
                     <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
                     <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
                     <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
-                </ul>
+                </ul>   
+            </li>
+            
         </ul>
-    </nav> 
+    </nav>
 
     <h2>Solicitud de Turno</h2>
     <form action="servidor-ejemplo.com">
@@ -122,23 +133,25 @@
         </label>
   </form>
 
-    <footer>
-        <ul>
-            <li><h4>Teléfonos</h4></li>
-            <li>
-                <a href="tel: +5408009999999">0-800-999-9999</a>
-            </li>
-            <li>
-                <a href="tel: +54123456">123456</a>
-            </li>
-        </ul>
-        <p>Lunes a viernes de 8 a 21 hs.</p>
-        <a href="https://www.facebook.com.ar" target="_blank"><img src="/imgs/facebook.png" alt="Logo de Facebook"/></a>
-        <a href="https://www.linkedin.com.ar" target="_blank"><img src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a>
-        <a href="https://www.instagram.com.ar" target="_blank"><img src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a>
-        <p>Clínica ... Todos los derechos reservados &#169;</p>   
-        <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
-    </footer>  
+  <footer >
+    <ul>
+        <li><h4>Teléfonos</h4></li>
+        <li>
+            <a href="tel: +5408009999999">0-800-999-9999</a>
+        </li>
+        <li>
+            <a href="tel: +54123456">123456</a>
+        </li>
+    </ul>
+    <p>Lunes a viernes de 8 a 21 hs.</p>
+    <ul>
+    <li class="redSocial"><a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a></li>
+    <li class="redSocial"><a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a></li>
+    <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a></li>
+    </ul>
+    <p>Clínica ... Todos los derechos reservados &#169;</p>   
+    <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
+    </footer> 
     
 </body>
 </html>
