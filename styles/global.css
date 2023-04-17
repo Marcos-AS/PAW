@@ -303,6 +303,9 @@ nav li {
 nav li:hover ul {
     display: block;
     background-color: white;
+    z-index: 1;
+    opacity: 97%;
+    border-radius: 10px;
 }
 
 nav a {
