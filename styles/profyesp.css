@@ -1,0 +1,50 @@
+.profyesp {
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.profyesp form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 10px;
+  }
+
+.profyesp h2 {
+    width:auto;
+    font-size: 1.5rem;
+    height: 4rem;
+    text-align: center;
+    color: white;
+    background-color: rgb(252,196,68);;
+}
+
+input[type="search"] {
+    padding: 5px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+  }
+
+.sLetras {
+    height:56%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.letra {
+    display: inline-block;
+    border: 1px solid rgb(0, 157, 218);
+    padding: 5px;
+    cursor: pointer;
+    color: rgb(0, 157, 218);
+}
+  
