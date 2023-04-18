@@ -16,19 +16,19 @@
 
         <header>
             <a href="/home.html"><img class="icono" src="/imgs/Imagotipo_PAW_Hospitals.svg" alt="Logo de la Clinica" /></a>
-            <button class="menu-toggle">
+            <button class="hamburguesa">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </header> 
 
-        <nav>
+        <nav id="menu">
             <ul>
                 <li class="dropdown">
-                    <a href="#">Institucional</a>             
-                    <ul>
-                        <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
+                    <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
+                    <ul class="dropdown-menu sub-menu">
+                        <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
                         <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
                         <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
                         <li><a href="/institucional/mision.html"><p>Misión</p></a></li>
@@ -37,17 +37,18 @@
                 <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
                 <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
                 <li class="dropdown">
-                    <a href="#">Información Útil</a>
-                    <ul>
+                    <a href="#">Información Útil<span><i id="desplegable2" class="icono-caretDown" aria-hidden="true"></i></span></a>
+                    <ul class="dropdown-menu sub-menu">
                         <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
                         <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
                         <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
-                    </ul>
+                    </ul>   
                 </li>
-                <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+                
             </ul>
         </nav>
-        
+
+        <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
         <a class="botonReservar" href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Necesito mas informacion!">
             <img id="whatsapp" src="/imgs/whatsapp.png" alt="Logo de WhatsApp" />    
         </a>
@@ -115,5 +116,36 @@
             <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
         </footer>
         
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const menuBtn = document.querySelector('.hamburguesa');
+              const menu = document.querySelector('#menu');
+              menuBtn.addEventListener('click', function() {
+                menu.classList.toggle('show');
+              });
+            });
+
+            // Agregar evento de escucha para cada elemento con la clase "dropdown"
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Agregar evento de escucha para el enlace de "Institucional"
+          /*  const institucionalLink = document.querySelector('#menu .dropdown:first-child > a');
+            const institucionalMenu = document.querySelector('#menu .dropdown:first-child > ul'); */
+
+            const institucional = document.querySelectorAll('.dropdown')[0];
+            const infoUtil = document.querySelectorAll('.dropdown')[1];
+
+            infoUtil.addEventListener('click', toggleSubMenu);
+            institucional.addEventListener('click', toggleSubMenu);
+
+            function toggleSubMenu() {
+                const subMenu = this.querySelector('.dropdown-menu');
+                subMenu.classList.toggle('mostrar');
+            }
+
+
+          </script>
+
     </body>
+
 </html>

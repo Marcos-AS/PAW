@@ -5,62 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novedades</title>
+    <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="..\styles/global.css">
+    <link rel="stylesheet" href="..\styles/info-util.css">
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
 </head>
 <body>
     
     <header>
-        <h1>Clínica ...</h1>
-        <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
-    </header>
+        <a href="/home.html"><img class="icono" src="/imgs/Imagotipo_PAW_Hospitals.svg" alt="Logo de la Clinica" /></a>
+    </header> 
 
     <nav>
         <ul>
-            <li>Institucional</li>                
+            <li class="dropdown">
+                <a href="#">Institucional</a>             
                 <ul>
-                    <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
+                    <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
                     <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
                     <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
                     <li><a href="/institucional/mision.html"><p>Misión</p></a></li>
                 </ul>
-        
+            </li> 
             <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
             <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
-        
-            <li>Información Útil</li>
+            <li class="dropdown">
+                <a href="#">Información Útil</a>
                 <ul>
                     <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
                     <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
                     <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
                 </ul>
+            </li>
+            <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+        </ul>
+    </nav>
+
+    <nav class="nav-info-util">
+        <ul>
+            <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
+            <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
+            <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
         </ul>
     </nav>
     
-    <section>
-        <h2>Novedades</h1>
-      
+    <section class="sNovedades">
         <article>
-          <h3><a href="#">Título de la Noticia 1</a></h3>
-          <img src="noticia1.jpg" alt="Noticia 1">
-          <p>Descripción de la noticia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Refuerzo con vacuna bivalente para COVID-19</h3>
+          <img src="../imgs/covid.jpg" alt="Noticia Covid">
+          <p>Desde septiembre de 2022, las vacunas de ARNm bivalentes, que contienen elementos de la cepa COVID de tipo salvaje original y un componente actualizado de la cepa Omicron, han reemplazado a los refuerzos monovalentes de estilo más antiguo en los EE. UU., Israel y otros países. Estas vacunas se diseñaron para ayudar a mejorar la inmunidad inducida por la vacuna contra la variante omicron y las subvariantes posteriores.</p>
           <a href="#">Leer más</a>
         </article>
       
         <article>
-          <h3><a href="#">Título de la Noticia 2</a></h3>
-          <img src="noticia2.jpg" alt="Noticia 2">
-          <p>Descripción de la noticia 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#">Leer más</a>
-        </article>
-      
-        <article>
-          <h3><a href="#">Título de la Noticia 3</a></h3>
-          <img src="noticia3.jpg" alt="Noticia 3">
-          <p>Descripción de la noticia 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Granulomatosis nasal con poliangeítis inducida por cocaína</h3>
+          <img src="../imgs/cocaina.jpg" alt="Noticia Granulomatosis">
+          <p>La cocaína y la cocaína mezclada con levamisol se usan cada vez más en el Reino Unido y provocan un daño nasal directo significativo además de promover la vasculitis. Nuestros objetivos fueron los siguientes: (1) identificar los principales síntomas y presentación de la vasculitis inducida por cocaína; (2) proporcionar evidencia sobre las mejores prácticas para la investigación y el diagnóstico de vasculitis inducida por cocaína; y (3) analizar los resultados clínicos de los pacientes para comprender el manejo óptimo de la afección.</p>
           <a href="#">Leer más</a>
         </article>
     </section>
 
-    <footer>
+    <footer >
         <ul>
             <li><h4>Teléfonos</h4></li>
             <li>
@@ -71,12 +76,13 @@
             </li>
         </ul>
         <p>Lunes a viernes de 8 a 21 hs.</p>
-        <a href="https://www.facebook.com.ar" target="_blank"><img src="/imgs/facebook.png" alt="Logo de Facebook"/></a>
-        <a href="https://www.linkedin.com.ar" target="_blank"><img src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a>
-        <a href="https://www.instagram.com.ar" target="_blank"><img src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a>
+        <ul>
+        <li class="redSocial"><a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a></li>
+        <li class="redSocial"><a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a></li>
+        <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a></li>
+        </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
-        <a href="/./trabajaconnosotros.html">Trabaja con nosotros</a>
+        <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
     </footer>
-
 </body>
 </html>

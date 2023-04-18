@@ -5,79 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patologias y Tratamientos</title>
+    <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="..\styles/global.css">
+    <link rel="stylesheet" href="..\styles/info-util.css">
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
 </head>
 <body>
     <header>
-        <h1>Clínica ...</h1>
-        <a href="/home.html"><img src="/imgs/icono clinica.png" alt="Logo de la Clinica" /></a>
+        <a href="/home.html"><img class="icono" src="/imgs/Imagotipo_PAW_Hospitals.svg" alt="Logo de la Clinica" /></a>
     </header> 
-    
+
     <nav>
         <ul>
-            <li>Institucional</li>                
+            <li class="dropdown">
+                <a href="#">Institucional</a>             
                 <ul>
-                    <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
+                    <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
                     <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
                     <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
                     <li><a href="/institucional/mision.html"><p>Misión</p></a></li>
                 </ul>
-        
+            </li> 
             <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
             <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
-        
-            <li>Información Útil</li>
+            <li class="dropdown">
+                <a href="#">Información Útil</a>
                 <ul>
                     <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
                     <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
                     <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
                 </ul>
+            </li>
+            <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
         </ul>
-    </nav> 
+    </nav>
 
-    <form action="servidor-ejemplo.com" method="get">
-        <label for="letra">Filtrar por letra:
-            <select id="letra" name="letra">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                <option value="G">G</option>
-                <option value="H">H</option>
-                <option value="I">I</option>
-                <option value="J">J</option>
-                <option value="K">K</option>
-                <option value="L">L</option>
-                <option value="M">M</option>
-                <option value="N">N</option>
-                <option value="O">O</option>
-                <option value="P">P</option>
-                <option value="Q">Q</option>
-                <option value="R">R</option>
-                <option value="S">S</option>
-                <option value="T">T</option>
-                <option value="U">U</option>
-                <option value="V">V</option>
-                <option value="W">W</option>
-                <option value="X">X</option>
-                <option value="Y">Y</option>
-                <option value="Z">Z</option>
-            </select>
-            <label for="inputSubmit">
-                <input type="submit" value="Filtrar" name="inputSubmit">
-            </label>
+    <nav class="nav-info-util">
+        <ul>
+            <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
+            <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
+            <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
+        </ul>
+    </nav>
+
+    <section class="sLetras">
+        <p>Filtrar por letra</p>
+        <label for="letra">
+            <span class="letra">A</span>
+            <span class="letra">B</span>
+            <span class="letra">C</span>
+            <span class="letra">D</span>
+            <span class="letra">E</span>
+            <span class="letra">F</span>
+            <span class="letra">G</span>
+            <span class="letra">H</span>
+            <span class="letra">I</span>
+            <span class="letra">J</span>
+            <span class="letra">K</span>
+            <span class="letra">L</span>
+            <span class="letra">M</span>
+            <span class="letra">N</span>
+            <span class="letra">O</span>
+            <span class="letra">P</span>
+            <span class="letra">Q</span>
+            <span class="letra">R</span>
+            <span class="letra">S</span>
+            <span class="letra">T</span>
+            <span class="letra">U</span>
+            <span class="letra">V</span>
+            <span class="letra">W</span>
+            <span class="letra">X</span>
+            <span class="letra">Y</span>
+            <span class="letra">Z</span>
         </label>
-      </form>
+        <ul>
+            <li><a href="">Enfermedad 1</a></li>
+            <li><a href="">Enfermedad 2</a></li>
+            <li><a href="">Enfermedad 3</a></li>
+            <li><a href="">Enfermedad 4</a></li>
+        </ul>
+    </section>
 
-      <ul>
-        <li><a href="">Enfermedad 1</a></li>
-        <li><a href="">Enfermedad 2</a></li>
-        <li><a href="">Enfermedad 3</a></li>
-        <li><a href="">Enfermedad 4</a></li>
-      </ul>
-
-    <footer>
+    <footer >
         <ul>
             <li><h4>Teléfonos</h4></li>
             <li>
@@ -88,11 +97,13 @@
             </li>
         </ul>
         <p>Lunes a viernes de 8 a 21 hs.</p>
-        <a href="https://www.facebook.com.ar" target="_blank"><img src="/imgs/facebook.png" alt="Logo de Facebook"/></a>
-        <a href="https://www.linkedin.com.ar" target="_blank"><img src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a>
-        <a href="https://www.instagram.com.ar" target="_blank"><img src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a>
+        <ul>
+        <li class="redSocial"><a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a></li>
+        <li class="redSocial"><a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a></li>
+        <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a></li>
+        </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
-        <a href="/./trabajaconnosotros.html">Trabaja con nosotros</a>
+        <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
     </footer>
 
 </body>
