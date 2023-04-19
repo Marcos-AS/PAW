@@ -1,8 +1,9 @@
 .profyesp {
     height:auto;
+    margin: 0;
+    padding: 5rem;
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
     align-items: center;
 }
 
@@ -18,10 +19,12 @@
 .profyesp h2 {
     width:auto;
     font-size: 1.5rem;
-    height: 4rem;
+    height: auto;
+    padding: 0.8rem;
     text-align: center;
     color: white;
-    background-color: rgb(252,196,68);;
+    background-color: rgb(252,196,68);
+    border-radius: 0.5rem;
 }
 
 input[type="search"] {
@@ -33,7 +36,9 @@ input[type="search"] {
   }
 
 .sLetras {
-    height:56%;
+    color: white;
+    height:auto;
+    padding-bottom: 20rem;
     display: flex;
     align-content: center;
     justify-content: center;
