@@ -1,74 +1,125 @@
 h2 {
     font-size: 4vw;
     color: rgb(2,82,85);
+    margin-left: .5rem;
 }
 
-.historia > p, 
-.mision,
-.mision > li,
-.valores > li {
-    font-size: 2vw;
-    text-align: left;
-}
-
-.navInstitucional {
-    background-color: rgb(0, 157, 218);
-    height: auto;
-}
-
-.navInstitucional > ul > li {
-    position: relative;
-    bottom: 2rem;
-}
-
-.activo {
-    text-decoration: underline solid;
-    font-size: 1rem;
+.primerP {
+    text-indent: .5rem;
 }
 
 ol {
-  list-style: upper-roman;  
+    list-style: upper-roman;  
 }
 
-ul {
-    list-style: square;
-}
-
-.directorioList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    list-style: none;
+@media (min-width:815px) {    
+    .historia > p, 
+    .mision,
+    .mision > li,
+    .valores > li {
+        font-size: 1.5vw;
+        text-align: left;
+        margin-left: 0.5rem;
+    }
     
+    /*Navegación de sección institucional*/
+    .navInstitucional {
+        background-color: rgb(0, 157, 218);
+        margin-top: 1rem;
+        height: 3rem
+    }
+    
+    .navInstitucional > ul > li {
+        position: relative;
+        bottom: 3rem;
+        right: 9rem;
+    }
+    
+    .activo {
+        text-decoration: underline solid;
+        font-size: 1rem;
+    }
+    
+    ul {
+        list-style: square;
+    }
+    
+    /*sección autoridades---------------------------------*/
+    .directorioList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        list-style: none;
+        
+    }
+    
+    .directorioList > li {
+        border: 2px solid black;
+        width:70vw;
+        background-color: rgb(238, 241, 239);
+    }
+    
+    .directorioList > li > img {
+        width: 10rem;
+        border: 2px solid black;
+        margin: 2vw 2vw 0 2vw;
+        display: inline-block;
+    }
+    
+    .directorioList > li > h3 {
+        display: inline;
+        font-size: 3vw;
+        position: relative;
+        bottom: 4rem;
+    }
+    
+    .directorioList > li > p {
+        position: relative;
+        bottom: 4rem;
+        left: 15rem;
+        width: fit-content;
+        margin: 0;
+        font-size: 2vw;
+    }    
+
+    .breadcrumb {
+        display: none;
+    }
 }
 
-.directorioList > li {
-    border: 2px solid black;
-    width:70vw;
-    background-color: rgb(238, 241, 239);
-}
+@media only screen and (max-width: 815px) {
+    .navInstitucional > ul {
+        display: none;
+    }
 
-.directorioList > li > img {
-    width: 10rem;
-    border: 2px solid black;
-    margin: 2vw 2vw 0 2vw;
-    display: inline-block;
-}
+    /*nav*/
+    .breadcrumb {
+        width: fit-content;
+        margin: 0;
+    
+    }
+    
+    .breadcrumb ul {
+        bottom: .5rem;
+        list-style: none;
+    }
 
-.directorioList > li > h3 {
-    display: inline;
-    font-size: 3vw;
-    position: relative;
-    bottom: 4rem;
-}
+    .breadcrumb :not(:first-child) a:before {
+        content: ">";
+        padding-right: 0.5rem;
+    }    
 
-.directorioList > li > p {
-    position: relative;
-    bottom: 4rem;
-    left: 15rem;
-    width: fit-content;
-    margin: 0;
-    font-size: 2vw;
-}
+    h2, p {
+        position: relative;
+        top: 0.3rem;
+    }
 
+    p {
+        margin: 0.6rem;
+    }
+
+    .directorioList > li > img {
+        width: 45vw;
+    }
+}
