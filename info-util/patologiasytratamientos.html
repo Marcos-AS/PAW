@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="..\styles/global.css">
     <link rel="stylesheet" href="..\styles/info-util.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+    <link rel="stylesheet" href="/styles/submenu.css">
 </head>
 <body>
     <header>
@@ -125,18 +126,8 @@
     </footer>
 
     <script src="../scripts/hamburguesa.js"></script>
-    <script>
-        var currentPathname = window.location.pathname;
+    <script src="/scripts/submenu.js"></script>
 
-        document.querySelectorAll('nav a').forEach(function(link) {
-            if (link.getAttribute('href') === currentPathname) {
-            link.classList.add('active');
-            } else {
-            link.classList.remove('active');
-            }
-        });
-
-    </script>
 
 </body>
 </html>
