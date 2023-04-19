@@ -98,8 +98,10 @@ body {
 }
 
 #lupa {
-    font-size: 200px; 
-    background-color: white;
+    height: 1.2rem;
+    width: 2rem;
+    color:black;
+    background-color: #a9b3ac;
     border-color: black; 
     border-width: 1px;
 }

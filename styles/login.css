@@ -1,8 +1,12 @@
-section {
+.login {
     display: flex;
+    background-image: url(/imgs/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 75vh;
     align-items: center;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 h2 {
@@ -12,18 +16,26 @@ h2 {
   border-radius: 7%;
   margin-bottom: 3rem;
   background-color: rgb(0, 157, 218);
-  width:auto;
+  width:13rem;
 
+}
+
+p {
+  text-align: center;
 }
 
 form {
     width: 90%;
     max-width: 500px;
     padding: 2rem;
-    background-color: rgb(238, 241, 239,0.2);
+    background-color: rgb(238, 241, 239);
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
   
   label {
@@ -31,11 +43,13 @@ form {
     margin-bottom: 1rem;
     color: #555;
     font-size: 1vw;
+    width: auto;
+    text-align: center;
   }
-  
+    
   input[type="text"],
   input[type="password"] {
-    width: 50%;
+    width: 100%;
     padding: 0.5rem;
     border: none;
     background-color: #fff;
