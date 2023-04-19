@@ -127,11 +127,18 @@ body {
 
 /*SECTION CONSULTA---------------------*/
 
+.contenedor {
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+}
+
 .consulta {
-    width: 50%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    float: right;
+    width: min-content;
     padding: 0px;
     border-radius: 10%;
     justify-content: center;
@@ -139,7 +146,15 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgba(252,196,68, 0.2);
-    /*background-color: rgba(208, 36, 74, 0.6); */
+}
+
+.consulta form {
+    width: 30rem;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    display: flex;
 }
 
 .consulta h3 {
@@ -154,15 +169,16 @@ body {
     display: block;
     margin-bottom: 10px;
     font-size: 20px;
+    text-align: right;
 }
 
 .consulta form input[type="text"],
 .consulta form input[type="email"] {
   padding: 5px;
-  font-size: 30px;
+  font-size: 1.5vw;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
+  width: min-content;
 }  
 
 .consulta form input[type="submit"] {
@@ -178,4 +194,14 @@ body {
 .consulta form input[type="submit"]:hover {
     background-color: rgb(113, 136, 57);
 }
+
+
+@media screen and (max-width: 939px) {
+    
+
+    
+    
+    
+    
+    }
 

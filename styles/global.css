@@ -9,20 +9,25 @@ body {
   height: 100vh;
   background-color: rgb(238, 241, 239);
   font-family: 'Calibri';
-  font-size: 15px;
+  font-size: 1.2vw;
   background-size: cover;
   flex-direction: column;
 }
 
-@media screen and (max-width: 815px ) {
+@media screen and (max-width: 832px ) {
 
 /* Estilos para el menú hamburguesa */
+
+header {
+  width: 100%;
+}
+
 .hamburguesa {
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction: column;
   justify-content: space-between;
-  top: 6rem;
+  top: 6rem;  
   right: 0;
   width: 2.5rem;
   height: 2rem;  
@@ -271,6 +276,14 @@ nav ul ul li {
     
 }
 
+@media screen and (max-width: 832px ) {
+  
+
+
+
+
+}
+
 /*SECTION HEADER-------------------------------*/
 header {
     display: flex; 
@@ -310,8 +323,21 @@ nav ul {
 nav li {
     margin-right: 20px;
     position: relative;
+    padding: 0.5rem;
 }
-  
+
+nav li:hover {
+  display: block;
+  background-color: rgb(208, 36 ,74); 
+  z-index: 1;
+  opacity: 97%;
+  border-radius: 10px;
+}
+
+nav p:hover, nav a:hover {
+  color: white;
+}
+
 nav li:hover ul {
     display: block;
     background-color: white;

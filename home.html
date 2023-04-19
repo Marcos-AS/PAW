@@ -66,6 +66,7 @@
             </form>
         </section>
         
+        <section class="contenedor">
         <section class="sMapa">
             <h3>¿Donde encontrarnos?</h3>
             <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13088.495915509864!2d-60.01438485!3d-34.9033381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1681595424190!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -95,6 +96,7 @@
                 </label>                
             </form>
         </section>
+    </section>
 
         <footer >
             <ul>
@@ -115,36 +117,8 @@
             <p>Clínica ... Todos los derechos reservados &#169;</p>   
             <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
         </footer>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              const menuBtn = document.querySelector('.hamburguesa');
-              const menu = document.querySelector('#menu');
-              menuBtn.addEventListener('click', function() {
-                menu.classList.toggle('show');
-              });
-            });
 
-            // Agregar evento de escucha para cada elemento con la clase "dropdown"
-            const dropdowns = document.querySelectorAll('.dropdown');
-
-            // Agregar evento de escucha para el enlace de "Institucional"
-          /*  const institucionalLink = document.querySelector('#menu .dropdown:first-child > a');
-            const institucionalMenu = document.querySelector('#menu .dropdown:first-child > ul'); */
-
-            const institucional = document.querySelectorAll('.dropdown')[0];
-            const infoUtil = document.querySelectorAll('.dropdown')[1];
-
-            infoUtil.addEventListener('click', toggleSubMenu);
-            institucional.addEventListener('click', toggleSubMenu);
-
-            function toggleSubMenu() {
-                const subMenu = this.querySelector('.dropdown-menu');
-                subMenu.classList.toggle('mostrar');
-            }
-
-
-          </script>
+        <script src="./scripts/hamburguesa.js"></script>
 
     </body>
 
