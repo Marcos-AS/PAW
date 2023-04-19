@@ -32,7 +32,7 @@ ol {
     .navInstitucional > ul > li {
         position: relative;
         bottom: 3rem;
-        right: 9rem;
+        text-align: center;
     }
     
     .activo {

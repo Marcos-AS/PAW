@@ -93,6 +93,7 @@ article p {
 /* Patologias y Tratamientos */
 
 .sLetras {
+    padding-top: 2rem;
     width: 100%;
     height: 100%;
     background-color: rgb(135, 211, 226);
@@ -108,7 +109,17 @@ article p {
     height: fit-content;
     padding: 0.5rem;
     font: 1.2rem bold;
-    background-color: rgb(252, 192, 68);
+    border-radius: 0.5rem;
+}
+
+.sLetras h2 {
+    width:auto;
+    font-size: 1.5rem;
+    height: auto;
+    padding: 0.8rem;
+    text-align: center;
+    color: white;
+    background-color: rgb(252,196,68);
     border-radius: 0.5rem;
 }
 
