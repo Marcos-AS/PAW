@@ -103,35 +103,8 @@
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
         <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const menuBtn = document.querySelector('.hamburguesa');
-          const menu = document.querySelector('#menu');
-          menuBtn.addEventListener('click', function() {
-            menu.classList.toggle('show');
-          });
-        });
 
-        // Agregar evento de escucha para cada elemento con la clase "dropdown"
-        const dropdowns = document.querySelectorAll('.dropdown');
+    <script src="../scripts/hamburguesa.js"></script>
 
-        // Agregar evento de escucha para el enlace de "Institucional"
-      /*  const institucionalLink = document.querySelector('#menu .dropdown:first-child > a');
-        const institucionalMenu = document.querySelector('#menu .dropdown:first-child > ul'); */
-
-        const institucional = document.querySelectorAll('.dropdown')[0];
-        const infoUtil = document.querySelectorAll('.dropdown')[1];
-
-        infoUtil.addEventListener('click', toggleSubMenu);
-        institucional.addEventListener('click', toggleSubMenu);
-
-        function toggleSubMenu() {
-            const subMenu = this.querySelector('.dropdown-menu');
-            subMenu.classList.toggle('mostrar');
-        }
-
-
-      </script>
 </body>
 </html>
