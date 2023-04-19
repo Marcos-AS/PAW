@@ -41,7 +41,7 @@
                     <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
                 </ul>   
             </li>
-            <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>  
+            <a class="botonTurno" href="../solicitarTurno.html"> Reserva tu turno</a>  
         </ul>
     </nav>
 
@@ -124,6 +124,18 @@
     </footer>
 
     <script src="../scripts/hamburguesa.js"></script>
+    <script>
+        var currentPathname = window.location.pathname;
+
+        document.querySelectorAll('nav a').forEach(function(link) {
+            if (link.getAttribute('href') === currentPathname) {
+            link.classList.add('active');
+            } else {
+            link.classList.remove('active');
+            }
+        });
+
+    </script>
 
 </body>
 </html>
