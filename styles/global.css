@@ -21,14 +21,13 @@ body {
   position: absolute;
   flex-direction: column;
   justify-content: space-between;
-  top: 6rem;  
+  top: 7.5rem;  
   right: 0;
   width: 2.5rem;
   height: 2rem;  
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
 }
 
 .hamburguesa span {
