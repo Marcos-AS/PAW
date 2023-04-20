@@ -47,7 +47,7 @@ body {
 
 /*TITULOS Y CAMPO DE BUSQUEDA---------------------*/
 #sBusqueda {
-    background-image: url("/imgs/portada.jpg");
+    background-image: url("https://marcos-as.github.io/PAW/imgs/portada.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -175,6 +175,10 @@ body {
     text-align: right;
 }
 
+.consulta form label input[type="submit"] {
+    text-align: center;
+}
+
 .consulta form input[type="text"],
 .consulta form input[type="email"] {
   padding: 5px;
@@ -195,16 +199,7 @@ body {
   }
 
 .consulta form input[type="submit"]:hover {
-    background-color: rgb(113, 136, 57);
+    background-color: rgb(0, 157, 218, 0.7);
 }
 
-
-@media screen and (max-width: 939px) {
-    
-
-    
-    
-    
-    
-    }
 

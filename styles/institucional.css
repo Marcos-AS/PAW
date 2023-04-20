@@ -1,5 +1,5 @@
 h2 {
-    font-size: 4vw;
+    font-size: 2.5vw;
     color: rgb(2,82,85);
     margin-left: .5rem;
 }
@@ -8,9 +8,40 @@ h2 {
     text-indent: .5rem;
 }
 
-ol {
-    list-style: upper-roman;  
+.valores {
+    list-style-type: none;
+    counter-reset: li;
+    margin: 20px 0;
+    padding: 0 20px
 }
+
+.valores li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+.valores p {
+    font-size: 1.2vw;
+    margin: 0.5rem;
+  }
+
+ .valores li::before {
+    content: counter(li);
+    counter-increment: li;
+    background-color: rgb(2,82,85);
+    color: #fff;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
 
 .navAutoridades {
     display: flex;
@@ -36,7 +67,19 @@ ol {
     background-color: rgba(252, 196, 68, 0.3);
 }
 
-.directorioList {
+.autoridades ul:not(:first-of-type) {
+    display: none;
+}
+
+/*.navAutoridades a.activo {
+    background-color: #ddd;
+}
+
+.autoridades ul.activo {
+    display: block;
+}*/
+
+.autoridades ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +89,7 @@ ol {
     margin: 0;
 }
 
-.directorioList li {
+.autoridades ul li {
     padding: 0;
     margin: 0;
     background-color: rgba(252, 196, 68, 0.3);
@@ -66,18 +109,18 @@ ol {
         background-color: rgb(238, 241, 239);
     } */
     
-    .directorioList > li > img {
+    .autoridades ul > li > img {
         width: 10vw;
         border: 2px solid black;
-        margin: 2vw 2vw 0 2vw;
+        margin: 2vw 2vw 2vw 2vw;
         grid-row: 1 / 3;
     }
-    
-    .directorioList > li > h3 {
+
+    .autoridades ul > li > h3 {
         font-size: 2vw;
     }
     
-    .directorioList > li > p {
+    .autoridades ul > li > p {
         width: fit-content;
         margin: 0;
         font-size: 1vw;
@@ -108,8 +151,13 @@ ol {
     }
     
     .activo {
-        text-decoration: underline solid;
-        font-size: 1rem;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: white;
+        text-decoration-thickness: 0.2rem;
+        text-underline-offset: 0.3rem;
+        /*text-decoration: underline solid;
+        font-size: 1rem;*/
     }
     
     ul {

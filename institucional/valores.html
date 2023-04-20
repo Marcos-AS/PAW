@@ -29,8 +29,8 @@
                 <ul class="dropdown-menu sub-menu">
                     <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
                     <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
-                    <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
                     <li><a href="/institucional/mision.html"><p>Misión</p></a></li>
+                    <li><a href="/institucional/valores.html"><p>Valores</p></a></li>  
                 </ul>
             </li> 
             <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
@@ -89,40 +89,14 @@
         </ul>
         <p>Lunes a viernes de 8 a 21 hs.</p>
         <ul>
-        <li class="redSocial"><a href="https://www.facebook.com.ar" target="_blank"><img class="logos-redes" src="/imgs/facebook.png" alt="Logo de Facebook"/></a></li>
-        <li class="redSocial"><a href="https://www.linkedin.com.ar" target="_blank"><img class="logos-redes" src="/imgs/linkedin.png" alt="Logo de LinkedIn"/></a></li>
-        <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><img class="logos-redes" src="/imgs/instagram.jpg" alt="Logo de Instagram"/></a></li>
+            <li class="redSocial"><a href="https://www.facebook.com.ar" target="_blank"><i class="icono-facebook"  alt="Logo de Facebook"></i></a></li>
+            <li class="redSocial"><a href="https://www.linkedin.com.ar" target="_blank"><i class="icono-linkedIn" alt="Logo de LinkedIn"></i></a></li>
+            <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
         </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
         <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const menuBtn = document.querySelector('.hamburguesa');
-          const menu = document.querySelector('#menu');
-          menuBtn.addEventListener('click', function() {
-            menu.classList.toggle('show');
-          });
-        });
-
-        // Agregar evento de escucha para cada elemento con la clase "dropdown"
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        // Agregar evento de escucha para el enlace de "Institucional"
-
-        const institucional = document.querySelectorAll('.dropdown')[0];
-        const infoUtil = document.querySelectorAll('.dropdown')[1];
-
-        infoUtil.addEventListener('click', toggleSubMenu);
-        institucional.addEventListener('click', toggleSubMenu);
-
-        function toggleSubMenu() {
-            const subMenu = this.querySelector('.dropdown-menu');
-            subMenu.classList.toggle('mostrar');
-        }
-      </script>
-
+        
     <script src="/scripts/hamburguesa.js"></script>
     <script src="/scripts/submenu.js"></script>
 

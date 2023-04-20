@@ -263,6 +263,10 @@ nav ul ul a {
     display: flex;
 }
 
+.botonTurno:hover {
+    background-color: rgb(0, 157, 218, 0.7);
+}
+
 /*SECTION FOOTER-------------------------*/
 footer {
     background-color: rgb(2,82,85);
@@ -281,18 +285,18 @@ footer ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-direction: column;
-}
-
-footer li.redSocial {
-    display: inline-block;  
 }
 
 footer li {
-    margin-bottom: 10px;
-    margin-left: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
-  
+
+footer .redSocial {
+    display: inline-block;
+    margin: 0 10px;
+}
+
 footer h4 {
     margin-bottom: 10px;
     padding: 5px;
@@ -309,11 +313,6 @@ footer a {
   
 footer a:hover {
     text-decoration: underline;
-}
-  
-.logos-redes {
-    width: 25px;
-    margin-right: 10px;
 }
   
 footer p {
