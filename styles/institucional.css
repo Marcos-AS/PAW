@@ -12,6 +12,81 @@ ol {
     list-style: upper-roman;  
 }
 
+.navAutoridades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navAutoridades ul {
+    background-color: rgb(252, 196, 68);
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    width: 75vw;
+    background-color: rgb(252, 196, 68);
+    align-items: center;
+    align-content: center;
+    left: auto;
+    padding: 0;
+}
+
+.autoridades {
+    width: 75vw;
+    margin: 0 auto 1rem;
+    background-color: rgba(252, 196, 68, 0.3);
+}
+
+.directorioList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.directorioList li {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(252, 196, 68, 0.3);
+    width: 75vw;
+    border-bottom: 2px black solid;
+    list-style: none;
+}
+
+    /*sección autoridades---------------------------------*/
+
+  /*  .directorioList > li {
+        border: 2px solid black;
+        width:70vw;
+        background-color: rgb(238, 241, 239);
+    } */
+    
+    .directorioList > li > img {
+        width: 10vw;
+        border: 2px solid black;
+        margin: 2vw 2vw 0 2vw;
+        display: inline-block;
+    }
+    
+    .directorioList > li > h3 {
+        display: inline;
+        font-size: 2vw;
+        position: relative;
+        bottom: 4rem;
+    }
+    
+    .directorioList > li > p {
+        display: inline;
+        position: relative;
+        bottom: 4rem;
+        width: fit-content;
+        margin: 0;
+        font-size: 1vw;
+    }   
+
+
 @media (min-width:815px) {    
     .historia > p, 
     .mision,
@@ -44,48 +119,6 @@ ol {
         list-style: square;
     }
     
-    /*sección autoridades---------------------------------*/
-    .directorioList {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-items: center;
-        list-style: none;
-        
-    }
-    
-    .directorioList > li {
-        border: 2px solid black;
-        width:70vw;
-        background-color: rgb(238, 241, 239);
-    }
-    
-    .directorioList > li > img {
-        width: 10rem;
-        border: 2px solid black;
-        margin: 2vw 2vw 0 2vw;
-        display: inline-block;
-    }
-    
-    .directorioList > li > h3 {
-        display: inline;
-        font-size: 3vw;
-        position: relative;
-        bottom: 4rem;
-    }
-    
-    .directorioList > li > p {
-        position: relative;
-        bottom: 4rem;
-        left: 15rem;
-        width: fit-content;
-        margin: 0;
-        font-size: 2vw;
-    }    
-
-    .breadcrumb {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: 815px) {
@@ -93,33 +126,13 @@ ol {
         display: none;
     }
 
-    /*nav*/
-    .breadcrumb {
-        width: fit-content;
-        margin: 0;
-    
-    }
-    
-    .breadcrumb ul {
-        bottom: .5rem;
-        list-style: none;
-    }
-
-    .breadcrumb :not(:first-child) a:before {
-        content: ">";
-        padding-right: 0.5rem;
-    }    
-
-    h2, p {
-        position: relative;
-        top: 0.3rem;
-    }
-
     p {
+        position: relative;
+        top: auto;
         margin: 0.6rem;
     }
 
     .directorioList > li > img {
-        width: 45vw;
+        width: 30vw;
     }
 }

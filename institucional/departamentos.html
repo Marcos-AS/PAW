@@ -15,19 +15,19 @@
     
     <header>
         <a href="/home.html"><img class="icono" src="/imgs/Imagotipo_PAW_Hospitals.svg" alt="Logo de la Clinica" /></a>
-        <button class="menu-toggle">
+        <button class="hamburguesa">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </header>
 
-    <nav>
+    <nav id="menu">
         <ul>
             <li class="dropdown">
-                <a href="#">Institucional</a>             
-                <ul>
-                    <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
+                <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
+                <ul class="dropdown-menu sub-menu">
+                    <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
                     <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
                     <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
                     <li><a href="/institucional/mision.html"><p>Misión</p></a></li>
@@ -36,14 +36,14 @@
             <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
             <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
             <li class="dropdown">
-                <a href="#">Información Útil</a>
-                <ul>
+                <a href="#">Información Útil<span><i id="desplegable2" class="icono-caretDown" aria-hidden="true"></i></span></a>
+                <ul class="dropdown-menu sub-menu">
                     <li><a href="/info-util/coberturasmedicas.html"><p>Coberturas médicas</p></a></li>
                     <li><a href="/info-util/novedades.html"><p>Novedades</p></a></li>
                     <li><a href="/info-util/patologiasytratamientos.html"><p>Patologías y tratamientos</p></a></li>
-                </ul>
+                </ul>   
             </li>
-            <a class="botonTurno" href="/solicitarTurno.html"> Reserva tu turno</a>
+            <a class="botonTurno" href="/solicitarTurno.html"> Reserva tu turno</a>  
         </ul>
     </nav>
 
@@ -53,14 +53,6 @@
             <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
             <li><a href="/institucional/mision.html"><p>Mision</p></a></li>
             <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
-        </ul>
-    </nav>
-
-    <nav class="navAutoridades">
-        <ul>
-            <li><a href="/institucional/directorio.html">Directorio</a></li>
-            <li><a class="activo">Departamentos</a></li>
-            <li><a href="/institucional/area-administrativa.html">Área Administrativa</a></li>
         </ul>
     </nav>
 
@@ -78,7 +70,15 @@
         </ul>
     </nav>
 
-    <section>    
+    <nav class="navAutoridades">
+        <ul>
+            <li><a href="/institucional/directorio.html">Directorio</a></li>
+            <li><a class="activo">Departamentos</a></li>
+            <li><a href="/institucional/area-administrativa.html">Área Administrativa</a></li>
+        </ul>
+    </nav>
+
+    <section class="autoridades">    
         <ul class="directorioList">
             <li><img src="/imgs/jefe-medico.jpg" alt="Jefa de Enfermería">
                 <h3>Dra. Camila Sosa</h3>
@@ -110,6 +110,8 @@
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
         <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
     </footer>
+
+    <script src="../scripts/hamburguesa.js"></script>
     <script src="/scripts/submenu.js"></script>
 
     

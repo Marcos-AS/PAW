@@ -1,4 +1,6 @@
 .profyesp {
+    background-repeat: no-repeat;
+    background-size: cover;
     height:auto;
     margin: 0;
     padding: 5rem;
@@ -6,15 +8,6 @@
     flex-direction: column;
     align-items: center;
 }
-
-.profyesp form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
-    align-items: center;
-    gap: 10px;
-  }
 
 .profyesp h2 {
     width:auto;
@@ -44,6 +37,15 @@ input[type="search"] {
     justify-content: center;
     margin-top: 2rem;
 }
+
+.sLetras form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 10px;
+  }
 
 .letra {
     display: inline-block;
