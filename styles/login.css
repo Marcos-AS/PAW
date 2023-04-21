@@ -1,8 +1,5 @@
 .login {
     display: flex;
-    background-image: url(/imgs/fondo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 75vh;
     align-items: center;
     flex-direction: column;

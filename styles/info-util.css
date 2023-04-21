@@ -3,7 +3,6 @@
 .obras-sociales {
     width: 100%; /* ancho fijo */
     text-align: center;
-    background-color: rgb(135, 211, 226);
     min-height: 64vh;
     padding-bottom: 7.2rem;
 }
@@ -38,7 +37,6 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: rgb(135, 211, 226);
 }
 
 .sNovedades img {
@@ -73,7 +71,6 @@ article p {
     padding-top: 2rem;
     width: 100%;
     height: 100%;
-    background-color: rgb(135, 211, 226);
     text-align: center;
     display: flex;
     flex-direction: column;

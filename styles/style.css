@@ -208,11 +208,9 @@ body {
         right: 1rem;
     }
 
-    .mapa,
-    .consulta,
-    .consulta form,
-    .consulta label {
-        width: 100%;
+    .sMapa, .consulta
+     {
+       width:max-content;
     }
     
     .consulta label {
