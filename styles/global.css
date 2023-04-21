@@ -51,6 +51,7 @@ body {
 #menu.show {
   display: block;
   transition: all 0.3s ease-in-out;
+  margin-top:2rem;
 }
 
 #menu ul {
@@ -60,6 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  left: auto;
 }
 
 #menu li:not(:last-child) {
@@ -69,9 +71,9 @@ body {
 #menu li, #menu a {
   text-align: center;
   background-color: rgb(238, 241, 239);
-  margin-right: 20px;
   position: relative;
   padding: 0.5rem;
+  margin: 0;
 }
 
 #menu li a {
@@ -224,7 +226,7 @@ nav li:hover ul {
     opacity: 97%;
     border-radius: 10px;
     max-height: 1000px;
-}
+  }
 
 nav a {
     display: block;
@@ -233,7 +235,6 @@ nav a {
     font-weight: bold;
     text-align: center;
     font-size: 20px;
-    transition: transform 0.3s ease;
     transition: background-color 1s ease;
 }
 
@@ -250,8 +251,6 @@ nav ul ul {
     background-color: #fff;
     padding: 0;
     max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
 }
 
 nav ul ul li {
@@ -336,6 +335,23 @@ footer p {
     margin-top: 10px;
     font-size: 14px;
     color: white;
+}
+
+@media print  {
+  header  {
+      display: none;
+  }
+  nav {
+      display: none;
+  }
+  footer {
+      display: none;
+  }
+
+  a[href]:after {
+      content: " (" attr(href) ")";
+  }
+
 }
 
 

@@ -60,13 +60,27 @@
     
     .breadcrumb ul {
         list-style: none;
-        text-decoration: underline;
+        padding-top: 2rem;
+    }
+    
+    .breadcrumb li:not(:last-child) a {
+        padding-right: 0.5rem;
     }
 
     .breadcrumb :not(:first-child) a:before {
         content: ">";
         padding-right: 0.5rem;
-    }  
+        text-decoration: none;
+    }
+
+    .breadcrumb a {
+        text-decoration: none;
+    }
+
+    .breadcrumb li {
+        padding: 0;
+        margin-right: 0;
+    }
 
 }
 
