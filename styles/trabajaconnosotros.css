@@ -7,10 +7,6 @@ body {
     background-size: cover;
 }
 
-nav {
-    border-bottom: 0.4rem rgb(0, 157, 218) solid;
-}
-
 form {
     display: flex;
     flex-wrap: wrap;
