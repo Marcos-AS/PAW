@@ -191,7 +191,6 @@ nav ul {
     background-color: rgb(2,82,85);
     display: flex;
     justify-content: space-around;
-    border: solid 2px white;
 }
   
 nav li {
