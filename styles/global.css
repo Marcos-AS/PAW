@@ -170,6 +170,12 @@ header {
 
 .icono {
     width: 15vw;
+    background-image: url("/imgs/Imagotipo_PAW_Hospitals.svg");
+    display: inline-block;
+    aspect-ratio: 2.25;
+    width: 250px;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 /*SECTION NAV-------------------------------------------*/
@@ -348,6 +354,29 @@ footer p {
       content: " (" attr(href) ")";
   }
 
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(59, 74, 90); /* gris oscuro */
+  }
+
+  nav {
+    background-color: rgb(59, 74, 90);  
+  }
+
+  .icono {
+    background-image: url("/imgs/Imagotipo_PAW_Hospitals-dark.svg");
+  }
+
+  section {
+    background-color: rgb(59, 74, 90); 
+  }
+
+  p {
+    color: white;
+  }
+  
 }
 
 
