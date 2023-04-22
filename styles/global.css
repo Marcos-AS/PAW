@@ -215,33 +215,6 @@ footer p {
 
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: rgb(59, 74, 90); /* gris oscuro */
-  }
-
-  nav {
-    background-color: rgb(59, 74, 90);  
-  }
-
-  .icono {
-    background-image: url("/imgs/Imagotipo_PAW_Hospitals-dark.svg");
-  }
-
-  section {
-    background-color: rgb(59, 74, 90); 
-  }
-
-  p, h2, h3, li, label {
-    color: white !important;
-  }
-
-  .autoridades, .navAutoridades ul {
-    border: 0.3rem solid white;
-  }
-
-  
-}
 @media screen and (max-width: 832px) {
 
   /* Estilos para el menú hamburguesa */
@@ -304,11 +277,16 @@ footer p {
     padding: 0.5rem;
     margin: 0;
   }
+
+  #menu li {
+    background-color: rgb(2,82,85);
+  }
   
   #menu li a {
     display: inline-block;
     text-decoration: none;
-    color: rgb(2,82,85);
+    background-color: rgb(2,82,85);
+    color: white;
     font-size: 18px;
   }
   
@@ -329,14 +307,14 @@ footer p {
   }
   
   #desplegable1, #desplegable2 {
-    color: black;
+    color: white;
   }
   
   #menu .dropdown-menu{
       display: none;
       left: 0;
       width: 100%;
-      background-color: rgb(238, 241, 239);
+      background-color: rgb(2,82,85);
       z-index: 999;
       overflow: hidden;
       height: auto;
@@ -351,7 +329,7 @@ footer p {
   
   #menu .dropdown-menu li a {
       text-decoration: none;
-      color: rgb(2,82,85);
+      color: white;
       font-size: 18px;
       margin-top: 0px;
       margin-bottom: 0px;
@@ -385,12 +363,46 @@ footer p {
   .icono {
     width: 50vw;
   }
-        
+
   }
   
   @media screen and (width>832px) {
     header {
       float: left;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: rgb(59, 74, 90); /* gris oscuro */
+    }
+  
+    nav {
+      background-color: rgb(59, 74, 90);  
+    }
+  
+    .icono {
+      background-image: url("/imgs/Imagotipo_PAW_Hospitals-dark.svg");
+    }
+  
+    section {
+      background-color: rgb(59, 74, 90); 
+    }
+  
+    p, h2, h3, li, label {
+      color: white !important;
+    }
+  
+    .autoridades, .navAutoridades ul {
+      border: 0.3rem solid white;
+    }
+
+    .fLogin {
+      background-color: rgb(59, 74, 90);
+    }
+
+    article {
+      background-color: rgb(59, 74, 90);
     }
   }
 
