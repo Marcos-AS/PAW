@@ -149,6 +149,7 @@ h2 {
         text-decoration-color: white;
         text-decoration-thickness: 0.2rem;
         text-underline-offset: 0.3rem;
+        cursor: pointer;
         /*text-decoration: underline solid;
         font-size: 1rem;*/
     }

@@ -5,7 +5,7 @@
 body {
   width: 100%;
   background-color: rgb(238, 241, 239);
-  font-family: 'Calibri';
+  font-family: Calibri, sans-serif;
   font-size: 1.2vw;
   position: relative;
   margin: 0;
@@ -33,7 +33,7 @@ nav {
   }
 
 #desplegable1, #desplegable2 {
-  color: black;
+  color: white;
 }
 
 nav ul {
@@ -48,6 +48,8 @@ nav ul {
 nav li {
     position: relative;
     padding: 1rem 2rem;
+    margin:auto;
+    cursor:pointer;
 }
 
 nav li:hover {
@@ -118,9 +120,17 @@ nav ul ul a {
     border: 3px solid white;
     color: white;
     font-size: 1.2rem;
+    display: inline-grid;
     justify-content: center;
-    align-items: center;
-    display: flex;
+    align-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 1s ease;
+}
+
+.botonTurno:hover {
+background-color: rgb(208, 36 ,74);
+transform: scale(1.2);
 }
 
 .botonTurno:hover {
