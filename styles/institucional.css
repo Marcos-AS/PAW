@@ -8,39 +8,35 @@ h2 {
     text-indent: .5rem;
 }
 
+/*página valores-------------------------*/
+/*.valores es ol*/
 .valores {
-    list-style-type: none;
-    counter-reset: li;
-    margin: 20px 0;
-    padding: 0 20px
+    margin: 1vw 0;
+    padding: 0 1vw;
 }
 
 .valores li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
     margin-bottom: 2rem;
+    z-index: 1;
+    color: white;
+    position: relative;
+    left: .8rem;
   }
   
 .valores p {
+    display: inline;
     font-size: 1.2vw;
-    margin: 0.5rem;
+    color: black;
   }
 
  .valores li::before {
-    content: counter(li);
-    counter-increment: li;
-    background-color: rgb(2,82,85);
-    color: #fff;
-    font-size: 1.5vw;
-    font-weight: bold;
+    content: '';
+    z-index: -1;
+    color: white;
+    border: .8vw solid rgb(2,82,85);
     border-radius: 50%;
-    width: 2vw;
-    height: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
+    position: relative;
+    right: 1.75vw;
   }
 
 /*Navegación autoridades (con javascript)*/
