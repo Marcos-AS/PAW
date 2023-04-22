@@ -86,17 +86,6 @@ article p {
     border-radius: 0.5rem;
 }
 
-.sLetras h2 {
-    width:auto;
-    font-size: 1.5rem;
-    height: auto;
-    padding: 0.8rem;
-    text-align: center;
-    color: white;
-    background-color: rgb(252,196,68);
-    border-radius: 0.5rem;
-}
-
 .sLetras ul {
     list-style-type: none;
     display: flex;
@@ -111,7 +100,6 @@ article p {
     font-size: 1.2rem;
     margin: 3rem;
     padding: 0.5rem;
-    background-color: rgb(252, 192, 68);
     border: 2px solid black;
     border-radius: 0.5rem;
 }
@@ -126,7 +114,6 @@ article p {
     height: 2rem;
     display: inline-block;
     text-align: center;
-    border: 2px solid rgb(91, 43, 25);
+    border: 0.1rem solid black;
     cursor: pointer;
-    color: rgb(91, 43, 25);
 }
