@@ -43,41 +43,40 @@ h2 {
     margin-right: 10px;
   }
 
+/*Navegación autoridades (con javascript)*/
 .navAutoridades {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .navAutoridades ul {
-    background-color: rgb(252, 196, 68);
-    margin-top: 2rem;
-    padding-top: 0.5rem;
     width: 75vw;
-    background-color: rgb(252, 196, 68);
-    align-items: center;
-    align-content: center;
-    left: auto;
+    margin-top: 2rem;
+    background-color: rgb(59, 74, 90);
     padding: 0;
+    border-bottom: 2px solid black;
 }
+
+.navAutoridades a {
+    font-size: 1vw;
+}
+
+.navAutoridades li {
+    padding: 2vw 0;
+}
+
+/*section autoridades (caja que contiene cada profesional)*/
 
 .autoridades {
     width: 75vw;
     margin: 0 auto 1rem;
-    background-color: rgba(252, 196, 68, 0.3);
+    background-color: rgb(59, 74, 90);
 }
 
 .autoridades ul:not(:first-of-type) {
     display: none;
 }
-
-/*.navAutoridades a.activo {
-    background-color: #ddd;
-}
-
-.autoridades ul.activo {
-    display: block;
-}*/
 
 .autoridades ul {
     display: flex;
@@ -89,10 +88,10 @@ h2 {
     margin: 0;
 }
 
-.autoridades ul li {
+.autoridades li {
+    overflow-x:auto;
     padding: 0;
     margin: 0;
-    background-color: rgba(252, 196, 68, 0.3);
     width: 75vw;
     border-bottom: 2px black solid;
     list-style: none;
@@ -101,30 +100,24 @@ h2 {
     grid-template-rows: min-content 2rem;
 }
 
-    /*sección autoridades---------------------------------*/
+.autoridades ul > li > img {
+    width: 15vw;
+    border: 2px solid black;
+    margin: 2vw 2vw 2vw 2vw;
+    grid-row: 1 / 3;
+}
 
-  /*  .directorioList > li {
-        border: 2px solid black;
-        width:70vw;
-        background-color: rgb(238, 241, 239);
-    } */
-    
-    .autoridades ul > li > img {
-        width: 10vw;
-        border: 2px solid black;
-        margin: 2vw 2vw 2vw 2vw;
-        grid-row: 1 / 3;
-    }
+.autoridades ul > li > h3 {
+    font-size: 2vw;
+    color: white;
+}
 
-    .autoridades ul > li > h3 {
-        font-size: 2vw;
-    }
-    
-    .autoridades ul > li > p {
-        width: fit-content;
-        margin: 0;
-        font-size: 1vw;
-    }   
+.autoridades ul > li > p {
+    width: fit-content;
+    margin: 0;
+    font-size: 1.5vw;
+    color: white;
+}   
 
 
 @media (min-width:815px) {    

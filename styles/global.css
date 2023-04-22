@@ -12,153 +12,6 @@ body {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 832px ) {
-
-/* Estilos para el menú hamburguesa */
-
-.hamburguesa {
-  display: flex;
-  flex-direction: column;
- /* position: absolute; */
-  justify-content: space-between;
-  right: 0;
-  width: 2.5rem;
-  height: 2rem;  
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburguesa span {
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  transition: all 0.3s ease-in-out;
-}
-
-#menu {
-  display: none;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  overflow: hidden;
-  height: auto;
-  transition: all 0.3s ease-in-out;
-}
-
-#menu.show {
-  display: block;
-  transition: all 0.3s ease-in-out;
-  margin-top:2rem;
-}
-
-#menu ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: auto;
-}
-
-#menu li:not(:last-child) {
-  border-bottom: 0.2rem white solid;
-}
-
-#menu li, #menu a {
-  text-align: center;
-  background-color: rgb(2,82,85);
-  position: relative;
-  padding: 0.5rem;
-  margin: 0;
-}
-
-#menu li a {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-}
-
-#menu li a:hover {
-  background-color: red;
-}
-
-#menu li a p:hover {
-  color: white;
-}
-
-#menu li a:hover {
-  color: white;
-}
-
-#menu li a i{
-  margin-right: 10px;
-}
-
-#desplegable1, #desplegable2 {
-  color: black;
-}
-
-#menu .dropdown-menu{
-    display: none;
-    left: 0;
-    width: 100%;
-    background-color: rgb(238, 241, 239);
-    z-index: 999;
-    overflow: hidden;
-    height: auto;
-    transition: all 0.3s ease-in-out;
-  }
-
-#menu .dropdown-menu li {
-    margin: 10px 0;
-    text-align: center;
-    height: 2rem;
-  }
-
-#menu .dropdown-menu li a {
-    text-decoration: none;
-    color: rgb(2,82,85);
-    font-size: 18px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-#menu .dropdown-menu li p {
-    text-decoration: none;
-    color: rgb(2,82,85);
-    font-size: 18px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-#menu .sub-menu {
-    top: 0;
-    margin-top: -1px;
-    margin-left: 0;
-  }
-
-#menu .dropdown-menu.mostrar {
-    display: block;
-    margin-top: 0rem;
-    max-height: 500px;
-    transition: all 0.3s ease-in-out;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    flex-direction: column;
-}
-      
-}
-
-@media screen and (width>832px) {
-  header {
-    float: left;
-  }
-}
-
 /*SECTION HEADER-------------------------------*/
 header {
     width: 100%;
@@ -194,12 +47,9 @@ nav ul {
   
 nav li {
     position: relative;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem;
+    padding: 1rem 2rem;
     margin:auto;
     cursor:pointer;
-    padding-bottom: 1rem;
 }
 
 nav li:hover {
@@ -358,5 +208,157 @@ footer p {
   }
 
 }
+
+@media screen and (max-width: 832px) {
+
+  /* Estilos para el menú hamburguesa */
+  
+  .hamburguesa {
+    display: flex;
+    flex-direction: column;
+   /* position: absolute; */
+    justify-content: space-between;
+    right: 0;
+    width: 2.5rem;
+    height: 2rem;  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hamburguesa span {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #menu {
+    display: none;
+    left: 0;
+    width: 100%;
+  
+    z-index: 999;
+    overflow: hidden;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #menu.show {
+    display: block;
+    transition: all 0.3s ease-in-out;
+    margin-top:2rem;
+  }
+  
+  #menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: auto;
+  }
+  
+  #menu li:not(:last-child) {
+    border-bottom: 0.2rem white solid;
+  }
+  
+  #menu li, #menu a {
+    text-align: center;
+    background-color: rgb(238, 241, 239);
+    position: relative;
+    padding: 0.5rem;
+    margin: 0;
+  }
+  
+  #menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(2,82,85);
+    font-size: 18px;
+  }
+  
+  #menu li a:hover {
+    background-color: red;
+  }
+  
+  #menu li a p:hover {
+    color: white;
+  }
+  
+  #menu li a:hover {
+    color: white;
+  }
+  
+  #menu li a i{
+    margin-right: 10px;
+  }
+  
+  #desplegable1, #desplegable2 {
+    color: black;
+  }
+  
+  #menu .dropdown-menu{
+      display: none;
+      left: 0;
+      width: 100%;
+      background-color: rgb(238, 241, 239);
+      z-index: 999;
+      overflow: hidden;
+      height: auto;
+      transition: all 0.3s ease-in-out;
+    }
+  
+  #menu .dropdown-menu li {
+      margin: 10px 0;
+      text-align: center;
+      height: 2rem;
+    }
+  
+  #menu .dropdown-menu li a {
+      text-decoration: none;
+      color: rgb(2,82,85);
+      font-size: 18px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  
+  #menu .dropdown-menu li p {
+      text-decoration: none;
+      color: rgb(2,82,85);
+      font-size: 18px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  
+  #menu .sub-menu {
+      top: 0;
+      margin-top: -1px;
+      margin-left: 0;
+    }
+  
+  #menu .dropdown-menu.mostrar {
+      display: block;
+      margin-top: 0rem;
+      max-height: 500px;
+      transition: all 0.3s ease-in-out;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      flex-direction: column;
+  }
+  
+  .icono {
+    width: 50vw;
+  }
+        
+  }
+  
+  @media screen and (width>832px) {
+    header {
+      float: left;
+    }
+  }
 
 
