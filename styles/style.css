@@ -6,7 +6,7 @@ body {
     position: relative;
     min-height: 100%;
     background-color: rgb(238, 241, 239);
-    font-family: 'Calibri';
+    font-family: Calibri, sans-serif;
     font-size: 15px;
     background-size: cover;
     flex-direction: column; 
@@ -171,6 +171,7 @@ body {
     font-size: 20px;
     text-align: right;
     color: white;
+    text-align: center;
 }
 
 .consulta form label input[type="submit"] {
