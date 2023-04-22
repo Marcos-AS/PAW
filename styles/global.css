@@ -232,9 +232,14 @@ footer p {
     background-color: rgb(59, 74, 90); 
   }
 
-  p {
-    color: white;
+  p, h2, h3, li, label {
+    color: white !important;
   }
+
+  .autoridades, .navAutoridades ul {
+    border: 0.3rem solid white;
+  }
+
   
 }
 @media screen and (max-width: 832px) {
