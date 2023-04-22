@@ -150,7 +150,6 @@ body {
 }
 
 .consulta form {
-    width: 30rem;
     justify-content: center;
     flex-direction: column;
     align-content: center;
@@ -204,7 +203,7 @@ body {
     .botonReservar,
     #whatsapp {
         width: 15vw;
-        top: 15rem;
+        top: 25rem;
         right: 1rem;
     }
 
@@ -216,10 +215,5 @@ body {
     .consulta label {
         text-align: center;
     }
-
-    .icono {
-        width: 100%;
-    }
-
 
 }

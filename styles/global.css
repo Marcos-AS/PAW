@@ -18,10 +18,9 @@ body {
 
 .hamburguesa {
   display: flex;
-  position: absolute;
   flex-direction: column;
+ /* position: absolute; */
   justify-content: space-between;
-  top: 7.5rem;  
   right: 0;
   width: 2.5rem;
   height: 2rem;  
@@ -41,7 +40,7 @@ body {
   display: none;
   left: 0;
   width: 100%;
-  background-color: rgb(238, 241, 239);
+
   z-index: 999;
   overflow: hidden;
   height: auto;
@@ -163,14 +162,14 @@ body {
 
 /*SECTION HEADER-------------------------------*/
 header {
-    display: flex; 
+    width: 100%;
     position: relative;
     left: 0;
     z-index: 1;
 }
 
 .icono {
-    width: 18rem;
+    width: 15vw;
 }
 
 /*SECTION NAV-------------------------------------------*/
@@ -179,7 +178,6 @@ nav {
     position: relative;
     background-color: rgb(238, 241, 239);
     text-align: center;
-    
   }
 
 #desplegable1, #desplegable2 {
@@ -189,15 +187,14 @@ nav {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding-top: 7rem;
     position: relative;
+    background-color: rgb(2,82,85);
     display: flex;
     justify-content: space-around;
-    left: -30px;
+    border: solid 2px white;
 }
   
 nav li {
-    margin-right: 20px;
     position: relative;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -221,7 +218,7 @@ nav p:hover, nav a:hover {
 
 nav li:hover ul {
     display: block;
-    background-color: white;
+    background-color: rgb(2,82,85);;
     z-index: 1;
     opacity: 97%;
     border-radius: 10px;
@@ -231,7 +228,7 @@ nav li:hover ul {
 nav a {
     display: block;
     text-decoration: none;
-    color: rgb(2,82,85);
+    color: white;
     font-weight: bold;
     text-align: center;
     font-size: 20px;

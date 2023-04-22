@@ -5,13 +5,13 @@
 }
 
 .nav-info-util {
-    background-color: rgb(0,157,218);
     height: 3.5vw;
     margin-top: 2rem;
 }
 
 .nav-info-util ul {
     list-style-type: none;
+    background-color: rgb(0,157,218);
     margin: 0;
     padding: 0;
     height:100%;
