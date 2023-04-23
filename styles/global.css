@@ -30,6 +30,10 @@ header {
     background-repeat: no-repeat;
 }
 
+.hambur > h2 {
+  display: none;
+}
+
 /*SECTION NAV-------------------------------------------*/
 
 nav {
@@ -220,12 +224,25 @@ footer p {
 
   /* Estilos para el menú hamburguesa */
   
+  .hambur {
+    position: relative;
+    height: 2.1rem;
+  }
+
+  .hambur > h2 {
+    position: relative;
+    display: inline;
+    font-size: 1.6rem;
+    left: 1rem;
+  }
+
   .hamburguesa {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
-   /* position: absolute; */
     justify-content: space-between;
-    right: 0;
     width: 2.5rem;
     height: 2rem;  
     background-color: transparent;
@@ -239,7 +256,8 @@ footer p {
     background-color: #000;
     transition: all 0.3s ease-in-out;
   }
-  
+
+  /*navegación principal del sitio*/
   #menu {
     display: none;
     left: 0;
@@ -254,7 +272,7 @@ footer p {
   #menu.show {
     display: block;
     transition: all 0.3s ease-in-out;
-    margin-top:2rem;
+    margin-top:.5rem;
   }
   
   #menu ul {
@@ -272,7 +290,6 @@ footer p {
   }
   
   #menu li, #menu a {
-    text-align: center;
     background-color: rgb(238, 241, 239);
     position: relative;
     padding: 0.5rem;
@@ -309,6 +326,7 @@ footer p {
   
   #desplegable1, #desplegable2 {
     color: white;
+    margin: 0 1rem;
   }
   
   #menu .dropdown-menu{
@@ -394,37 +412,29 @@ footer p {
   }
 
   @media (prefers-color-scheme: dark) {
-    body {
-      background-color: rgb(59, 74, 90); /* gris oscuro */
-    }
-  
+    body,
+    .fLogin,
+    article,
+    section,
     nav {
-      background-color: rgb(59, 74, 90);  
+      background-color: rgb(59, 74, 90);
     }
   
     .icono {
       background-image: url("/imgs/Imagotipo_PAW_Hospitals-dark.svg");
     }
   
-    section {
-      background-color: rgb(59, 74, 90); 
-    }
-  
     p, h2, h3, li, label {
       color: white !important;
+    }
+
+    .hamburguesa > span {
+      background-color: white;
     }
   
     .autoridades, .navAutoridades ul {
       border: 0.3rem solid white;
     }
-
-    .fLogin {
-      background-color: rgb(59, 74, 90);
-    }
-
-    article {
-      background-color: rgb(59, 74, 90);
-    }
-  }
+}
 
 
