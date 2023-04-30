@@ -46,7 +46,7 @@
     </nav>
 
     <h2>Solicitud de Turno</h2>
-    <form action="servidor-ejemplo.com">
+    <form action="turno.php" method="post">
         <fieldset>
             <legend>Datos del Paciente</legend>
             <label for="inputNombre">
