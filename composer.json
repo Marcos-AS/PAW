@@ -1,0 +1,32 @@
+{
+    "name": "paw/clinica_medica",
+    "description": "Pagina web para Clinica Médica",
+    "type": "project",
+    "keywords": ["php", "mvc"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leonardo Duville",
+            "email": "leo_2000_12@hotmail.com"
+        },
+        {
+            "name": "Marcos Santangelo",
+            "email": "leo_2000_12@hotmail.com"
+        },
+        {
+            "name": "Enzo Bianchi",
+            "email": "leo_2000_12@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filp/whoops": "~2",
+        "monolog/monolog": "^3.3",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Paw\\": "src/"
+        }
+    }
+}
