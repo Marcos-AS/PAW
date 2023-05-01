@@ -27,6 +27,7 @@ class Turno {
             throw new InvalidValueFormatException("El nombre no debe ser mayor a 60 caracteres");
         }
         $this -> fields["nombre"] = $nombre;
+        
     }
 
     public function setApellido(string $apellido) {
