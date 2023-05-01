@@ -30,6 +30,7 @@ class Turno {
             throw new InvalidValueFormatException("El nombre no debe contener números");
         }
         $this -> fields["nombre"] = $nombre;
+        
     }
 
     public function setApellido(string $apellido) {
