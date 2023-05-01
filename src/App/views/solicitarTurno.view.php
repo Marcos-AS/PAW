@@ -49,28 +49,28 @@
 -->
 
     <h2>Solicitud de Turno</h2>
-    <form action="turno.php" method="post">
+    <form action="/solicitarTurno" method="post">
         <fieldset>
             <legend>Datos del Paciente</legend>
             <label for="inputNombre">
                 Nombre
-                <input type="text" required name="inputNombre" />
+                <input type="text" required name="nombre" />
             </label>
             <label for="inputApellido">
                 Apellido
-                <input type="text" required name="inputApellido" />
+                <input type="text" required name="apellido" />
             </label>
             <label for="inputDni">
                 DNI
-                <input type="number" required name="inputDni" maxlength="8" minlength="7"/>
+                <input type="number" required name="dni" maxlength="8" minlength="7"/>
             </label>
             <label for="inputDate">
                 Fecha de nacimiento
-                <input type="date" required name="inputDate" />
+                <input type="date" required name="fechanacimiento" />
             </label>
             <label for="inputEdad">
                 Edad
-                <input type="number" required name="inputEdad" />
+                <input type="number" required name="edad" />
             </label>
             <label for="inputSelect">
                 Obra Social
@@ -83,11 +83,11 @@
             <p>¿A donde te avisamos?</p>
             <label for="inputEmail">
                 Email
-                <input type="email" required name="inputEmail"/>
+                <input type="email" required name="email"/>
             </label>
             <label for="inputTelefono">
                 Telefono
-                <input type="tel" required name="inputTelefono"/>
+                <input type="tel" required name="telefono"/>
             </label>
         </fieldset>
         <fieldset>
@@ -109,21 +109,21 @@
             </label>
             <label for="inputDate">
                 Fecha
-                <input type="date" required name="inputDate" />
+                <input type="date" required name="fecha" />
             </label>
             <label for="inputHorarios">
                 Horarios
                 <label for="opcion1">
                     10:30
-                    <input type="radio" id="opcion1" name="opcion" value="opcion1">
+                    <input type="radio" id="opcion1" required name="horario" value="10:30">
                 </label>
                 <label for="opcion2">
                     11:00
-                    <input type="radio" id="opcion2" name="opcion" value="opcion2">
+                    <input type="radio" id="opcion2" required name="horario" value="11:00">
                 </label>
                 <label for="opcion3">
                     11:30
-                    <input type="radio" id="opcion3" name="opcion" value="opcion3">
+                    <input type="radio" id="opcion3" required name="horario" value="11:30">
                 </label>
             </label>            
             <label for="inputSubmit">

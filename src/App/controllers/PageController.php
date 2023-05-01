@@ -4,6 +4,8 @@ namespace Paw\App\controllers;
 
 use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\App\models\Login;
+use Paw\App\models\Turno;
+
 
 class PageController {
 
@@ -106,7 +108,16 @@ class PageController {
     }
 
     public function solicitarTurnoValidar() {
-        
+        $turno = new Turno();
+        $turno -> setNombre($_POST['nombre']);
+        $turno -> setApellido($_POST['apellido']);
+        $turno -> setFechaNacimiento($_POST['fechanacimiento']);
+        $turno -> setDni($_POST['dni']);
+        $turno -> setEdad($_POST['edad']);
+        $turno -> setEmail($_POST['email']);
+        $turno -> setTelefono($_POST['telefono']);
+        $turno -> setFecha($_POST['fecha']);
+        $turno -> setHorario($_POST['horario']);
     }
 
     public function loginValidar() {
