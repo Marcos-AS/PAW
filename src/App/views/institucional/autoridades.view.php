@@ -14,16 +14,16 @@
 <body>
     
     <header>
-        <a class="icono" href="/home.html"></a>
+        <a class="icono" href="/"></a>
         <button class="hamburguesa">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <a class="botonTurno" href="/solicitarTurno.html"> Reserva tu turno</a>
+        <a class="botonTurno" href="../solicitarTurno"> Reserva tu turno</a>
     </header>
 
-  //  <?php include __DIR__ . '/../parts/nav.view.php' ?>
+    <?php include __DIR__ . '/../parts/nav.view.php' ?>
 
     <!--  <nav id="menu">
         <ul>
@@ -49,12 +49,13 @@
         </ul>
     </nav>
     -->
+
     <nav class="nav-info-util">
         <ul>
-            <li><a href="/institucional/autoridades.html"><p>Autoridades</p></a></li>
-            <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
-            <li><a href="/institucional/mision.html"><p>Mision</p></a></li>
-            <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
+            <li><a href="/institucional/autoridades"><p>Autoridades</p></a></li>
+            <li><a href="/institucional/historia"><p>Historia</p></a></li>
+            <li><a href="/institucional/mision"><p>Mision</p></a></li>
+            <li><a href="/institucional/valores"><p>Valores</p></a></li>
         </ul>
     </nav>
 
@@ -76,8 +77,6 @@
             <li><a href="#" data-target="administrativoList">Área Administrativa</a></li>
         </ul>
     </nav>
-
-
 
     <section class="autoridades">
 
@@ -108,22 +107,22 @@
         </ul>
 
         <ul class="departamentoList">
-            <li><img src="/imgs/jefe-medico.jpg" alt="Jefa de Enfermería">
+            <li><img src="/assets/imgs/jefe-medico.jpg" alt="Jefa de Enfermería">
                 <h3>Dra. Camila Sosa</h3>
                 <p>Jefa de Enfermería</p>
             </li>
-            <li><img src="/imgs/jefe-medico.jpg" alt="Jefe de Medicina Legal">
+            <li><img src="/assets/imgs/jefe-medico.jpg" alt="Jefe de Medicina Legal">
                 <h3>Dr. Carlos Rivera</h3>
                 <p>Jefe de Medicina Legal</p>
             </li>
         </ul>
 
         <ul class="administrativoList">
-            <li><img src="/imgs/jefe-medico.jpg" alt="Gerente de Operaciones">
+            <li><img src="/assets/imgs/jefe-medico.jpg" alt="Gerente de Operaciones">
                 <h3>Dr.&nbsp;Mariano&nbsp;Pereyra</h3>
                 <p>Gerente de Operaciones</p>
             </li>
-            <li><img src="/imgs/jefe-medico.jpg" alt="Jefa de Facturacion">
+            <li><img src="/assets/imgs/jefe-medico.jpg" alt="Jefa de Facturacion">
                 <h3>Dra. Silvia Lugano</h3>
                 <p>Jefa de Facturacion</p>
             </li>
@@ -148,11 +147,11 @@
             <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
         </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
-        <a href="/trabajaconnosotros.html">Trabaja con nosotros</a>
+        <a href="/trabajaconnosotros">Trabaja con nosotros</a>
     </footer>
     
-    <script src="../scripts/hamburguesa.js"></script>
-    <script src="/scripts/submenu.js"></script>
+    <script src="/assets/scripts/hamburguesa.js"></script>
+    <script src="/assets/scripts/submenu.js"></script>
     <script>
         const links = document.querySelectorAll('.navAutoridades a');
 

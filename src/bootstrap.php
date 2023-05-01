@@ -39,13 +39,13 @@ $router -> get('/info-util/patologiasytratamientos', 'PageController@patologiasy
 $router -> get('/profyesp', 'PageController@profyesp');
 $router -> get('/solicitarTurno', 'PageController@solicitarTurno');
 $router -> get('/trabajaconnosotros', 'PageController@trabajaconnosotros');
-$router -> get('/portal-pacientes/estudios-realizados', 'PageController@estudios-realizados');
-$router -> get('/portal-pacientes/historial-turnos', 'PageController@historial-turnos');
-$router -> get('/portal-pacientes/inicio-usuario', 'PageController@inicio-usuario');
-$router -> get('/portal-pacientes/login', 'PageController@login');
-$router -> get('/portal-pacientes/nuevo-usuario', 'PageController@nuevo-usuario');
-$router -> get('/portal-pacientes/perfil-usuario', 'PageController@perfil-usuario');
-$router -> get('/portal-pacientes/recuperar-password', 'PageController@recuperar-password');
+$router -> get('/portal-pacientes/estudios-realizados', 'PageController@estudiosRealizados');
+$router -> get('/portal-pacientes/historial-turnos', 'PageController@historialTurnos');
+$router -> get('/portal-pacientes/inicio-usuario', 'PageController@inicioUsuario');
+$router -> get('/portal-pacientes', 'PageController@login');
+$router -> get('/portal-pacientes/nuevo-usuario', 'PageController@nuevoUsuario');
+$router -> get('/portal-pacientes/perfil-usuario', 'PageController@perfilUsuario');
+$router -> get('/portal-pacientes/recuperar-password', 'PageController@recuperarPassword');
 
 
 /*$router -> get('/about', 'PageController@about');

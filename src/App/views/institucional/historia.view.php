@@ -14,21 +14,23 @@
 <body>
     
     <header>
-        <a class="icono" href="/home.html"></a>
+        <a class="icono" href="/"></a>
         <button class="hamburguesa">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+        <a class="botonTurno" href="../solicitarTurno"> Reserva tu turno</a>
     </header> 
 
-    <nav id="menu">
+    <?php include __DIR__ . '/../parts/nav.view.php' ?>
+
+ <!--   <nav id="menu">
         <ul>
             <li class="dropdown">
                 <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
                 <ul class="dropdown-menu sub-menu">
-                    <li><a href="/institucional/directorio.html">Autoridades</a></li>
+                    <li><a href="/institucional/autoridades.html">Autoridades</a></li>
                     <li><a href="/institucional/historia.html">Historia</a></li>
                     <li><a href="/institucional/mision.html">Misión</a></li>
                     <li><a href="/institucional/valores.html">Valores</a></li>                
@@ -47,12 +49,14 @@
         </ul>
     </nav>
 
+    -->
+
     <nav class="nav-info-util">
         <ul>
-            <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
-            <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
-            <li><a href="/institucional/mision.html"><p>Mision</p></a></li>
-            <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
+            <li><a href="/institucional/autoridades"><p>Autoridades</p></a></li>
+            <li><a href="/institucional/historia"><p>Historia</p></a></li>
+            <li><a href="/institucional/mision"><p>Mision</p></a></li>
+            <li><a href="/institucional/valores"><p>Valores</p></a></li>
         </ul>
     </nav>
 
@@ -97,8 +101,8 @@
         <a href="/trabajaconnosotros.html">Trabaja con nosotros</a>
     </footer>
 
-    <script src="../scripts/hamburguesa.js"></script>
-    <script src="/scripts/submenu.js"></script>
+    <script src="/assets/scripts/hamburguesa.js"></script>
+    <script src="/assets/scripts/submenu.js"></script>
 
 </body>
 </html>

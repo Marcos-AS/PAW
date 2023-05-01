@@ -15,8 +15,8 @@
     <body>
 
         <header>
-            <a class="icono" href="/home.view.php"></a>
-            <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+            <a class="icono" href="/"></a>
+            <a class="botonTurno" href="solicitarTurno"> Reserva tu turno</a>
             <section class="hambur">
                 <h2>Menú</h2>
                 <button class="hamburguesa">
@@ -147,7 +147,7 @@
             <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
             </ul>
             <p>Clínica ... Todos los derechos reservados &#169;</p>   
-            <a href="trabajaconnosotros.html">Trabaja con nosotros</a>
+            <a href="trabajaconnosotros">Trabaja con nosotros</a>
         </footer>
 
         <script src="assets/scripts/hamburguesa.js"></script>

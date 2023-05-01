@@ -6,46 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
-    <link rel="stylesheet" href="../styles/login.css">
-    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
 
 </head>
 <body>
     
     <header>
-        <a class="icono" href="/home.html"></a>
+        <a class="icono" href="/"></a>
         <button class="hamburguesa">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+        <a class="botonTurno" href="solicitarTurno"> Reserva tu turno</a>
     </header> 
     
-    <nav id="menu">
-        <ul>
-            <li class="dropdown">
-                <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
-                <ul class="dropdown-menu sub-menu">
-                    <li><a href="/institucional/directorio.html">Autoridades</a></li>
-                    <li><a href="/institucional/historia.html">Historia</a></li>
-                    <li><a href="/institucional/mision.html">Misión</a></li>
-                    <li><a href="/institucional/valores.html">Valores</a></li>                
-                </ul>
-            </li> 
-            <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
-            <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
-            <li class="dropdown">
-                <a href="#">Información Útil<span><i id="desplegable2" class="icono-caretDown" aria-hidden="true"></i></span></a>
-                <ul class="dropdown-menu sub-menu">
-                    <li><a href="/info-util/coberturasmedicas.html">Coberturas médicas</a></li>
-                    <li><a href="/info-util/novedades.html">Novedades</a></li>
-                    <li><a href="/info-util/patologiasytratamientos.html">Patologías y tratamientos</a></li>
-                </ul>   
-            </li>
-        </ul>
-    </nav>
+    <?php include __DIR__ . '/../parts/nav.view.php' ?>
+
+<!--  <nav id="menu">
+    <ul>
+        <li class="dropdown">
+            <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
+            <ul class="dropdown-menu sub-menu">
+                <li><a href="/institucional/directorio.html">Autoridades</a></li>
+                <li><a href="/institucional/historia.html">Historia</a></li>
+                <li><a href="/institucional/mision.html">Misión</a></li>
+                <li><a href="/institucional/valores.html">Valores</a></li>                
+            </ul>
+        </li> 
+        <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
+        <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
+        <li class="dropdown">
+            <a href="#">Información Útil<span><i id="desplegable2" class="icono-caretDown" aria-hidden="true"></i></span></a>
+            <ul class="dropdown-menu sub-menu">
+                <li><a href="/info-util/coberturasmedicas.html">Coberturas médicas</a></li>
+                <li><a href="/info-util/novedades.html">Novedades</a></li>
+                <li><a href="/info-util/patologiasytratamientos.html">Patologías y tratamientos</a></li>
+            </ul>   
+        </li>
+    </ul>
+</nav>
+-->
 
     <section class="login">
     <h2>Iniciar sesión</h2>
@@ -80,11 +83,11 @@
             <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
         </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
-        <a href="/trabajaconnosotros.html">Trabaja con nosotros</a>
+        <a href="/trabajaconnosotros">Trabaja con nosotros</a>
         <a href="/portal-pacientes/inicio-usuario.html">link temporal</a>
     </footer>
 
-    <script src=../scripts/hamburguesa.js></script>
+    <script src="/assets/scripts/hamburguesa.js"></script>
 
 </body>
 </html>

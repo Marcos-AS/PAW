@@ -50,7 +50,7 @@ body {
 
 /*TITULOS Y CAMPO DE BUSQUEDA---------------------*/
 #sBusqueda {
-    background-image: url("https://marcos-as.github.io/PAW/imgs/portada.jpg");
+    background-image: url("/assets/imgs/portada.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

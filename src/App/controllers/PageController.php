@@ -10,7 +10,7 @@ class PageController {
         $this -> viewsDir = __DIR__  . '/../views/';
         @$this -> menu = [
             [
-                "href" => "/institucional",
+                "href" => "",
                 "name" => "Institucional",
             ],
             [
@@ -22,7 +22,7 @@ class PageController {
                 "name" => "Profesionales y Especialidades",
             ],  
             [
-                "href" => "/informacion-util",
+                "href" => "",
                 "name" => "Informacion Util",
             ]
         ];
@@ -48,15 +48,15 @@ class PageController {
 
         @$this -> subMenuInformacionUtil = [
             [
-                "href" => "/coberturasmedicas",
+                "href" => "/info-util/coberturasMedicas",
                 "name" => "Coberturas Medicas",
             ],
             [
-                "href" => "/novedades",
+                "href" => "/info-util/novedades",
                 "name" => "Novedades",
             ],
             [
-                "href" => "/patologiasytratamientos",
+                "href" => "/info-util/patologiasytratamientos",
                 "name" => "Patologias y Tratamientos",
             ],
         ];
@@ -71,27 +71,27 @@ class PageController {
     }
 
     public function historia() {
-        require $this ->viewsDir . '/institucional/historia.html';
+        require $this ->viewsDir . '/institucional/historia.view.php';
     }
 
     public function mision() {
-        require $this ->viewsDir . '/institucional/mision.html';
+        require $this ->viewsDir . '/institucional/mision.view.php';
     }
 
     public function valores() {
-        require $this ->viewsDir . '/institucional/valores.html';
+        require $this ->viewsDir . '/institucional/valores.view.php';
     }
 
     public function coberturasMedicas() {
-        require $this ->viewsDir . '/info-util/coberturasmedicas.html';
+        require $this ->viewsDir . '/info-util/coberturasmedicas.view.php';
     }
 
     public function novedades() {
-        require $this ->viewsDir . '/info-util/novedades.html';
+        require $this ->viewsDir . '/info-util/novedades.view.php';
     }
 
     public function patologiasytratamientos() {
-        require $this ->viewsDir . '/info-util/patologiasytratamientos.html';
+        require $this ->viewsDir . '/info-util/patologiasytratamientos.view.php';
     }
 
     public function profyesp() {
@@ -106,32 +106,32 @@ class PageController {
         require $this ->viewsDir . '/trabajaconnosotros.view.php';
     }
 
-    public function estudios-realizados() {
-        require $this ->viewsDir . '/portal-pacientes/estudios-realizados.html';
+    public function estudiosRealizados() {
+        require $this ->viewsDir . '/portal-pacientes/estudios-realizados.view.php';
     }
 
-    public function historial-turnos() {
-        require $this ->viewsDir . '/portal-pacientes/historial-turnos.html';
+    public function historialTurnos() {
+        require $this ->viewsDir . '/portal-pacientes/historial-turnos.view.php';
     }
 
-    public function inicio-usuario() {
-        require $this ->viewsDir . '/portal-pacientes/inicio-usuario.html';
+    public function inicioUsuario() {
+        require $this ->viewsDir . '/portal-pacientes/inicio-usuario.view.php';
     }
 
     public function login() {
-        require $this ->viewsDir . '/portal-pacientes/login.html';
+        require $this ->viewsDir . '/portal-pacientes/login.view.php';
     }
 
-    public function nuevo-usuario() {
-        require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.html';
+    public function nuevoUsuario() {
+        require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
     }
     
-    public function perfil-usuario() {
-        require $this ->viewsDir . '/portal-pacientes/perfil-usuario.html';
+    public function perfilUsuario() {
+        require $this ->viewsDir . '/portal-pacientes/perfil-usuario.view.php';
     }
 
-    public function recuperar-password() {
-        require $this ->viewsDir . '/portal-pacientes/recuperar-password.html';
+    public function recuperarPassword() {
+        require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
     }
 
 }

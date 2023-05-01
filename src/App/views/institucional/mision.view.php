@@ -6,24 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mision</title>
     <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
-    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
-    <link rel="stylesheet" href="/styles/institucional.css">
-    <link rel="stylesheet" href="/styles/submenu.css">
+    <link rel="stylesheet" href="/assets/css/institucional.css">
+    <link rel="stylesheet" href="/assets/css/submenu.css">
 </head>
 <body>
     
     <header>
-        <a class="icono" href="/home.html"></a>
+        <a class="icono" href="/"></a>
         <button class="hamburguesa">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+        <a class="botonTurno" href="../solicitarTurno"> Reserva tu turno</a>
     </header> 
 
-    <nav id="menu">
+    <?php include __DIR__ . '/../parts/nav.view.php' ?>
+
+ <!--   <nav id="menu">
         <ul>
             <li class="dropdown">
                 <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
@@ -47,12 +49,14 @@
         </ul>
     </nav>
 
+-->
+
     <nav class="nav-info-util">
         <ul>
-            <li><a href="/institucional/directorio.html"><p>Autoridades</p></a></li>
-            <li><a href="/institucional/historia.html"><p>Historia</p></a></li>
-            <li><a href="/institucional/mision.html"><p>Mision</p></a></li>
-            <li><a href="/institucional/valores.html"><p>Valores</p></a></li>
+            <li><a href="/institucional/autoridades"><p>Autoridades</p></a></li>
+            <li><a href="/institucional/historia"><p>Historia</p></a></li>
+            <li><a href="/institucional/mision"><p>Mision</p></a></li>
+            <li><a href="/institucional/valores"><p>Valores</p></a></li>
         </ul>
     </nav>
 
@@ -107,11 +111,11 @@
             <li class="redSocial"><a href="https://www.instagram.com.ar" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
         </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
-        <a href="/trabajaconnosotros.html">Trabaja con nosotros</a>
+        <a href="/trabajaconnosotros">Trabaja con nosotros</a>
     </footer>
 
-    <script src="/scripts/hamburguesa.js"></script>
-    <script src="/scripts/submenu.js"></script>
+    <script src="/assets/scripts/hamburguesa.js"></script>
+    <script src="/assets/scripts/submenu.js"></script>
 
 </body>
 </html>
