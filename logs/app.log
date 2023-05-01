@@ -369,3 +369,4 @@
 [2023-05-01T00:46:28.611134+00:00] mvc-app.INFO:                      Status Code: 200 {"Path":"/","Method":"GET"} []
 [2023-05-01T00:46:53.084560+00:00] mvc-app.INFO:                      Status Code: 200 {"Path":"/portal-pacientes","Method":"GET"} []
 [2023-05-01T00:47:03.112096+00:00] mvc-app.INFO:                      Status Code: 200 {"Path":"/","Method":"GET"} []
+[2023-05-01T03:07:33.932229+00:00] mvc-app.INFO:                      Status Code: 200 {"Path":"/solicitarTurno","Method":"GET"} []
