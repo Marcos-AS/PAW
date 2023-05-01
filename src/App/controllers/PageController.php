@@ -102,6 +102,10 @@ class PageController {
         require $this ->viewsDir . '/solicitarTurno.view.php';
     }
 
+    public function solicitarTurnoValidar() {
+        
+    }
+
     public function trabajaconnosotros() {
         require $this ->viewsDir . '/trabajaconnosotros.view.php';
     }
