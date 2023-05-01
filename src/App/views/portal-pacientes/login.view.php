@@ -52,12 +52,12 @@
 
     <section class="login">
     <h2>Iniciar sesión</h2>
-    <form class="fLogin" action="servidor-ejemplo.com" method="post">
+    <form class="fLogin" action="portal-pacientes" method="post">
         <label for="inputDNI">DNI:
-            <input type="text" name="inputDNI">
+            <input type="text" name="dni">
         </label>
         <label for="inputPassword">Contraseña:
-            <input type="password" name="inputPassword">
+            <input type="password" name="password">
         </label>
         <p>¿No tienes cuenta? <a href="nuevo-usuario.html">Regístrate</a></p>
         <p>¿Olvidaste tu contraseña? <a href="recuperar-password.html">Recupérala aquí</a></p>
@@ -84,7 +84,7 @@
         </ul>
         <p>Clínica ... Todos los derechos reservados &#169;</p>   
         <a href="/trabajaconnosotros">Trabaja con nosotros</a>
-        <a href="/portal-pacientes/inicio-usuario.html">link temporal</a>
+        <a href="/portal-pacientes/inicio-usuario">link temporal</a>
     </footer>
 
     <script src="/assets/scripts/hamburguesa.js"></script>

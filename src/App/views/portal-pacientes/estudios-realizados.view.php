@@ -72,6 +72,18 @@
         </label>
     </form>
 
+    <form method="post" action="/guardar-estudio" enctype="multipart/form-data">
+        <label for="archivo">Adjuntar estudio:</label>
+        <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.png" required>
+        <button type="submit">Guardar estudio</button>
+        <?php if ($procesado) : ?>
+            <div>
+                Su peticion fue procesada con exito.
+            </div>
+        <?php endif; ?>
+    </form>
+
+
     <table>
         <thead>
             <tr>

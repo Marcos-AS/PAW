@@ -24,18 +24,18 @@
     <nav>
         <ul>
             <li>
-                <a href="perfil-usuario.html">Mi perfil</a>
+                <a href="perfil-usuario">Mi perfil</a>
             </li>
             <li>
-                <a href="historial-turnos.html">Historial de turnos</a>
+                <a href="historial-turnos">Historial de turnos</a>
             </li>
             <li>
-                <a href="estudios-realizados.html">Estudios realizados</a>
+                <a href="estudios-realizados">Estudios realizados</a>
             </li>
             <li>
                 <a href="#">Cerrar sesión</a>
             </li>
-            <a class="botonTurno" href="solicitarTurno.html"> Reserva tu turno</a>
+            <a class="botonTurno" href="solicitarTurno"> Reserva tu turno</a>
         </ul>
     </nav>
 

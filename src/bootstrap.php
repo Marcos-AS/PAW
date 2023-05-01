@@ -44,9 +44,12 @@ $router -> get('/portal-pacientes/estudios-realizados', 'PageController@estudios
 $router -> get('/portal-pacientes/historial-turnos', 'PageController@historialTurnos');
 $router -> get('/portal-pacientes/inicio-usuario', 'PageController@inicioUsuario');
 $router -> get('/portal-pacientes', 'PageController@login');
+$router -> post('/portal-pacientes', 'PageController@loginValidar');
 $router -> get('/portal-pacientes/nuevo-usuario', 'PageController@nuevoUsuario');
 $router -> get('/portal-pacientes/perfil-usuario', 'PageController@perfilUsuario');
 $router -> get('/portal-pacientes/recuperar-password', 'PageController@recuperarPassword');
+$router -> post('/guardar-estudio', 'PageController@guardarEstudio');
+
 
 
 /*$router -> get('/about', 'PageController@about');
