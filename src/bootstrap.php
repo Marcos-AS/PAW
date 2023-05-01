@@ -38,6 +38,7 @@ $router -> get('/info-util/novedades', 'PageController@novedades');
 $router -> get('/info-util/patologiasytratamientos', 'PageController@patologiasytratamientos');
 $router -> get('/profyesp', 'PageController@profyesp');
 $router -> get('/solicitarTurno', 'PageController@solicitarTurno');
+$router -> post('/solicitarTurno', 'PageController@solicitarTurnoValidar');
 $router -> get('/trabajaconnosotros', 'PageController@trabajaconnosotros');
 $router -> get('/portal-pacientes/estudios-realizados', 'PageController@estudiosRealizados');
 $router -> get('/portal-pacientes/historial-turnos', 'PageController@historialTurnos');
