@@ -20,9 +20,9 @@ $handler = new StreamHandler('../logs/app.log');
 $handler -> setLevel(Monolog\Logger::DEBUG);
 $log -> pushHandler($handler);
 
-/*$whoops = new \Whoops\Run;
+$whoops = new \Whoops\Run;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops -> register(); */
+$whoops -> register();
 
 $request = new Request;
 

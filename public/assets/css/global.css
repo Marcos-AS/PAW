@@ -412,15 +412,16 @@ footer p {
     .fLogin,
     article,
     section,
+    .contenedor,
     nav {
       background-color: rgb(59, 74, 90);
     }
   
     .icono {
-      background-image: url("/imgs/Imagotipo_PAW_Hospitals-dark.svg");
+      background-image: url("/assets/imgs/Imagotipo_PAW_Hospitals-dark.svg");
     }
   
-    p, h2, h3, li, label {
+    p, h2, h3, h4, li, label {
       color: white !important;
     }
 
