@@ -78,22 +78,27 @@
         
         <section class="consulta">
             <h3>Envianos tu consulta aquí</h3>
-            <form>
+            <form action = "/" method="post">
                 <label for="inputNombre">
                     Nombre
-                    <input type="text" name="inputNombre">
+                    <input type="text" name="nombre">
                 </label>
                 <label for="inputEmail">
                     Email
-                    <input type="email" name="inputEmail">
+                    <input type="email" name="email">
                 </label>
                 <label for="inputConsulta">
                     Consulta
-                    <input type="text" name="inputConsulta">    
+                    <input type="text" name="consulta">    
                 </label>
                 <label for="inputSubmit">
                      <input type="submit" name="inputSubmit">
-                </label>                
+                </label> 
+                <?php if ($procesado) : ?>
+                <div>
+                    Su peticion fue procesada con exito.
+                </div>
+                <?php endif; ?>               
             </form>
         </section>
     </section>

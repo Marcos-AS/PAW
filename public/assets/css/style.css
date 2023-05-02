@@ -195,6 +195,10 @@ body {
     transform: scale(1.2);
 }
 
+input[name="consulta"] {
+    height: 8rem;
+}
+
 .informacion {
     display: flex;
     width: 100%; 

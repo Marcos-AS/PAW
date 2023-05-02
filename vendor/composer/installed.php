@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'paw/clinica_medica',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '49a29b7a68311b80d87a3690577abc08677cfdb6',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'paw/clinica_medica' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '49a29b7a68311b80d87a3690577abc08677cfdb6',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -24,60 +24,35 @@
 
     <?php include __DIR__ . '/./parts/nav.view.php' ?>
 
-<!--  <nav id="menu">
-    <ul>
-        <li class="dropdown">
-            <a href="#">Institucional<span><i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i></span></a>             
-            <ul class="dropdown-menu sub-menu">
-                <li><a href="/institucional/directorio.html">Autoridades</a></li>
-                <li><a href="/institucional/historia.html">Historia</a></li>
-                <li><a href="/institucional/mision.html">Misión</a></li>
-                <li><a href="/institucional/valores.html">Valores</a></li>                
-            </ul>
-        </li> 
-        <li><a href="/portal-pacientes/login.html">Portal Pacientes</a></li>
-        <li><a href="/profyesp.html">Profesionales y Especialidades</a></li>
-        <li class="dropdown">
-            <a href="#">Información Útil<span><i id="desplegable2" class="icono-caretDown" aria-hidden="true"></i></span></a>
-            <ul class="dropdown-menu sub-menu">
-                <li><a href="/info-util/coberturasmedicas.html">Coberturas médicas</a></li>
-                <li><a href="/info-util/novedades.html">Novedades</a></li>
-                <li><a href="/info-util/patologiasytratamientos.html">Patologías y tratamientos</a></li>
-            </ul>   
-        </li>
-    </ul>
-</nav>
--->
-
     <h2>Dejanos tu CV!</h2>
-    <form action=servidor-ejemplo.com">
+    <form action="/trabajaconnosotros" method="post">
         <label for="inputNombre">
             Nombre
-            <input type="text" required name="inputNombre" />
+            <input type="text" required name="nombre" />
         </label>
         <label for="inputApellido">
             Apellido
-            <input type="text" required name="inputApellido" />
+            <input type="text" required name="apellido" />
         </label>    
         <label for="inputEmail">
             Email
-            <input type="email" required name="inputEmail"/>
+            <input type="email" required name="email"/>
         </label>
         <label for="inputTelefono">
             Telefono
-            <input type="tel" required name="inputTelefono"/>
+            <input type="tel" required name="telefono"/>
         </label>
         <label for="inputDireccion">
             Direccion
-            <input type="text" required name="inputDireccion" />
+            <input type="text" required name="direccion" />
         </label>
         <label for="inputCP">
             Código Postal
-            <input type="text" required name="inputCP" />
+            <input type="text" required name="cp" />
         </label>
         <label for="inputSelect">
             Nivel de Estudio
-            <select name="inputSelect">
+            <select name="estudio">
                 <option value="Primario">Primario</option>
                 <option value="Secundario">Secundario</option>
                 <option value="Universitario">Universitario</option>
@@ -85,7 +60,7 @@
         </label>
         <label for="inputSelect">
             Área
-            <select name="inputSelect">
+            <select name="area">
                 <option value="Admistración">Admistración</option>
                 <option value="Enfermería">Enfermería</option>
                 <option value="Traumatología">Traumatología</option>
@@ -99,6 +74,11 @@
         <label for="inputSubmit">
             <input type="submit" name="inputSubmit"/>
         </label>
+        <?php if ($procesado) : ?>
+            <div>
+                Su peticion fue procesada con exito.
+            </div>
+        <?php endif; ?>
   </form>
 
   <footer >

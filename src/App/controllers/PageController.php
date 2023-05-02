@@ -5,6 +5,8 @@ namespace Paw\App\controllers;
 use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\App\models\Login;
 use Paw\App\models\Turno;
+use Paw\App\models\Cv;
+use Paw\App\models\Consulta;
 
 
 class PageController {
@@ -67,8 +69,17 @@ class PageController {
         ];
     }
 
-    public function index() {
+    public function index($procesado= false) {
         require $this ->viewsDir . 'home.view.php';
+    }
+
+    public function consulta() {
+        $consulta = new Consulta();
+        var_dump($_POST);
+        $consulta -> setNombre($_POST['nombre']);
+        $consulta -> setEmail($_POST['email']);
+        $consulta -> setConsulta($_POST['consulta']);
+        $this -> index(true);
     }
 
     public function autoridades() {
@@ -127,8 +138,22 @@ class PageController {
         $this -> inicioUsuario();
     }
 
-    public function trabajaconnosotros() {
+    public function trabajaconnosotros($procesado= false) {
         require $this ->viewsDir . '/trabajaconnosotros.view.php';
+    }
+
+    public function trabajaconnosotrosValidar() {
+        $cv = new Cv();
+        var_dump($_POST);
+        $cv -> setNombre($_POST['nombre']);
+        $cv -> setApellido($_POST['apellido']);
+        $cv -> setEmail($_POST['email']);
+        $cv -> setTelefono($_POST['telefono']);
+        $cv -> setDireccion($_POST['direccion']);
+        $cv -> setCodigoPostal($_POST['cp']);
+        $cv -> setEstudio($_POST['estudio']);
+        $cv -> setArea($_POST['area']);
+        $this -> trabajaconnosotros(true);
     }
 
     public function estudiosRealizados($procesado= false) {
