@@ -10,10 +10,10 @@
     </ul>
     <p>Lunes a viernes de 8 a 21 hs.</p>
     <ul class="redSocial">
-    <li><a href="https://www.facebook.com.ar" target="_blank"><i class="icono-facebook"  alt="Logo de Facebook"></i></a></li>
-    <li><a href="https://www.linkedin.com.ar" target="_blank"><i class="icono-linkedIn" alt="Logo de LinkedIn"></i></a></li>
-    <li><a href="https://www.instagram.com.ar" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
+    <li><a href="https://www.facebook.com" target="_blank"><i class="icono-facebook"  alt="Logo de Facebook"></i></a></li>
+    <li><a href="https://www.linkedin.com" target="_blank"><i class="icono-linkedIn" alt="Logo de LinkedIn"></i></a></li>
+    <li><a href="https://www.instagram.com" target="_blank"><i class="icono-instagram" alt="Logo de Instagram"></i></a></li>
     </ul>
-    <p>Clínica ... Todos los derechos reservados &#169;</p>   
+    <p>Clínica UNLu PAW. Todos los derechos reservados &#169;</p>   
     <a href="trabajaconnosotros">Trabaja con nosotros</a>
 </footer>

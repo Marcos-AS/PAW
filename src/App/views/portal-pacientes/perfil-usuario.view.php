@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil usuario</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/styles/portal-pacientes.css">
+    <link rel="stylesheet" href="/assets/css/portal-pacientes.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
 </head>
 
@@ -31,16 +31,15 @@
         </ul>
     </nav>
 
-    <h2>Tus datos: <!--Nombre--></h2>
+    <main class="datosPaciente">
+        <h2>Tus datos: <!--Nombre--></h2>
+        <p>Mail: juanperez25@gmail.com</p> <a href="#">Modificar</a>
+        <p>Obra social: ASIMRA</p> <a href="#">Modificar</a>
+        <p>Teléfono: 2346505152</p> <a href="#">Modificar</a>
+        <p>Contraseña: *************</p> <a href="#">Modificar</a>
 
-
-    <p>Mail: juanperez25@gmail.com</p> <a href="#">Modificar</a>
-    <p>Obra social: ASIMRA</p> <a href="#">Modificar</a>
-    <p>Teléfono: 2346505152</p> <a href="#">Modificar</a>
-    <p>Contraseña: *************</p> <a href="#">Modificar</a>
-
-    <?php require __DIR__ . '/../parts/footer.view.php' ?>
-
+        <?php require __DIR__ . '/../parts/footer.view.php' ?>
+    </main>
 </body>
 </html>
 

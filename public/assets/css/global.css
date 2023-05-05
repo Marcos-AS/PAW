@@ -420,7 +420,7 @@ footer p {
       background-image: url("/assets/imgs/Imagotipo_PAW_Hospitals-dark.svg");
     }
   
-    p, h2, h3, h4, li, label {
+    p, h2, h3, h4, li, label, legend {
       color: white !important;
     }
 

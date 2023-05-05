@@ -62,3 +62,23 @@ label > input[type="submit"]:hover,
 label > input[type="reset"]:hover {
     background-color: #0056b3;
 }
+
+/* perfil usuario -------------------------*/
+
+nav {
+    display: inline-block;
+    position:absolute;
+    top: 8rem;
+    width: 20vw;
+    height: 65vh;
+}
+
+nav ul {
+    flex-direction: column
+}
+
+.datosPaciente {
+    display: inline-block;
+    position: relative;
+    left: 20rem;
+}

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitar Turno</title>
     <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
-    <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/solicitarTurno.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
 </head>
 <body>
