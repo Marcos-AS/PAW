@@ -18,7 +18,7 @@
 
         <?php require __DIR__ . '/./parts/nav.view.php' ?>
 
-        <section id="sBusqueda">
+        <section class="sBusqueda">
             <h2>Bienvenido a nuestro sitio oficial</h2>
             <h3>Encontra a tu profesional</h3>
             <form>
@@ -30,7 +30,7 @@
                 </a>
             </form>
             <a class="botonReservar" href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Necesito mas informacion!">
-                <img id="whatsapp" src="assets/imgs/whatsapp.png" alt="Logo de WhatsApp" />    
+                <img class="whatsapp" src="assets/imgs/whatsapp.png" alt="Logo de WhatsApp" />    
             </a>
         </section>
         

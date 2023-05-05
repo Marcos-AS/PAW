@@ -17,7 +17,7 @@ class PageController {
         $this -> viewsDir = __DIR__  . '/../views/';
         @$this -> menu = [
             [
-                "href" => "",
+                "href" => "#",
                 "name" => "Institucional",
             ],
             [
@@ -29,7 +29,7 @@ class PageController {
                 "name" => "Profesionales y Especialidades",
             ],  
             [
-                "href" => "",
+                "href" => "#",
                 "name" => "Informacion Util",
             ]
         ];

@@ -111,7 +111,7 @@ article p {
     text-decoration: none;
 }
 
-.letra {
+.letra span{
     width: 2rem;
     height: 2rem;
     display: inline-block;

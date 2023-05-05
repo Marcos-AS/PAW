@@ -41,33 +41,33 @@
 
     <section class="sLetras">
         <p>Filtrar por letra</p>
-        <label for="letra">
-            <span class="letra">A</span>
-            <span class="letra">B</span>
-            <span class="letra">C</span>
-            <span class="letra">D</span>
-            <span class="letra">E</span>
-            <span class="letra">F</span>
-            <span class="letra">G</span>
-            <span class="letra">H</span>
-            <span class="letra">I</span>
-            <span class="letra">J</span>
-            <span class="letra">K</span>
-            <span class="letra">L</span>
-            <span class="letra">M</span>
-            <span class="letra">N</span>
-            <span class="letra">O</span>
-            <span class="letra">P</span>
-            <span class="letra">Q</span>
-            <span class="letra">R</span>
-            <span class="letra">S</span>
-            <span class="letra">T</span>
-            <span class="letra">U</span>
-            <span class="letra">V</span>
-            <span class="letra">W</span>
-            <span class="letra">X</span>
-            <span class="letra">Y</span>
-            <span class="letra">Z</span>
+        <label class="letra" for="letra">
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+            <span>D</span>
+            <span>E</span>
+            <span>F</span>
+            <span>G</span>
+            <span>H</span>
+            <span>I</span>
+            <span>J</span>
+            <span>K</span>
+            <span>L</span>
+            <span>M</span>
+            <span>N</span>
+            <span>O</span>
+            <span>P</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>S</span>
+            <span>T</span>
+            <span>U</span>
+            <span>V</span>
+            <span>W</span>
+            <span>X</span>
+            <span>Y</span>
+            <span>Z</span>
         </label>
         <ul>
             <li><a href="">Enfermedad 1</a></li>

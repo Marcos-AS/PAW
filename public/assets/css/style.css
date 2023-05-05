@@ -43,13 +43,13 @@ body {
 }
 
 /*imagen whatsapp*/
-#whatsapp {
+.whatsapp {
     width: 4.5rem;
     border-radius: 50%;
 }
 
 /*TITULOS Y CAMPO DE BUSQUEDA---------------------*/
-#sBusqueda {
+.sBusqueda {
     background-image: url("/assets/imgs/portada.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,22 +63,22 @@ body {
     flex-direction: column;
 }
 
-#sBusqueda h3,form {
+.sBusqueda h3,form {
     margin: 0 auto;
     text-align: center;
 }
 
-#sBusqueda h2 {
+.sBusqueda h2 {
     font-size: 40px;
     color: white;
 }
 
-#sBusqueda h3 {
+.sBusqueda h3 {
     font-size: 20px;
     color: white;
 }
 
-#sBusqueda form input[type="text"] {
+.sBusqueda form input[type="text"] {
   padding: 5px;
   font-size: 30px;
   border: 1px solid #ccc;
@@ -86,7 +86,7 @@ body {
   width: 100%;
 }  
 
-#sBusqueda form input[type="submit"] {
+.sBusqueda form input[type="submit"] {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: #fff;
@@ -96,7 +96,7 @@ body {
     cursor: pointer;
 }
 
-#sBusqueda form a {
+.sBusqueda form a {
     width: 50%;
 }
 

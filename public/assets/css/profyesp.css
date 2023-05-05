@@ -47,7 +47,7 @@ input[type="search"] {
     gap: 10px;
   }
 
-.letra {
+.letra span {
     display: inline-block;
     border: 1px solid rgb(0, 157, 218);
     padding: 5px;

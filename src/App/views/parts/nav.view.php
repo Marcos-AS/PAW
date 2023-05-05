@@ -1,4 +1,4 @@
-<nav id="menu">
+<nav class="menu">
     <ul>
     <?php foreach ($this -> menu as $item) : ?>
         <?php if ($item["name"] == 'Institucional' || $item["name"] == 'Informacion Util'): ?>
