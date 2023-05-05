@@ -68,7 +68,6 @@ label > input[type="reset"]:hover {
 nav {
     position:absolute;
     top: 8rem;
-
 }
 
 nav ul {
@@ -86,7 +85,6 @@ nav, .datosPaciente {
     position: relative;
     top: 2rem;
     left: 23vw;
-    border: 1px solid black;
     width: 75vw;
 }
 
@@ -96,6 +94,23 @@ nav, .datosPaciente {
     font-size: 2vw;
 }
 
+.datosPaciente p {
+    display: inline;
+    font-size: 1.2vw;
+    line-height: 3rem;
+    position: inherit;
+    left: 2rem;
+}
+
+.datosPaciente a, .icono-gear {
+    margin-left: 3rem;
+}
+
+.datosPaciente a::after {
+    content: "\a";
+    white-space: pre;
+}
+
 footer {
-    margin-top: 15rem;
+    margin-top: 25rem;
 }

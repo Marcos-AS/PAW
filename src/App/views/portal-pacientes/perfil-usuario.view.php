@@ -33,10 +33,10 @@
 
     <main class="datosPaciente">
         <h2>Tus datos: <!--Nombre--></h2>
-        <p>Mail: juanperez25@gmail.com</p> <a href="#">Modificar</a>
-        <p>Obra social: ASIMRA</p> <a href="#">Modificar</a>
-        <p>Teléfono: 2346505152</p> <a href="#">Modificar</a>
-        <p>Contraseña: *************</p> <a href="#">Modificar</a>
+        <p>Mail: juanperez25@gmail.com</p><i class="icono-gear"></i><a href="#">Modificar</a>
+        <p>Obra social: ASIMRA</p><i class="icono-gear"></i> <a href="#">Modificar</a>
+        <p>Teléfono: 2346505152</p><i class="icono-gear"></i> <a href="#">Modificar</a>
+        <p>Contraseña: *************</p><i class="icono-gear"></i> <a href="#">Modificar</a>
     </main>
 
     <?php require __DIR__ . '/../parts/footer.view.php' ?>

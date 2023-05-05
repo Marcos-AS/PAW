@@ -36,4 +36,21 @@ class UserController extends Controller {
         require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
     }
 
+    public function perfilUsuario() {
+        require $this ->viewsDir . '/portal-pacientes/perfil-usuario.view.php';
+    }
+
+    public function recuperarPassword() {
+        require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
+    }
+
+    public function estudiosRealizados($procesado= false) {
+        require $this ->viewsDir . '/portal-pacientes/estudios-realizados.view.php';
+    }
+
+    public function historialTurnos() {
+        require $this ->viewsDir . '/portal-pacientes/historial-turnos.view.php';
+    }
+
+
 }

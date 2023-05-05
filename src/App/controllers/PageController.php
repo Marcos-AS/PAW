@@ -42,41 +42,12 @@ class PageController extends Controller{
     public function profyesp() {
         require $this ->viewsDir . '/profyesp.view.php';
     }
-    
-    public function solicitarTurno($procesado = false) {
-        require $this ->viewsDir . '/solicitarTurno.view.php';
-    }
 
     public function trabajaconnosotros($procesado= false) {
         require $this ->viewsDir . '/trabajaconnosotros.view.php';
     }
 
-    public function estudiosRealizados($procesado= false) {
-        require $this ->viewsDir . '/portal-pacientes/estudios-realizados.view.php';
-    }
-
-    public function historialTurnos() {
-        require $this ->viewsDir . '/portal-pacientes/historial-turnos.view.php';
-    }
-
-    public function inicioUsuario() {
-        require $this ->viewsDir . '/portal-pacientes/inicio-usuario.view.php';
-    }
-
     public function login() {
         require $this ->viewsDir . '/portal-pacientes/login.view.php';
     }
-
-    public function nuevoUsuario($procesado=false) {
-        require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
-    }
-    
-    public function perfilUsuario() {
-        require $this ->viewsDir . '/portal-pacientes/perfil-usuario.view.php';
-    }
-
-    public function recuperarPassword() {
-        require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
-    }
-
 }
