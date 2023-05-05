@@ -3,83 +3,12 @@
 namespace Paw\App\controllers;
 
 use Paw\Core\Exceptions\InvalidValueFormatException;
-use Paw\App\models\Login;
-use Paw\App\models\Turno;
-use Paw\App\models\Cv;
-use Paw\App\models\Consulta;
+use Paw\Core\Controller;
 
-
-class PageController {
-
-    public string $viewsDir;
-
-    public function __construct(){
-        $this -> viewsDir = __DIR__  . '/../views/';
-        @$this -> menu = [
-            [
-                "href" => "#",
-                "name" => "Institucional",
-            ],
-            [
-                "href" => "/portal-pacientes",
-                "name" => "Portal Pacientes",
-            ],
-            [
-                "href" => "/profyesp",
-                "name" => "Profesionales y Especialidades",
-            ],  
-            [
-                "href" => "#",
-                "name" => "Informacion Util",
-            ]
-        ];
-
-        @$this -> subMenuInstitucional = [
-            [
-                "href" => "/institucional/autoridades",
-                "name" => "Autoridades"
-            ],
-            [
-                "href" => "/institucional/historia",
-                "name" => "Historia",
-            ],
-            [
-                "href" => "/institucional/mision",
-                "name" => "Mision",
-            ],
-            [
-                "href" => "/institucional/valores",
-                "name" => "Valores",
-            ]
-        ];
-
-        @$this -> subMenuInformacionUtil = [
-            [
-                "href" => "/info-util/coberturasMedicas",
-                "name" => "Coberturas Medicas",
-            ],
-            [
-                "href" => "/info-util/novedades",
-                "name" => "Novedades",
-            ],
-            [
-                "href" => "/info-util/patologiasytratamientos",
-                "name" => "Patologias y Tratamientos",
-            ],
-        ];
-    }
+class PageController extends Controller{
 
     public function index($procesado= false) {
         require $this ->viewsDir . 'home.view.php';
-    }
-
-    public function consulta() {
-        $consulta = new Consulta();
-        var_dump($_POST);
-        $consulta -> setNombre($_POST['nombre']);
-        $consulta -> setEmail($_POST['email']);
-        $consulta -> setConsulta($_POST['consulta']);
-        $this -> index(true);
     }
 
     public function autoridades() {
@@ -114,46 +43,12 @@ class PageController {
         require $this ->viewsDir . '/profyesp.view.php';
     }
     
-    public function solicitarTurno() {
+    public function solicitarTurno($procesado = false) {
         require $this ->viewsDir . '/solicitarTurno.view.php';
-    }
-
-    public function solicitarTurnoValidar() {
-        $turno = new Turno();
-        $turno -> setNombre($_POST['nombre']);
-        $turno -> setApellido($_POST['apellido']);
-        $turno -> setFechaNacimiento($_POST['fechanacimiento']);
-        $turno -> setDni($_POST['dni']);
-        $turno -> setEdad($_POST['edad']);
-        $turno -> setEmail($_POST['email']);
-        $turno -> setTelefono($_POST['telefono']);
-        $turno -> setFecha($_POST['fecha']);
-        $turno -> setHorario($_POST['horario']);
-    }
-
-    public function loginValidar() {
-        $login = new Login;
-        $login -> setDni($_POST['dni']);
-        $login -> setPassword($_POST['password']);
-        $this -> inicioUsuario();
     }
 
     public function trabajaconnosotros($procesado= false) {
         require $this ->viewsDir . '/trabajaconnosotros.view.php';
-    }
-
-    public function trabajaconnosotrosValidar() {
-        $cv = new Cv();
-        var_dump($_POST);
-        $cv -> setNombre($_POST['nombre']);
-        $cv -> setApellido($_POST['apellido']);
-        $cv -> setEmail($_POST['email']);
-        $cv -> setTelefono($_POST['telefono']);
-        $cv -> setDireccion($_POST['direccion']);
-        $cv -> setCodigoPostal($_POST['cp']);
-        $cv -> setEstudio($_POST['estudio']);
-        $cv -> setArea($_POST['area']);
-        $this -> trabajaconnosotros(true);
     }
 
     public function estudiosRealizados($procesado= false) {
@@ -172,7 +67,7 @@ class PageController {
         require $this ->viewsDir . '/portal-pacientes/login.view.php';
     }
 
-    public function nuevoUsuario() {
+    public function nuevoUsuario($procesado=false) {
         require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
     }
     
@@ -182,31 +77,6 @@ class PageController {
 
     public function recuperarPassword() {
         require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
-    }
-
-    public function guardarEstudio()
-    {
-        $formulario = $_POST;
-        // Validamos que se haya enviado un archivo
-        if (empty($_FILES['archivo']['tmp_name'])) {
-            // Si no se envió un archivo, mostramos un mensaje de error
-            throw new InvalidValueFormatException("Debes adjuntar un archivo");
-        }
-
-        // Validamos el formato del archivo
-        $formato_permitido = ['pdf', 'jpg', 'png'];
-        $archivo = $_FILES['archivo']['name'];
-        $extension = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
-
-        if (!in_array($extension, $formato_permitido)) {
-            // Si el formato no está permitido, mostramos un mensaje de error
-            throw new InvalidValueFormatException("Formato no permitido");
-        }
-
-        // Aquí puedes guardar el archivo en el servidor, por ejemplo:
-        // move_uploaded_file($_FILES['archivo']['tmp_name'], '/ruta/para/guardar/archivos/' . $archivo);
-
-        $this -> estudiosRealizados(true);
     }
 
 }

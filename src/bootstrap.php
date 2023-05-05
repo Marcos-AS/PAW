@@ -29,7 +29,7 @@ $request = new Request;
 $router = new Router;
 $router -> setLogger($log);
 $router -> get('/', 'PageController@index');
-$router -> post('/', 'PageController@consulta');
+$router -> post('/', 'ConsultaController@consulta');
 $router -> get('/institucional/autoridades', 'PageController@autoridades');
 $router -> get('/institucional/historia', 'PageController@historia');
 $router -> get('/institucional/mision', 'PageController@mision');
@@ -39,18 +39,19 @@ $router -> get('/info-util/novedades', 'PageController@novedades');
 $router -> get('/info-util/patologiasytratamientos', 'PageController@patologiasytratamientos');
 $router -> get('/profyesp', 'PageController@profyesp');
 $router -> get('/solicitarTurno', 'PageController@solicitarTurno');
-$router -> post('/solicitarTurno', 'PageController@solicitarTurnoValidar');
+$router -> post('/solicitarTurno', 'TurnoController@solicitarTurnoValidar');
 $router -> get('/trabajaconnosotros', 'PageController@trabajaconnosotros');
-$router -> post('/trabajaconnosotros', 'PageController@trabajaconnosotrosValidar');
+$router -> post('/trabajaconnosotros', 'CvController@trabajaconnosotrosValidar');
 $router -> get('/portal-pacientes/estudios-realizados', 'PageController@estudiosRealizados');
 $router -> get('/portal-pacientes/historial-turnos', 'PageController@historialTurnos');
 $router -> get('/portal-pacientes/inicio-usuario', 'PageController@inicioUsuario');
 $router -> get('/portal-pacientes', 'PageController@login');
-$router -> post('/portal-pacientes', 'PageController@loginValidar');
+$router -> post('/portal-pacientes', 'UserController@loginValidar');
 $router -> get('/portal-pacientes/nuevo-usuario', 'PageController@nuevoUsuario');
+$router -> post('/portal-pacientes/nuevo-usuario', 'UserController@registroUsuario');
 $router -> get('/portal-pacientes/perfil-usuario', 'PageController@perfilUsuario');
 $router -> get('/portal-pacientes/recuperar-password', 'PageController@recuperarPassword');
-$router -> post('/guardar-estudio', 'PageController@guardarEstudio');
+$router -> post('/guardar-estudio', 'EstudioController@guardarEstudio');
 
 
 

@@ -94,8 +94,7 @@
                 la atención de nuestros pacientes.
             </p>
         </section>
-    </section>
-
+    
         <?php require __DIR__ . '/./parts/footer.view.php' ?>
         
         <script src="assets/scripts/hamburguesa.js"></script>

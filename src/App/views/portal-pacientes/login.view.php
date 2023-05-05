@@ -26,8 +26,8 @@
         <label for="inputPassword">Contraseña:
             <input type="password" name="password">
         </label>
-        <p>¿No tienes cuenta? <a href="nuevo-usuario.html">Regístrate</a></p>
-        <p>¿Olvidaste tu contraseña? <a href="recuperar-password.html">Recupérala aquí</a></p>
+        <p>¿No tienes cuenta? <a href="/portal-pacientes/nuevo-usuario">Regístrate</a></p>
+        <p>¿Olvidaste tu contraseña? <a href="/portal-pacientes/recuperar-password">Recupérala aquí</a></p>
 
         <input type="submit" value="Ingresar">
       </form>
