@@ -37,9 +37,10 @@
         <p>Obra social: ASIMRA</p> <a href="#">Modificar</a>
         <p>Teléfono: 2346505152</p> <a href="#">Modificar</a>
         <p>Contraseña: *************</p> <a href="#">Modificar</a>
-
-        <?php require __DIR__ . '/../parts/footer.view.php' ?>
     </main>
+
+    <?php require __DIR__ . '/../parts/footer.view.php' ?>
+
 </body>
 </html>
 
