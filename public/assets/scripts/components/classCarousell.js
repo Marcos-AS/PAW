@@ -53,9 +53,9 @@ class Carousell {
 
             // LLAMADA Ejemplo de uso
             const images = [
-            '/assets/imgs/portada.jpg',
-            '/assets/imgs/cocaina.jpg',
-            '/assets/imgs/fondo.png'
+            '/assets/imgs/1.jpg',
+            '/assets/imgs/2.jpg',
+            '/assets/imgs/3.jpg'
             ];
         
             loadCarousel('.sBusqueda', images, 'fade'); // Puedes especificar el efecto de transición deseado
@@ -104,7 +104,7 @@ class Carousell {
                     const imageWidth = image.clientWidth;
                     console.log("el ancho de la imagen es: " + imageWidth);
                     const totalImages = carouselImages.children.length; //cantidad de imagenes (hijos del img container)
-                    let currentIndex = 0; //indice de imagen actual
+                    let index = 0; //indice de imagen actual
                 
                     // Establecer el ancho del contenedor del carousel
                     carouselImages.style.width = `${imageWidth * totalImages}px`;
@@ -113,16 +113,16 @@ class Carousell {
                     console.log("cantidad de imagenes es: " + totalImages)
                     console.log("ancho del container es: " + carouselImages.style.width);
 
-                    console.log("el indice es: " + currentIndex);
+                    console.log("el indice es: " + index);
                 
                 // Función para cambiar a la siguiente imagen
                     function nextSlide() {
-                        if (currentIndex < totalImages - 1) {
-                            currentIndex++;
+                        if (index < totalImages - 1) {
+                            index++;
                             // Calcular la posición de desplazamiento
                             const displacement = -imageWidth;
 
-                            console.log("el indice es: " + currentIndex + ", el tamaño de la imagen es: " + imageWidth + " y el desplazamiento es de: " + displacement);
+                            console.log("el indice es: " + index + ", el tamaño de la imagen es: " + imageWidth + " y el desplazamiento es de: " + displacement);
                         
                             // Aplicar la transición mediante la propiedad transform
                             carouselImages.style.transform = `translateX(${displacement}px)`;                        
@@ -132,12 +132,12 @@ class Carousell {
 
                 // Función para cambiar a la imagen anterior
                     function prevSlide() {
-                        if (currentIndex > 0) {
-                            currentIndex--;
+                        if (index > 0) {
+                            index--;
                             // Calcular la posición de desplazamiento
                             const displacement = imageWidth;
                         
-                            console.log("el indice es: " + currentIndex + ", el tamaño de la imagen es: " + imageWidth + " y el desplazamiento es de: " + displacement);
+                            console.log("el indice es: " + index + ", el tamaño de la imagen es: " + imageWidth + " y el desplazamiento es de: " + displacement);
                         
 
                             // Aplicar la transición mediante la propiedad transform
@@ -168,8 +168,8 @@ class Carousell {
                     /*const thumbnails = document.querySelectorAll('.carousel-thumbnail');
                     thumbnails.forEach((thumbnail, index) => {
                     thumbnail.addEventListener('click', () => {
-                        currentIndex = index;
-                        const displacement = -currentIndex * imageWidth;
+                        index = index;
+                        const displacement = -index * imageWidth;
                         carouselImages.style.transform = `translateX(${displacement}px)`;
                     });
                     });*/
