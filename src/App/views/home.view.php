@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="/assets/css/global.css">
         <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+        <script src="/assets/scripts/components/classPaw.js"></script>
+        <script src="/assets/scripts/components/app.js"></script>
     </head>
     <body>
 
