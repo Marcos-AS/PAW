@@ -103,9 +103,17 @@
         </label>
   </form>
 
+    <div id="dropzone">
+        Arrastra y suelta archivos aquí   
+    </div>
+    <div id="imageContainer"></div>
+    <p id="message"></p>
+
     <?php include __DIR__ . '/./parts/footer.view.php' ?>
     
-    <script src="assets/scripts/hamburguesa.js"></script>
+    <script src="assets/scripts/components/hamburguesa.js"></script>
+    <script src="assets/scripts/components/dragdrop.js"></script>
+
 
 </body>
 </html>

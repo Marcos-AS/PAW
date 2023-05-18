@@ -20,5 +20,4 @@ class appPAW {
 		});
     }
 }
-
 let app = new appPAW();

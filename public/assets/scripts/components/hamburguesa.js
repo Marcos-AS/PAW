@@ -13,10 +13,11 @@ const dropdowns = document.querySelectorAll('.dropdown');
 const institucional = document.querySelectorAll('.dropdown')[0];
 const infoUtil = document.querySelectorAll('.dropdown')[3];
 
-infoUtil.addEventListener('click', toggleSubMenu);
-institucional.addEventListener('click', toggleSubMenu);
+    infoUtil.addEventListener('click', toggleSubMenu);
+    institucional.addEventListener('click', toggleSubMenu);
 
-function toggleSubMenu() {
-  const subMenu = this.querySelector('.dropdown-menu');
-  subMenu.classList.toggle('mostrar');
-}
+    function toggleSubMenu() {
+        const subMenu = this.querySelector('.dropdown-menu');
+        subMenu.classList.toggle('mostrar');
+    }
+
