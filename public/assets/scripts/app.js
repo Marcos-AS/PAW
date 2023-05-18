@@ -2,15 +2,15 @@ class appPAW {
 	constructor() {
         //Inicializar la funcionalidad Menu
         document.addEventListener("DOMContentLoaded", () => {
-		PAW.cargarScript("PAW-Menu", "assets/scripts/components/hamburguesa.js", () => {	
-				/*let menu = new PAWMenu("nav");*/
+		PAW.cargarScript("Menu-Hamburguesa", "/assets/scripts/components/hamburguesa.js", () => {	
+				// let menu = new PAWMenu("nav");
 			});
 		}
         );
         //Inicializar la funcionalidad SubMenu
         document.addEventListener("DOMContentLoaded", () => {
-        PAW.cargarScript("PAW-Menu", "assets/scripts/components/submenu.js", () => {	
-                /*let menu = new PAWMenu("nav");*/
+        PAW.cargarScript("SubMenu", "/assets/scripts/components/submenu.js", () => {	
+                //let menu = new PAWMenu("nav");
             });
         }
         );
@@ -22,5 +22,4 @@ class appPAW {
 		});
     }
 }
-
 let app = new appPAW();
