@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="/assets/css/global.css">
-        <script src="/assets/scripts/components/paw.js"></script>
+        <script src="/assets/scripts/components/classPaw.js"></script>
         <script src="/assets/scripts/app.js"></script>
         <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     </head> 

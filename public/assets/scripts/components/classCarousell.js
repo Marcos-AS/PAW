@@ -73,7 +73,9 @@ class Carousell {
                     const image = new Image();
                     image.src = imageUrl;
                     image.classList.add("carousel-image");
-    /*                image.onload = () => {
+    
+                    /* para barra de progreso
+                        image.onload = () => {
                         // Cálculo del porcentaje de carga de imágenes
                         const progress = Math.floor((loadedImagesCount / images.length) * 100);
                         progressBar.style.width = `${progress}%`;
@@ -90,7 +92,7 @@ class Carousell {
                     carouselImages.appendChild(image);
                 }); //end forEach
         
-                let loadedImagesCount = 0;
+                //let loadedImagesCount = 0;
 
                 //selecciona una imagen
                 const image = carouselImages.querySelector('.carousel-image');
