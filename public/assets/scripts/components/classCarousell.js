@@ -51,34 +51,7 @@ class Carousell {
             contenedor.prepend(botonAtras);
             
 
-    /*       
-            function fCarousell() {
-                const carouselImages = document.querySelector('.carousell');
-                const prevButton = document.querySelector('.carousel-prev');
-                const nextButton = document.querySelector('.carousel-next');
-                const imageWidth = carouselImages.clientWidth;
-                let currentIndex = 0;
-            
-                prevButton.addEventListener('click', function() {
-
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-                }
-                });
-            
-                nextButton.addEventListener('click', function() {
-                if (currentIndex < carouselImages.childElementCount - 1) {
-                    currentIndex++;
-                    carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-                }
-                });
-            };
-
-            fCarousell();
-        }*/
-
-            // Ejemplo de uso
+            // LLAMADA Ejemplo de uso
             const images = [
             '/assets/imgs/portada.jpg',
             '/assets/imgs/cocaina.jpg',

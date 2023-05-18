@@ -1,13 +1,28 @@
-  
+  /*CONTENEDORES------------------*/
   .sBusqueda {
     overflow: hidden;
     position: relative;
     width: 100%;
   }
 
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: calc(100vw * 3); /*3 es el num de imgs*/
+  }
+
+  /*IMAGENES------------------*/
+  .carousel-image {
+    height: 100%;
+    flex: 1 0 100vw;
+    object-fit: cover;
+  }
+
+
+  /*BOTONES------------------*/
  .carousel-prev-button,
  .carousel-next-button {
-   /* Add styles for the carousel navigation buttons */
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
@@ -21,15 +36,14 @@
 
  .carousel-prev-button.active,
 .carousel-next-button.active {
-  background-color: #000; /* Customize the active background color */
-  color: #fff; /* Customize the active text color */
+  background-color: #000; 
+  color: #fff;
 }
 
-/* Optional: Add hover styles for the carousel buttons */
 .carousel-prev-button:hover,
 .carousel-next-button:hover {
-  background-color: #ddd; /* Customize the hover background color */
-  color: #000; /* Customize the hover text color */
+  background-color: #ddd;
+  color: #000; 
 }
 
   .carousel-prev-button {
@@ -40,19 +54,8 @@
     right: 10px;
   }
 
+  /*BARRA DE PROGRESO DE CARGA------------------*/
 
-  .carousel-images {
-    display: flex;
-    transition: transform 0.5s ease;
-    height: 100%;
-    width: calc(100vw * 3); /*3 es el num de imgs*/
-  }
-
-  .carousel-image {
-    height: 100%;
-    flex: 1 0 100vw;
-    object-fit: cover;
-  }
 .progress-bar {
     position: fixed;
     top: 0;
