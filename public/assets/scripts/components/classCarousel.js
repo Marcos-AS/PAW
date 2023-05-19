@@ -1,4 +1,4 @@
-class Carousell {
+class Carousel {
 
     constructor(pContenedor) {
         let contenedor = pContenedor.className
@@ -7,23 +7,37 @@ class Carousell {
     
         if (contenedor) {
 
-            //creamos container para las imagenes dentro de .sBusqueda
+            //creamos container para el carrusel
+            let carousel = PAW.nuevoElemento("section","", {
+                class: "carousel"
+            })
+
+            //inserta antes de section .sBusqueda
+            document.body.insertBefore(carousel,contenedor);
+
+            //section para contener las imagenes
             let imgContainer = PAW.nuevoElemento("section","", {
                 class: "carousel-images"
             })
+            
+            carousel.appendChild(imgContainer);
 
-            contenedor.prepend(imgContainer);
+            //creamos thumbnail container
+            let thumb = PAW.nuevoElemento("section","", {
+                class: "thumbnails"
+            })
+            contenedor.appendChild(thumb);
 
             //creamos la barra de progreso
-            let barraProgreso = PAW.nuevoElemento("div", "", {
+            let barraProgresoContainer = PAW.nuevoElemento("div", "", {
                 class: "progress-bar"
             })
 
-            let barraProgreso1 = PAW.nuevoElemento("div", "", {
+            let barraProgreso = PAW.nuevoElemento("div", "", {
                 class: "progress-bar-fill"
             })
 
-            barraProgreso.appendChild(barraProgreso1);
+            barraProgresoContainer.appendChild(barraProgreso);
 
             //insertamos la barra de progreso despues de la section sBusqueda
             contenedor.insertAdjacentElement('afterend',barraProgreso);
@@ -38,17 +52,18 @@ class Carousell {
 
 
             //creamos botones
-            let botonAtras = PAW.nuevoElemento("button", "Atrás", {
+            let botonAtras = PAW.nuevoElemento("button", "<", {
                 class: "carousel-prev-button",
                 type: "button"
             });
-            let botonAdelante = PAW.nuevoElemento("button", "Adelante", {
+            let botonAdelante = PAW.nuevoElemento("button", ">", {
                 class: "carousel-next-button",
                 type: "button"
             });
 
-            contenedor.prepend(botonAdelante);
-            contenedor.prepend(botonAtras);
+            //se agregan al section carousel
+            carousel.prepend(botonAdelante);
+            carousel.prepend(botonAtras);
             
 
             // LLAMADA Ejemplo de uso
@@ -63,55 +78,54 @@ class Carousell {
 
 
             // Función para cargar imágenes y crear el carousel
-            function loadCarousel(containerSelector, images, transitionEffect) {
-                const container = document.querySelector(containerSelector);
-                const carouselImages = container.querySelector('.carousel-images');
-                const progressBar = document.querySelector('.progress-bar-fill');
-        
+            function loadCarousel(containerSelector, images, transitionEffect) {                
+                agregarImagenes(images,imgContainer,"carousel-image");
+
                 // Cargar imágenes y crear diapositivas
-                images.forEach((imageUrl) => {
-                    const image = new Image();
-                    image.src = imageUrl;
-                    image.classList.add("carousel-image");
-    
-                    /* para barra de progreso
-                        image.onload = () => {
-                        // Cálculo del porcentaje de carga de imágenes
-                        const progress = Math.floor((loadedImagesCount / images.length) * 100);
-                        progressBar.style.width = `${progress}%`;
-                        if (loadedImagesCount === images.length) {
-                            // Todas las imágenes se han cargado, iniciar el carousel
-                            progressBar.style.width = '100%';
-                            progressBar.addEventListener('transitionend', () => {
-                                // Comienza la animación del carousel
-                            });
-                        }
-                    };*/
-            
-                    //agrega al contenedor
-                    carouselImages.appendChild(image);
-                }); //end forEach
+                function agregarImagenes(images,container,imgClass) {
+                    images.forEach((imageUrl) => {
+                        const image = new Image();
+                        image.src = imageUrl;
+                        if (imgClass !== "")
+                            image.classList.add(imgClass);
+                        //agrega al contenedor
+                        container.appendChild(image);
+                        /* para barra de progreso
+                            image.onload = () => {
+                            // Cálculo del porcentaje de carga de imágenes
+                            const progress = Math.floor((loadedImagesCount / images.length) * 100);
+                            progressBar.style.width = `${progress}%`;
+                            if (loadedImagesCount === images.length) {
+                                // Todas las imágenes se han cargado, iniciar el carousel
+                                progressBar.style.width = '100%';
+                                progressBar.addEventListener('transitionend', () => {
+                                    // Comienza la animación del carousel
+                                });
+                            }
+                        };*/
+                    }); //end forEach
+                }//end agregarImagenes
         
                 //let loadedImagesCount = 0;
 
+
                 //selecciona una imagen
-                const image = carouselImages.querySelector('.carousel-image');
+                const image = imgContainer.querySelector('.carousel-image');    
         
                 // Función para iniciar el carousel
                 image.addEventListener('load', function startCarousel() {
-                    const container = document.querySelector('.sBusqueda');
-                    const carouselImages = container.querySelector('.carousel-images');
-                    const imageWidth = image.clientWidth;
+                    
+                    const imageWidth = image.naturalWidth; //ancho original de la imagen
                     console.log("el ancho de la imagen es: " + imageWidth);
-                    const totalImages = carouselImages.children.length; //cantidad de imagenes (hijos del img container)
+                    const totalImages = imgContainer.children.length; //cantidad de imagenes (hijos del img container)
                     let index = 0; //indice de imagen actual
                 
                     // Establecer el ancho del contenedor del carousel
-                    carouselImages.style.width = `${imageWidth * totalImages}px`;
-                    carouselImages.style.transform = `translateX(${imageWidth}px)`
+                    imgContainer.style.width = `${imageWidth * totalImages}px`;
+                    //carouselImages.style.transform = `translateX(${imageWidth}px)`
                 
                     console.log("cantidad de imagenes es: " + totalImages)
-                    console.log("ancho del container es: " + carouselImages.style.width);
+                    console.log("ancho del container es: " + imgContainer.style.width);
 
                     console.log("el indice es: " + index);
                 
@@ -125,7 +139,7 @@ class Carousell {
                             console.log("el indice es: " + index + ", el tamaño de la imagen es: " + imageWidth + " y el desplazamiento es de: " + displacement);
                         
                             // Aplicar la transición mediante la propiedad transform
-                            carouselImages.style.transform = `translateX(${displacement}px)`;                        
+                            imgContainer.style.transform = `translateX(${displacement}px)`;                        
                         }                
                     } //end nextSlide
 
@@ -141,7 +155,7 @@ class Carousell {
                         
 
                             // Aplicar la transición mediante la propiedad transform
-                            carouselImages.style.transform = `translateX(${displacement}px)`;
+                            imgContainer.style.transform = `translateX(${displacement}px)`;
 
                         }
                     
@@ -165,12 +179,24 @@ class Carousell {
                     prevButton.addEventListener('click', prevSlide);
                 
                     // Ejemplo: Evento para cambiar de imagen al hacer clic en una miniatura
-                    /*const thumbnails = document.querySelectorAll('.carousel-thumbnail');
-                    thumbnails.forEach((thumbnail, index) => {
-                    thumbnail.addEventListener('click', () => {
-                        index = index;
-                        const displacement = -index * imageWidth;
-                        carouselImages.style.transform = `translateX(${displacement}px)`;
+                    //agregamos el array de imgs al thumbnail container
+                    /*agregarImagenes(images,thumb,"");
+                    //selecciona todas las thumbnails
+                    const thumbnailImages = thumb.querySelectorAll('img');
+                    thumbnailImages.forEach((thumbnail) => {
+                        thumbnail.addEventListener('click', () => {
+                            thumbnailImages.forEach((thumb) => {
+                                //quita clase active a todas las thumbnails
+                                thumb.classList.remove('active'); 
+                            })
+                            //agrega la clase active a la thumbnail que se seleccionó
+                            thumbnail.classList.add('active');
+
+                            //obtiene el índice de la thumbnail seleccionada
+                            const index = Array.from(thumbnailImages).indexOf(thumbnail);
+
+                            const displacement = index * carouselImages.offsetWidth;
+                            carouselImages.style.transform = `translateX(${displacement}px)`;
                     });
                     });*/
 

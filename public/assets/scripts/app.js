@@ -14,8 +14,8 @@ class appPAW {
         );
         //Inicializar la funcionalidad Carousell
 		document.addEventListener("DOMContentLoaded", () => {
-        PAW.cargarScript("Carousell", "assets/scripts/components/classCarousell.js", () => {
-				let carousell = new Carousell(".sBusqueda");
+        PAW.cargarScript("Carousell", "assets/scripts/components/classCarousel.js", () => {
+				let carousell = new Carousel(".sBusqueda");
 			});
 		});
     }
