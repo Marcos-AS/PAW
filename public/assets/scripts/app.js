@@ -18,6 +18,12 @@ class appPAW {
 				let carousell = new Carousell(".sBusqueda");
 			});
 		});
+         //Inicializar la funcionalidad Filtros
+		document.addEventListener("DOMContentLoaded", () => {
+            PAW.cargarScript("Filter", "assets/scripts/components/filtros-table.js", () => {
+                    let filter = new Filter(".tEstudios");
+            });
+        });
     }
 }
 let app = new appPAW();
