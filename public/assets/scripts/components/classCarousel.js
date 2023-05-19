@@ -126,9 +126,7 @@ class Carousel {
                 
                     console.log("cantidad de imagenes es: " + totalImages)
                     console.log("ancho del container es: " + imgContainer.style.width);
-
-                    console.log("el indice es: " + index);
-                
+               
                 // Función para cambiar a la siguiente imagen
                     function nextSlide() {
                         if (index < totalImages - 1) {
