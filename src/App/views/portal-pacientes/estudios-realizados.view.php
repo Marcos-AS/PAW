@@ -7,7 +7,9 @@
     <title>Estudios realizados</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/styles/portal-pacientes.css">
-    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">    
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">  
+    <script src="/assets/scripts/components/classPaw.js"></script>
+    <script src="/assets/scripts/app.js"></script>  
 </head>
 
 <body>
@@ -33,7 +35,7 @@
 
     <h2>Estudios realizados</h2>
 
-    <form>
+    <form id="fFilter">
         <label for="inputFDesde">
             Fecha desde:
             <input type="date" name="inputFDesde">
@@ -60,7 +62,7 @@
     </form>
 
 
-    <table>
+    <table id="tEstudios">
         <thead>
             <tr>
                 <th><label for="h1">Fecha</label></th>

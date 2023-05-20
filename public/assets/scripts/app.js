@@ -21,7 +21,7 @@ class appPAW {
          //Inicializar la funcionalidad Filtros
 		document.addEventListener("DOMContentLoaded", () => {
             PAW.cargarScript("Filter", "assets/scripts/components/filtros-table.js", () => {
-                    let filter = new Filter(".tEstudios");
+                    let filter = new Filter("tEstudios");
             });
         });
     }

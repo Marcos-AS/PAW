@@ -3,11 +3,11 @@ class Filter {
     constructor(pContenedor) {
         let contenedor = pContenedor.className
         ? pContenedor
-        : document.querySelector(".tEstudios");        
+        : document.querySelector("#tEstudios");        
     
         if (contenedor) {
             // Obtener referencias a elementos relevantes
-            const tabla = document.getElementById(".tEstudios");
+            const tabla = document.getElementById("tEstudios");
             const columnas = tabla.getElementsByTagName("th");
             const filas = tabla.getElementsByTagName("tr");
 
@@ -20,7 +20,7 @@ class Filter {
             //Agregar botón de "Ordenar" en el formulario de filtrado
             let formularioFiltrado = document.getElementById('fFilter');
             formularioFiltrado.appendChild(sortButton);
-
+    
             sortButton.addEventListener('click', function() {
                 // Eliminar clases de ordenación de todas las columnas
                 headers.forEach(function(header) {
