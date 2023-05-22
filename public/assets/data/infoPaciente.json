@@ -1,0 +1,9 @@
+{
+    "paciente": {
+      "nombre": "Juan Pérez",
+      "numeroTurno": "T001",
+      "turnoEnAtencion": "T002",
+      "tiempoEstimadoEspera": "00:10"
+    }
+  }
+  

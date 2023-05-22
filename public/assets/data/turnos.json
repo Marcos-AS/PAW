@@ -1,0 +1,17 @@
+{
+    "turnos": [
+      {
+        "numero": "T001",
+        "paciente": "Juan Pérez",
+        "horaLlegada": "09:00",
+        "estado": "En espera"
+      },
+      {
+        "numero": "T002",
+        "paciente": "María Gómez",
+        "horaLlegada": "09:15",
+        "estado": "En espera"
+      }
+    ]
+  }
+  

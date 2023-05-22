@@ -60,28 +60,29 @@
         </fieldset>
         <fieldset>
             <legend>Datos del Turno</legend>
-            <label for="inputSelect">
+            <!--<label for="inputSelect">
                 Especialidad
-                <select name="inputSelect">
-                    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
+                <select name="inputSelect" id="profesionales">
+                <!--    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
                     <option value="GINECOLOGIA">GINECOLOGIA</option>
-                    <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option>
-                </select>
+                    <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option> 
+                </select> -->
             </label>
             <label for="inputSelect">
                 Profesionales
-                <select name="inputSelect">
-                    <option value="Juan Perez">Juan Perez</option>
-                    <option value="Jose Fernandez">Jose Fernandez</option>
+                <select id="selectProfesionales">
+                <!--    <option value="Juan Perez">Juan Perez</option>
+                    <option value="Jose Fernandez">Jose Fernandez</option> -->
                 </select>
+                <div id="agendaContainer"></div>
             </label>
-            <label for="inputDate">
+            <!--<label for="inputDate">
                 Fecha
                 <input type="date" required name="fecha" />
             </label>
             <label for="inputHorarios">
-                Horarios
-                <label for="opcion1">
+                Horarios -->
+            <!--    <label for="opcion1">
                     10:30
                     <input type="radio" id="opcion1" required name="horario" value="10:30">
                 </label>
@@ -92,7 +93,7 @@
                 <label for="opcion3">
                     11:30
                     <input type="radio" id="opcion3" required name="horario" value="11:30">
-                </label>
+                </label> -->
             </label>            
             <label for="inputSubmit">
                 <input type="submit" name="inputSubmit" value="Reservar"/>
@@ -113,7 +114,7 @@
     
     <script src="assets/scripts/components/hamburguesa.js"></script>
     <script src="assets/scripts/components/dragdrop.js"></script>
-
+    <script src="assets/scripts/components/especialistas.js"></script>
 
 </body>
 </html>
