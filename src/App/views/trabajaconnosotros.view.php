@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/assets/css/trabajaconnosotros.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+    <script src="/assets/scripts/components/userInterface.js"></script>
+
 </head>
 <body>
     

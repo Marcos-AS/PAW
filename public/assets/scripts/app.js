@@ -42,6 +42,18 @@ class appPAW {
                     let filter = new Filter("tEstudios");
             });
         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            PAW.cargarScript("Paciente", "assets/scripts/components/userInterface.js", () => {
+                let infoPaciente = new userInterface();
+            })
+        })
+
+        document.addEventListener("DOMContentLoaded", () => {
+            PAW.cargarScript("Medico", "assets/scripts/components/medicosInterface.js", () => {
+                let infoMedicos = new medicosInterface();
+            })
+        })
     }
 }
 let app = new appPAW();
