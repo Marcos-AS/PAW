@@ -1,175 +1,218 @@
-fetch('assets/data/especialistas.json')
-  .then(response => response.json())
-  .then(data => {
-    var especialistas = data.especialistas;
-    console.log(especialistas);
-    
+class Especialistas {
+  constructor() {
     // Obtener el elemento select del formulario
-    var selectMedico = document.getElementById('selectProfesionales');
+    this.agendaContainer = document.getElementById('agendaContainer');
+    this.fechaSelect = document.getElementById('fechaSelect');
+    this.horarioSelect = document.getElementById('horarioSelect');
 
-    var optionInicial = document.createElement('option');
+    const optionInicialFecha = document.createElement('option');
+    optionInicialFecha.value = '';
+    optionInicialFecha.textContent = 'Ingrese una fecha';
+    fechaSelect.appendChild(optionInicialFecha);
+
+    const optionInicialHorario = document.createElement('option');
+    optionInicialHorario.value = '';
+    optionInicialHorario.textContent = 'Ingrese un horario';
+    horarioSelect.appendChild(optionInicialHorario);
+
+    // Deshabilitar los inputs de fecha y horario inicialmente
+    this.fechaSelect.disabled = true;
+    this.horarioSelect.disabled = true;
+
+    this.fetchEspecialistas();
+  }
+
+  fetchEspecialistas() {
+    fetch('assets/data/especialistas.json')
+      .then(response => response.json())
+      .then(data => {
+        this.especialistas = data.especialistas;
+        console.log(this.especialistas);
+        this.initSelectMedico();
+      });
+  }
+
+  initSelectMedico() {
+    const selectMedico = document.getElementById('selectProfesionales');
+
+    const optionInicial = document.createElement('option');
     optionInicial.value = '';
     optionInicial.textContent = 'Ingrese un profesional';
     selectMedico.appendChild(optionInicial);
 
-    // Generar las opciones del select a partir de los datos del JSON
-    especialistas.forEach(medico => {
-    var option = document.createElement('option');
-    option.value = medico.matricula;
-    option.textContent = medico.nombre + ' ' + medico.apellido;
-    selectMedico.appendChild(option);
+    this.especialistas.forEach(medico => {
+      const option = document.createElement('option');
+      option.value = medico.matricula;
+      option.textContent = medico.nombre + ' ' + medico.apellido;
+      selectMedico.appendChild(option);
     });
 
-    selectMedico.addEventListener('change', function() {
-    var selectedMedico = this.value;
-    console.log(selectedMedico);
+    selectMedico.addEventListener('change', () => {
+      const selectedMedico = selectMedico.value;
+      console.log(selectedMedico);
 
-    var today = new Date(); // Fecha actual
-    var maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7); // Fecha límite
-    console.log(maxDate);
-    var medicoSeleccionado = especialistas.find(medico => medico.matricula === selectedMedico);
-    console.log(medicoSeleccionado);
-    var diasHabilitados = medicoSeleccionado.diasQueAtiende.filter(dia => {
-      // Convertir el día en formato string a objeto Date
-      var fecha = getNextDayOfWeek(dia);
-      console.log(fecha); 
-      return fecha >= today && fecha <= maxDate;
+      const today = new Date();
+      const maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
+      console.log(maxDate);
+
+      const medicoSeleccionado = this.especialistas.find(medico => medico.matricula === selectedMedico);
+      console.log(medicoSeleccionado);
+
+      const diasHabilitados = medicoSeleccionado.diasQueAtiende.filter(dia => {
+        const fecha = this.getNextDayOfWeek(dia);
+        console.log(fecha);
+        return fecha >= today && fecha <= maxDate;
+      });
+
+      console.log(diasHabilitados);
+
+      const turnosDiponibles = this.obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
+      //this.mostrarAgenda(turnosDiponibles);
+      this.mostrarFechasDisponibles(turnosDiponibles);
     });
-  
-    console.log(diasHabilitados);
+  }
 
-    var turnosDiponibles = obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
-    mostrarAgenda(turnosDiponibles);
+  mostrarFechasDisponibles(turnosDisponibles) {
+    this.fechaSelect.innerHTML = '';
+    this.horarioSelect.innerHTML = '';
 
+    const fechasDisponibles = [];
+    turnosDisponibles.forEach(turno => {
+      const fechaTurno = this.getNextDayOfWeek(turno.dia);
+      const fechaFormateada = this.obtenerFechaFormateada(fechaTurno);
+
+      if (!fechasDisponibles.includes(fechaFormateada)) {
+        fechasDisponibles.push(fechaFormateada);
+        const optionFecha = document.createElement('option');
+        optionFecha.value = fechaFormateada;
+        optionFecha.textContent = fechaFormateada;
+        fechaSelect.appendChild(optionFecha);
+      }
     });
 
-})
+    this.fechaSelect.disabled = false;
 
-function mostrarAgenda(turnosDisponibles) {
-  // Obtener el elemento contenedor de la agenda
-  var agendaContainer = document.getElementById('agendaContainer');
-
-  // Limpiar el contenido existente en el contenedor de la agenda
-  agendaContainer.innerHTML = '';
-
-  // Crear la tabla de la agenda
-  var tablaAgenda = document.createElement('table');
-  tablaAgenda.classList.add('agendaTable');
-
-  // Agregar encabezado de la tabla
-  var encabezado = tablaAgenda.createTHead();
-  var filaEncabezado = encabezado.insertRow();
-  var encabezados = ['Fecha', 'Horario'];
-  encabezados.forEach(function (encabezado) {
-    var celdaEncabezado = document.createElement('th');
-    celdaEncabezado.textContent = encabezado;
-    filaEncabezado.appendChild(celdaEncabezado);
-  });
-
-  // Agregar filas con los turnos disponibles
-    turnosDisponibles.forEach(function (turno) {
-      var filaTurno = tablaAgenda.insertRow();
-      var celdaFecha = filaTurno.insertCell();
-      var celdaHorario = filaTurno.insertCell();
+    fechaSelect.addEventListener('change', () => {
+      const fechaSeleccionada = fechaSelect.value;
+      const horariosTurno = turnosDisponibles.filter(turno => {
+        const fechaTurno = this.obtenerFechaFormateada(this.getNextDayOfWeek(turno.dia));
+        return fechaTurno === fechaSeleccionada;
+      });
   
-      // Obtener la fecha correspondiente al turno
-      var fechaTurno = getNextDayOfWeek(turno.dia);
+      horariosTurno.forEach(horario => {
+        const optionHorario = document.createElement('option');
+        optionHorario.value = horario.horas.toString().padStart(2, '0') + ':' + horario.minutos.toString().padStart(2, '0');
+        optionHorario.textContent = optionHorario.value;
+        horarioSelect.appendChild(optionHorario);
+      });
+
+      this.horarioSelect.disabled = false;
+    });
+  }
   
-      // Formatear la fecha como "Día, DD/MM/AAAA"
-      var fechaFormateada = obtenerFechaFormateada(fechaTurno);
-  
-      // Mostrar la fecha, el día y el horario en las celdas correspondientes
+  mostrarAgenda(turnosDisponibles) {
+    this.agendaContainer.innerHTML = '';
+
+    const tablaAgenda = document.createElement('table');
+    tablaAgenda.classList.add('agendaTable');
+
+    const encabezado = tablaAgenda.createTHead();
+    const filaEncabezado = encabezado.insertRow();
+    const encabezados = ['Fecha', 'Horario'];
+    encabezados.forEach(encabezado => {
+      const celdaEncabezado = document.createElement('th');
+      celdaEncabezado.textContent = encabezado;
+      filaEncabezado.appendChild(celdaEncabezado);
+    });
+
+    turnosDisponibles.forEach(turno => {
+      const filaTurno = tablaAgenda.insertRow();
+      const celdaFecha = filaTurno.insertCell();
+      const celdaHorario = filaTurno.insertCell();
+
+      const fechaTurno = this.getNextDayOfWeek(turno.dia);
+      const fechaFormateada = this.obtenerFechaFormateada(fechaTurno);
+
       celdaFecha.textContent = fechaFormateada;
       celdaHorario.textContent = turno.horas.toString().padStart(2, '0') + ':' + turno.minutos.toString().padStart(2, '0');
 
-      // Agregar evento de clic a la celda
-      filaTurno.addEventListener('click', function () {
-      // Remover la clase 'selected' de todas las celdas
-      var celdas = document.getElementsByClassName('agendaTable')[0].getElementsByTagName('tr');
-      for (var i = 0; i < celdas.length; i++) {
-        celdas[i].classList.remove('selected');
-      }
+      filaTurno.addEventListener('click', function() {
+        const celdas = document.getElementsByClassName('agendaTable')[0].getElementsByTagName('tr');
+        for (let i = 0; i < celdas.length; i++) {
+          celdas[i].classList.remove('selected');
+        }
 
-      // Agregar la clase 'selected' a la celda seleccionada
-      this.classList.add('selected');
+        this.classList.add('selected');
+      });
     });
 
-    });
-
-  // Agregar la tabla de la agenda al contenedor
-  agendaContainer.appendChild(tablaAgenda);
-}
-
-
+    this.agendaContainer.appendChild(tablaAgenda);
+  }
 
   // Aca obtenemos los turnos disponibles para cada especialista
-
-  function obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado) {
-    var turnosDisponibles = [];
-
+  obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado) {
+    const turnosDisponibles = [];
+    console.log(diasHabilitados);
     diasHabilitados.forEach(dia => {
-    var fecha = getNextDayOfWeek(dia);
-    var horarioInicio = medicoSeleccionado.horarioInicio;
-    var horarioFinalizacion = medicoSeleccionado.horarioFinalizacion;
-    var duracionTurno = medicoSeleccionado.duracionTurno;
-
-    var horarioActual = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horarioInicio.horas, horarioInicio.minutos);
-    var horarioFin = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horarioFinalizacion.horas, horarioFinalizacion.minutos);
-
-
-    while (horarioActual < horarioFin) {
-      var turno = {
-        dia: dia,
-        horas: horarioActual.getHours(),
-        minutos: horarioActual.getMinutes()
-      };
-      
-    if (turnoEstaDisponible(turno, medicoSeleccionado.turnosTomados))
-      turnosDisponibles.push(turno);
-
-    horarioActual.setTime(horarioActual.getTime() + duracionTurno * 60000); // Sumar la duración del turno en milisegundos
-    }
-
+      const fecha = this.getNextDayOfWeek(dia);
+      const horarioInicio = medicoSeleccionado.horarioInicio;
+      const horarioFinalizacion = medicoSeleccionado.horarioFinalizacion;
+      const duracionTurno = medicoSeleccionado.duracionTurno;
+    
+      const horarioActual = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horarioInicio.horas, horarioInicio.minutos);
+      const horarioFin = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horarioFinalizacion.horas, horarioFinalizacion.minutos);
+    
+      while (horarioActual < horarioFin) {
+        const turno = {
+          dia: dia,
+          horas: horarioActual.getHours(),
+          minutos: horarioActual.getMinutes()
+        };
+        console.log(turno);
+    
+        if (this.turnoEstaDisponible(turno, medicoSeleccionado.turnosTomados))
+          turnosDisponibles.push(turno);
+    
+        horarioActual.setTime(horarioActual.getTime() + duracionTurno * 60000);
+      }
     });
+    console.log(turnosDisponibles);
     return turnosDisponibles;
   }
 
+  turnoEstaDisponible(turno, turnosTomados) {
+    return !turnosTomados.some(turnoTomado => {
+      return (
+        turnoTomado.dia === turno.dia &&
+        turnoTomado.horas === turno.horas &&
+        turnoTomado.minutos === turno.minutos
+      );
+    });
+  }
+    
+  getNextDayOfWeek(dayOfWeek) {
+    const today = new Date();
+    const currentDay = today.getDay();
+    const targetDay = this.getTargetDayOfWeek(dayOfWeek);
+    console.log(targetDay);
+    const daysToAdd = (targetDay + 7 - currentDay) % 7;
 
-    function turnoEstaDisponible(turno, turnosTomados) {
-      // Verificar si el turno está disponible o ya ha sido tomado
-      return !turnosTomados.some(turnoTomado => {
-        return (
-          turnoTomado.dia === turno.dia &&
-          turnoTomado.horas === turno.horas &&
-          turnoTomado.minutos === turno.minutos
-        );
-      });
-    }
+    today.setDate(today.getDate() + daysToAdd);
+    today.setHours(0, 0, 0, 0);
+    return today;
+  }
 
-    function getNextDayOfWeek(dayOfWeek) {
-      var today = new Date();
-      var currentDay = today.getDay(); // Obtener el día actual de la semana (0-6)
-      var targetDay = getTargetDayOfWeek(dayOfWeek); // Obtener el día objetivo de la semana (0-6)
-    
-      // Calcular la diferencia de días hasta el próximo día de la semana objetivo
-      var daysToAdd = (targetDay + 7 - currentDay) % 7;
-    
-      // Sumar la diferencia de días a la fecha actual
-      today.setDate(today.getDate() + daysToAdd);
-    
-      // Establecer la hora en 0 para evitar problemas con la zona horaria
-      today.setHours(0, 0, 0, 0);
-    
-      return today;
-    }
-    
-    function getTargetDayOfWeek(dayOfWeek) {
-      var days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-      return days.indexOf(dayOfWeek);
-    }
+  getTargetDayOfWeek(dayOfWeek) {
+    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    return days.indexOf(dayOfWeek);
+  }
 
-    function obtenerFechaFormateada(fecha) {
-      var opcionesFecha = { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' };
-      return fecha.toLocaleDateString('es-AR', opcionesFecha);
-    }
+  obtenerFechaFormateada(fecha) {
+    const opcionesFecha = { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' };
+    return fecha.toLocaleDateString('es-AR', opcionesFecha);
+  }
 
+}
+
+
+  

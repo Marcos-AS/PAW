@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/assets/css/solicitarTurno.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+    <script src="/assets/scripts/components/classPaw.js"></script>
+    <script src="/assets/scripts/app.js"></script>
 </head>
 <body>
 
@@ -76,12 +78,20 @@
                 </select>
                 <div id="agendaContainer"></div>
             </label>
-            <!--<label for="inputDate">
+            <label for="inputDate">
                 Fecha
-                <input type="date" required name="fecha" />
+                <!--<input type="date" required name="fecha" id="fechaInput" /> -->
+                <select id="fechaSelect">
+                </select>
             </label>
-            <label for="inputHorarios">
-                Horarios -->
+            <label for="inputDate">
+                Horario
+                <!--<input type="date" required name="fecha" id="fechaInput" /> -->
+                <select id="horarioSelect">
+                </select>
+            </label>
+            <!--<label for="inputHorarios">
+                Horarios
             <!--    <label for="opcion1">
                     10:30
                     <input type="radio" id="opcion1" required name="horario" value="10:30">
@@ -107,14 +117,8 @@
     <div id="dropzone">
         Arrastra y suelta archivos aquí   
     </div>
-    <div id="imageContainer"></div>
-    <p id="message"></p>
 
     <?php include __DIR__ . '/./parts/footer.view.php' ?>
     
-    <script src="assets/scripts/components/hamburguesa.js"></script>
-    <script src="assets/scripts/components/dragdrop.js"></script>
-    <script src="assets/scripts/components/especialistas.js"></script>
-
 </body>
 </html>

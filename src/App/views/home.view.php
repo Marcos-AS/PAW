@@ -20,22 +20,16 @@
 
         <?php require __DIR__ . '/./parts/nav.view.php' ?>
 
-       <!-- <div class="carousel-container">
-        <div class="carousel-images">
-            <img src="/assets/imgs/portada.jpg" alt="Imagen 1">
-        </div>
-        </div> -->
-
+       <section class="carousel"></section>
        <section class="sBusqueda">
-            <h2>Bienvenido a nuestro sitio oficial</h2>
-            <h3>Encontra a tu profesional</h3>
+            <h3>Encontrá a tu profesional</h3>
             <form>
                 <label for="inputSearch">
-                    <input type="search" name="inputSearch">
-                </label>
-                <a href="">
+                    <input type="search" name="inputSearch" placeholder="Buscar profesional">
+                    <a href="">
                     <i id="lupa" class="icono-search"></i>
-                </a>
+                    </a>
+                </label>
             </form>
             <a class="botonReservar" href="https://api.whatsapp.com/send?phone=54 2346 627605&text=Hola, Necesito mas informacion!">
                 <img class="whatsapp" src="assets/imgs/whatsapp.png" alt="Logo de WhatsApp" />    

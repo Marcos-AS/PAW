@@ -12,12 +12,30 @@ class appPAW {
             });
         }
         );
-        //Inicializar la funcionalidad Carousell
+        //Inicializar la funcionalidad Carousell (Punto 1)
 		document.addEventListener("DOMContentLoaded", () => {
         PAW.cargarScript("Carousell", "assets/scripts/components/classCarousel.js", () => {
-				let carousell = new Carousel(".sBusqueda");
+                const images = [
+                    "/assets/imgs/1.jpg",
+                    "/assets/imgs/2.jpg",
+                    "/assets/imgs/3.jpg"
+                ];
+              
+                const carousel = new Carousel(".carousel", images);
 			});
 		});
+        //Inicializar la funcionalidad de mostrar especialistas (Punto 2)
+		document.addEventListener("DOMContentLoaded", () => {
+            PAW.cargarScript("Especialistas", "assets/scripts/components/especialistas.js", () => {
+                    let especialistas = new Especialistas();
+            });
+        });
+        //Inicializar la funcionalidad de DragAndDrop (Punto 3)
+		document.addEventListener("DOMContentLoaded", () => {
+            PAW.cargarScript("DragDrop", "assets/scripts/components/dragdrop.js", () => {
+                    let dragdrop = new DragDrop("#dropzone");
+            });
+        });
          //Inicializar la funcionalidad Filtros
 		document.addEventListener("DOMContentLoaded", () => {
             PAW.cargarScript("Filter", "assets/scripts/components/filtros-table.js", () => {
