@@ -1,47 +1,58 @@
-// Obtén una referencia al elemento dropzone
-const dropzone = document.getElementById('dropzone');
+class DragDrop {
+  constructor(dropzoneId) {
+    this.dropzone = dropzoneId.tagName ? dropzoneId : document.querySelector(dropzoneId);
+    console.log(this.dropzone);
+    if (this.dropzone) {
+      this.imageContainer = document.createElement('div');
+      this.imageContainer.classList.add("imageContainer");
+      this.messageContainer = document.createElement('p');
+      this.messageContainer.classList.add("message");
 
-// Agrega los eventos de escucha para el drag and drop
-dropzone.addEventListener('dragenter', dragenter);
-dropzone.addEventListener('dragover', dragover);
-dropzone.addEventListener('dragleave', dragleave);
-dropzone.addEventListener('drop', drop);
+      this.dropzone.insertAdjacentElement('afterend', this.imageContainer);
+      this.dropzone.insertAdjacentElement('afterend', this.messageContainer);
+      
+      this.dropzone.addEventListener('dragenter', this.dragenter.bind(this));
+      this.dropzone.addEventListener('dragover', this.dragover.bind(this));
+      this.dropzone.addEventListener('dragleave', this.dragleave.bind(this));
+      this.dropzone.addEventListener('drop', this.drop.bind(this));
+    }
+  }
 
-function dragenter(e) {
-  e.preventDefault();
-  dropzone.classList.add('dragover');
-}
+  dragenter(e) {
+    e.preventDefault();
+    this.dropzone.classList.add('dragover');
+  }
 
-function dragover(e) {
-  e.preventDefault();
-}
+  dragover(e) {
+    e.preventDefault();
+  }
 
-function dragleave(e) {
-  dropzone.classList.remove('dragover');
-}
+  dragleave(e) {
+    this.dropzone.classList.remove('dragover');
+  }
 
-function drop(e) {
-  e.preventDefault();
-  dropzone.classList.remove('dragover');
+  drop(e) {
+    e.preventDefault();
+    this.dropzone.classList.remove('dragover');
 
-  const files = e.dataTransfer.files;
-  handleFiles(files);
-}
+    const files = e.dataTransfer.files;
+    this.handleFiles(files);
+  }
 
-function handleFiles(files) {
-  for (const file of files) {
-    if (file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        // Aquí puedes realizar las acciones necesarias con la imagen, como mostrarla en el formulario de turnos, enviarla al servidor, etc.
-        const image = new Image();
-        image.src = reader.result;
-        image.style.width = '100px'; // Establecer un ancho específico
-        image.style.height = '100px';
-        imageContainer.appendChild(image);
-        message.textContent = `Se cargó el archivo: ${file.name}`;
-      };
-      reader.readAsDataURL(file);
+  handleFiles(files) {
+    for (const file of files) {
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const image = new Image();
+          image.src = reader.result;
+          image.style.width = '100px';
+          image.style.height = '100px';
+          this.imageContainer.appendChild(image);
+          this.messageContainer.textContent = `Se cargó el archivo: ${file.name}`;
+        };
+        reader.readAsDataURL(file);
+      }
     }
   }
 }

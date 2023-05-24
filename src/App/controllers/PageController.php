@@ -50,4 +50,12 @@ class PageController extends Controller{
     public function login() {
         require $this ->viewsDir . '/portal-pacientes/login.view.php';
     }
+
+    public function UI() {
+        require $this ->viewsDir . '/turnosUserInterface.view.php';
+    }
+
+    public function interfazMedicos() {
+        require $this ->viewsDir . '/medicosInterface.view.php';
+    }
 }

@@ -118,7 +118,64 @@ form {
   }
   
   #dropzone.dragover {
-    background-color: lightgray;
+    background-color: #f7f7f7;
   }
+
+  .imageContainer {
+    margin-top: 20px;
+  }
+
+  .message {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  #agendaContainer {
+    margin-top: 20px;
+  }
+  
+  .agendaTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .agendaTable th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .agendaTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .agendaTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .agendaTable tr:hover {
+    background-color: rgb(0, 157, 218);
+    cursor: pointer;
+  }
+  
+  .agendaTable th:first-child,
+  .agendaTable td:first-child {
+    padding-left: 20px;
+  }
+  
+  .agendaTable th:last-child,
+  .agendaTable td:last-child {
+    padding-right: 20px;
+  }
+
+  .selected {
+    background-color: rgb(0, 157, 218);
+    cursor: pointer;
+  }
+  
   
   

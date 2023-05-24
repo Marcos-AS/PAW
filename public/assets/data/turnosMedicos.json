@@ -1,0 +1,33 @@
+{
+    "medicos": [
+      {
+        "nombre": "Dr. Juan Martínez",
+        "turnos": [
+          {
+            "numero": "T001",
+            "paciente": "Juan Pérez",
+            "horaAsignacion": "09:05",
+            "estado": "Atendiendo"
+          },
+          {
+            "numero": "T002",
+            "paciente": "María Gómez",
+            "horaAsignacion": "09:20",
+            "estado": "Esperando"
+          }
+        ]
+      },
+      {
+        "nombre": "Dra. Ana Rodríguez",
+        "turnos": [
+          {
+            "numero": "T003",
+            "paciente": "Luis Fernández",
+            "horaAsignacion": "09:10",
+            "estado": "Atendiendo"
+          }
+        ]
+      }
+    ]
+  }
+  
