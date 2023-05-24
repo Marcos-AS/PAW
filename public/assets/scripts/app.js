@@ -18,10 +18,20 @@ class appPAW {
 				let carousell = new Carousel(".sBusqueda");
 			});
 		});
-         //Inicializar la funcionalidad Filtros
+
+        /* ---- Tabla de Estudios de un paciente ---- */ 
+
+        //Cargar tabla con los datos
 		document.addEventListener("DOMContentLoaded", () => {
-            PAW.cargarScript("Filter", "assets/scripts/components/filtros-table.js", () => {
-                    let filter = new Filter("tEstudios");
+            PAW.cargarScript("Estudios", "../assets/scripts/components/tableEstudios/cargarJson.js", () => {
+                    let estudios = new Estudios();
+            });
+        }); 
+
+        //Inicializar las operaciones en la tabla
+		document.addEventListener("DOMContentLoaded", () => {
+            PAW.cargarScript("OpTabla", "../assets/scripts/components/tableEstudios/operacionesTabla.js", () => {
+                    let opTabla = new OpTabla("tEstudios");
             });
         });
     }

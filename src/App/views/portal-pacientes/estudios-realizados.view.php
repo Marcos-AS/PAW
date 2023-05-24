@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudios realizados</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/styles/portal-pacientes.css">
+    <link rel="stylesheet" href="/assets/css/estudiosRealizados.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">  
     <script src="/assets/scripts/components/classPaw.js"></script>
-    <script src="/assets/scripts/app.js"></script>  
+    <script src="/assets/scripts/app.js"></script>
 </head>
 
 <body>
@@ -36,6 +36,7 @@
     <h2>Estudios realizados</h2>
 
     <form id="fFilter">
+        <h3>Filtrar</h3>
         <label for="inputFDesde">
             Fecha desde:
             <input type="date" name="inputFDesde">
@@ -44,10 +45,9 @@
             Fecha hasta:
             <input type="date" name="inputFHasta">
         </label>
-        <label for="inputSubmit">
+        <button>
             Filtrar
-            <input type="submit" name="inputSubmit">
-        </label>
+        </button>
     </form>
 
     <form method="post" action="/guardar-estudio" enctype="multipart/form-data">
@@ -75,24 +75,6 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>20/03/2023</td>
-                <td>10:15</td>
-                <td>Pérez, Juan</td>
-                <td>Consulta</td>
-                <td>Otorrinolaringología</td>
-                <td>$1000,00</td>
-                <td><a href="#">Resultado</a></td>
-            </tr>
-            <tr>
-                <td>22/03/2023</td>
-                <td>11:15</td>
-                <td>Pérez, Juan</td>
-                <td>Consulta</td>
-                <td>Otorrinolaringología</td>
-                <td>$1100,00</td>
-                <td><a href="#">Resultado</a></td>
-            </tr>
         </tbody>
     </table>
 
