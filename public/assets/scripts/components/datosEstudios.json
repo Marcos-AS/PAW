@@ -1,0 +1,83 @@
+[
+    {
+        "Medico": "Perez, Marcelo",
+        "Motivo":  "Consulta",
+        "Servicio": "Odontologia",   
+        "Fecha": "20/03/2023",
+        "Hora": "10:15",
+        "Monto": "$2500,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Bianchi, Juan",
+        "Motivo":  "Consulta",
+        "Servicio": "Otorrinolaringología", 
+        "Fecha": "30/03/2023",
+        "Hora": "11:15",
+        "Monto": "$1100,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Acuña, Juan",
+        "Motivo":  "Consulta",
+        "Servicio": "Ecografia", 
+        "Fecha": "20/03/2023",
+        "Hora": "10:15",
+        "Monto": "$1600,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Perez, Marcelo",
+        "Motivo":  "Consulta",
+        "Servicio": "Odontologia", 
+        "Fecha": "20/03/2023",
+        "Hora": "10:15",
+        "Monto": "$2500,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Bianchi, Juan",
+        "Motivo":  "Consulta",
+        "Servicio": "Otorrinolaringología", 
+        "Fecha": "30/03/2023",
+        "Hora": "11:15",
+        "Monto": "$1100,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Acuña, Juan",
+        "Motivo":  "Consulta",
+        "Servicio": "Ecografia", 
+        "Fecha": "20/03/2023",
+        "Hora": "10:15",
+        "Monto": "$1600,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Perez, Marcelo",
+        "Motivo":  "Consulta",
+        "Servicio": "Odontologia", 
+        "Fecha": "20/03/2023",
+        "Hora": "10:15",
+        "Monto": "$2500,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Bianchi, Juan",
+        "Motivo":  "Consulta",
+        "Servicio": "Otorrinolaringología", 
+        "Fecha": "30/03/2023",
+        "Hora": "11:15",
+        "Monto": "$1100,00",
+        "Resultados": "Resultados"
+    },
+    {
+        "Medico": "Acuña, Juan",
+        "Motivo":  "Consulta",
+        "Servicio": "Ecografia", 
+        "Fecha": "20/03/2023",
+        "Hora": "10:15",
+        "Monto": "$1600,00",
+        "Resultados": "Resultados"
+    }
+]
