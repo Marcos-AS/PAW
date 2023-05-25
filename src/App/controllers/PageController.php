@@ -58,4 +58,8 @@ class PageController extends Controller{
     public function interfazMedicos() {
         require $this ->viewsDir . '/medicosInterface.view.php';
     }
+
+    public function salaEspera() {
+        require $this ->viewsDir . '/salaEspera.view.php';
+    }
 }

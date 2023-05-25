@@ -16,6 +16,7 @@
 
         <?php include __DIR__ . '/./parts/nav.view.php' ?>
 
+        <section class="medicoInterface"></section>
         <h1>
             Turnos de hoy
         </h1>

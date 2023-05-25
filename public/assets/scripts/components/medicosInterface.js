@@ -3,16 +3,6 @@ class medicosInterface {
         this.fetchEspecialistas();
     }
 
-    getTurnosDelDia(dia) {
-        let turnosTomados = this.especialistas.turnosTomados;
-        console.log(turnosTomados);
-        this.turnosTomados.forEach(turno => {
-            if (turno.turnosTomados.turno.dia == dia) {
-                this.mostrarTurnosDelDia(turnosTomados[turno]);  
-              }  
-        })
-    } //end getTurnosDelDia
-
     fetchEspecialistas() {
         fetch('assets/data/especialistas.json')
           .then(response => response.json())
@@ -22,6 +12,16 @@ class medicosInterface {
             this.getTurnosDelDia('Lunes'); //por ejemplo
           });
     } //end fetchEspecialistas
+
+    getTurnosDelDia(dia) {
+        let turnosTomados = this.especialistas.turnosTomados;
+        console.log(turnosTomados);
+        this.turnosTomados.forEach(turno => {
+            if (turno.turnosTomados.turno.dia == dia) {
+                this.mostrarTurnosDelDia(turnosTomados[turno]);  
+              }  
+        })
+    }
 
     //crea las html tags para mostrar
     mostrarTurnosDelDia(dia) {

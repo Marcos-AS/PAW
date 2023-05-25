@@ -54,6 +54,7 @@ $router -> get('/portal-pacientes/recuperar-password', 'UserController@recuperar
 $router -> post('/guardar-estudio', 'EstudioController@guardarEstudio');
 $router -> get('/interfaz-usuario', 'PageController@UI');
 $router -> get('/interfaz-medicos', 'PageController@interfazMedicos');
+$router -> get('/sala-espera', 'PageController@salaEspera');
 
 
 
