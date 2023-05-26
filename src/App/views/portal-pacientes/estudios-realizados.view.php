@@ -74,8 +74,6 @@
                 <th><label for="h7">Resultados</label></th>
             </tr>
         </thead>
-        <tbody>
-        </tbody>
     </table>
 
     <?php require __DIR__ . '/../parts/footer.view.php' ?>

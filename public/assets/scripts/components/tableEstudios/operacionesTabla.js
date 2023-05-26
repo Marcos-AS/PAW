@@ -5,18 +5,21 @@ class OpTabla {
         : document.querySelector("#tEstudios");        
         
         console.log(contenedor);
-        if (contenedor) {        
-            const tabla = document.getElementById('tEstudios');
-            const headers = tabla.querySelectorAll('th');
-            const rows = tabla.querySelectorAll('tbody tr');
+        if (contenedor) {  
+            this.fetchEstudios();      
+            console.log("Tabla: " + contenedor);
+            const headers = contenedor.querySelectorAll('th');
+            console.log("Headers: " + headers.length);
+            const rows = document.getElementsByTagName('tr');
+            console.log("Filas " + rows.length);
 
-            let css = PAW.nuevoElemento("link", "", {
+           /* let css = PAW.nuevoElemento("link", "", {
                 rel: "stylesheet",
                 href: "/assets/scripts/components/styles/table.css",
             });
             document.head.appendChild(css);
 
-
+            
             /* ------------------------------------ */
 
 
@@ -51,20 +54,20 @@ class OpTabla {
                 filtrosContainer.appendChild(doctorFilter);
                 filtrosContainer.appendChild(boton);
             }
-            cargarFiltros();
+           /* cargarFiltros();
 
             const especialidadFilter = document.getElementById('especialidadFilter');
             const doctorFilter = document.getElementById('doctorFilter');
 
             especialidadFilter.addEventListener('change', filtrarTabla);
-            doctorFilter.addEventListener('change', filtrarTabla);
+            doctorFilter.addEventListener('change', filtrarTabla); */
 
             function filtrarTabla() {
                 const especialidad = especialidadFilter.value;
                 const doctor = doctorFilter.value;
 
-                for (let i = 1; i < tabla.rows.length; i++) {
-                    const row = tabla.rows[i];
+                for (let i = 1; i < contenedor.rows.length; i++) {
+                    const row = contenedor.rows[i];
                     const especialidadValue = row.cells[0].textContent;
                     const doctorValue = row.cells[1].textContent;
 
@@ -83,10 +86,10 @@ class OpTabla {
             
             /* ---- Ordenar filas de la tabla ---- */
 
-            let isAscending = false;
+           // let isAscending = false;
 
             // Añadir evento click a los encabezados de columna
-            headers.forEach(function(header, index) {
+           /* headers.forEach(function(header, index) {
                 header.addEventListener('click', function() {
                     // Eliminar clases de ordenación de todas las columnas
                     headers.forEach(function(header) {
@@ -110,12 +113,12 @@ class OpTabla {
                 
                     // Eliminar las filas del nuevo array
                     rowsToRemove.forEach(function(row) {
-                    tabla.querySelector('tbody').removeChild(row);
+                        contenedor.querySelector('tbody').removeChild(row);
                     });
                 
                     // Agregar las filas ordenadas a la tabla
                     sortedRows.forEach(function(sortedRow) {
-                    tabla.querySelector('tbody').appendChild(sortedRow);
+                        contenedor.querySelector('tbody').appendChild(sortedRow);
                     });
                 
                     // Cambiar la clase de ordenación de la columna actual
@@ -131,7 +134,7 @@ class OpTabla {
             /* ---- Paginacion de la tabla ---- */
             
             //creamos container para la paginacion
-            let contenedorPagination = PAW.nuevoElemento("div","", {
+         /*   let contenedorPagination = PAW.nuevoElemento("div","", {
                 id: "pagination"
             })
             
@@ -195,21 +198,22 @@ class OpTabla {
 
             /* ---- Resaltar Filas de la tabla ---- */
 
-            let highlightedRow = null; // Almacenar la fila resaltada actualmente
+        }
+    }
 
-            // Función para resaltar una fila
-            function highlightRow(row) {
-                if (highlightedRow) {
-                    highlightedRow.classList.remove('highlighted');
-                }
-
-                if (highlightedRow !== row) {
-                    row.classList.add('highlighted');
-                    highlightedRow = row;
-                } else {
-                    highlightedRow = null;
-                }
-            }
+    fetchEstudios() {
+        fetch('/assets/scripts/components/tableEstudios/tabla.json')
+          .then(response => response.json())
+          .then(data => {
+            this.estudios = data;
+            console.log(this.estudios);
+            this.insertarDatos();
+            const contenedor = document.querySelector("#tEstudios");
+            console.log("Tabla: " + contenedor);
+            const headers = contenedor.querySelectorAll('th');
+            console.log("Headers: " + headers.length);
+            const rows = contenedor.querySelectorAll('tbody tr');
+            console.log("Filas: " + rows.length);
 
             // Escuchar eventos de clic en las filas para resaltar la fila
             rows.forEach((row) => {
@@ -217,6 +221,67 @@ class OpTabla {
                     highlightRow(row);
                 });
             });
+
+          });
+      }
+
+        // Función para resaltar una fila
+        highlightRow(row) {
+        let highlightedRow = null; // Almacenar la fila resaltada actualmente
+        if (highlightedRow) {
+            highlightedRow.classList.remove('highlighted');
         }
-    }
+
+        if (highlightedRow !== row) {
+            row.classList.add('highlighted');
+            highlightedRow = row;
+        } else {
+            highlightedRow = null;
+        }
+        }
+  
+      insertarDatos() {
+        const contenedor = document.querySelector("#tEstudios");
+        let tbody = contenedor.querySelector('tbody');
+        
+        if (!tbody) {
+          tbody = document.createElement('tbody');
+          contenedor.appendChild(tbody);
+        }
+
+        this.estudios.forEach(estudio => {
+          const fila = document.createElement('tr');
+      
+          const celda1 = document.createElement('td');
+          celda1.textContent = estudio.Fecha;
+          fila.appendChild(celda1);
+      
+          const celda2 = document.createElement('td');
+          celda2.textContent = estudio.Hora;
+          fila.appendChild(celda2);
+      
+          const celda3 = document.createElement('td');
+          celda3.textContent = estudio.Medico;
+          fila.appendChild(celda3);
+      
+          const celda4 = document.createElement('td');
+          celda4.textContent = estudio.Motivo;
+          fila.appendChild(celda4);
+      
+          const celda5 = document.createElement('td');
+          celda5.textContent = estudio.Servicio;
+          fila.appendChild(celda5);
+      
+          const celda6 = document.createElement('td');
+          celda6.textContent = estudio.Monto;
+          fila.appendChild(celda6);
+      
+          const celda7 = document.createElement('td');
+          celda7.textContent = estudio.Resultados;
+          fila.appendChild(celda7);
+      
+          tbody.appendChild(fila); 
+    })
+    console.log(tbody);
+}
 }

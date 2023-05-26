@@ -76,6 +76,15 @@ class appPAW {
                     let infoMedicos = new medicosInterface();
                 });
             }
+
+            contenedor = document.querySelector(".salaEsperaContainer");
+
+            if (contenedor) {
+                //Inicializar la interfaz de la sala de espera
+                PAW.cargarScript("Sala de Espera", "assets/scripts/components/salaEspera.js", () => {
+                    let sala = new SalaEspera();
+                });
+            }
         });
     }
 }

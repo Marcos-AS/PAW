@@ -15,5 +15,8 @@
         <?php include __DIR__ . '/./parts/header.view.php' ?>
 
         <?php include __DIR__ . '/./parts/nav.view.php' ?>
+
+        <h1>Sala de Espera</h1>
+        <section class="salaEsperaContainer"></section>
     </body>
 </html>
