@@ -4,30 +4,55 @@ class medicosInterface {
     }
 
     fetchEspecialistas() {
-        fetch('assets/data/especialistas.json')
+        fetch('assets/data/especialistas.json') //toma los datos de especialistas.JSON 
           .then(response => response.json())
           .then(data => {
-            this.especialistas = data.especialistas;
-            console.log(this.especialistas);
+            this.especialistas = data.especialistas; //guarda en array especialistas
+//            console.log(this.especialistas);
             this.getTurnosDelDia('Lunes'); //por ejemplo
           });
     } //end fetchEspecialistas
 
     getTurnosDelDia(dia) {
-        let turnosTomados = this.especialistas.turnosTomados;
-        console.log(turnosTomados);
-        this.turnosTomados.forEach(turno => {
-            if (turno.turnosTomados.turno.dia == dia) {
-                this.mostrarTurnosDelDia(turnosTomados[turno]);  
-              }  
-        })
-    }
+        this.especialistas.forEach(esp => { //para cada esp en el array de especialistas
+            //muestra el nombre de cada medico en el html
+            let medico = esp.nombre + ' ' + esp.apellido;
+            let title = document.createElement('h2');
+            title.textContent = medico;
+            document.body.appendChild(title);
+            
+            //muestra los turnos de cada uno
+            let turnosTomados = esp.turnosTomados;
+            //crea la lista
+            let lista = document.body.appendChild(document.createElement('ul'));
+            lista.classList.add('listaTurnos');
 
-    //crea las html tags para mostrar
-    mostrarTurnosDelDia(dia) {
-        let lista = document.createElement('ul');
-        let item = document.createElement('li');
-        let fechaHoraTurno = document.createTextNode(dia.horas + ':' + dia.minutos);
-        document.body.appendChild(lista.appendChild(item.appendChild(fechaHoraTurno)));
-    }
+            turnosTomados.forEach(turno => { //para cada turno en el array de turnos
+                if (turno.dia == dia) { //si coincide el dia param lo muestra en html
+                    let item = document.createElement('li');
+                    //if para que se vea con la cant correcta de ceros
+                    if (turno.horas < 10) {
+                        let hora = '0' + turno.horas;
+                        if (turno.minutos == 0) {
+                            console.log("hola");
+                            let minutos = turno.minutos + '0';
+                            item.textContent = hora + ':' + minutos;
+                        } else {
+                            item.textContent = hora + ':' + turno.minutos;
+                        }
+                    } else {
+                        item.textContent = turno.horas + ':' + turno.minutos;
+                    }
+//                    console.log(item);
+                    lista.appendChild(item);
+                } //end if
+            })//end turnosTomados.forEach
+            if (lista.childElementCount === 0) {
+                let item = document.createElement('li');
+                item.textContent = 'No registra turnos para el día de hoy';
+                lista.appendChild(item);
+            }
+        })
+    }//end getTurnosDelDia
+
 }

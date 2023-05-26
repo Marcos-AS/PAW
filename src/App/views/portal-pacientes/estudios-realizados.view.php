@@ -37,17 +37,6 @@
 
     <form id="fFilter">
         <h3>Filtrar</h3>
-        <label for="inputFDesde">
-            Fecha desde:
-            <input type="date" name="inputFDesde">
-        </label>
-        <label for="inputFHasta">
-            Fecha hasta:
-            <input type="date" name="inputFHasta">
-        </label>
-        <button>
-            Filtrar
-        </button>
     </form>
 
     <form method="post" action="/guardar-estudio" enctype="multipart/form-data">
@@ -65,11 +54,11 @@
     <table id="tEstudios">
         <thead>
             <tr>
-                <th><label for="h1">Fecha</label></th>
-                <th><label for="h2">Hora</label></th>
                 <th><label for="h3">Médico</label></th>
                 <th><label for="h4">Motivo</label></th>
                 <th><label for="h5">Servicio</label></th>
+                <th><label for="h1">Fecha</label></th>
+                <th><label for="h2">Hora</label></th>
                 <th><label for="h6">Monto</label></th>
                 <th><label for="h7">Resultados</label></th>
             </tr>
