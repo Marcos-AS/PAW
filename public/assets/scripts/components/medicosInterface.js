@@ -2,13 +2,14 @@ class medicosInterface {
     constructor() {
         this.fetchEspecialistas()
         .then(() => {
-            let day = new Date().getDay();
-            this.getTurnosDelDia(this.day2Name(day)); //le pasa nombre del dia de hoy
+            let day = this.day2Name(new Date().getDay());
+            let date = new Date().getDate();
+            this.getTurnosDelDia(day); //le pasa nombre del dia de hoy
             let titulo = document.querySelector('h1');
-            titulo.textContent += ': ' + this.day2Name(day) + ' ' + day; //setea el h1
+            titulo.textContent += ': ' + day + ' ' + date; //setea el h1
             this.seleccionarTurno();
             PAW.cargarStyles('assets/css/interfaces.css');
-            
+
             //estado atendiendo, estado en espera
         })
     }
