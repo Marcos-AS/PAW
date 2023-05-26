@@ -47,15 +47,9 @@ class appPAW {
             contenedor = document.querySelector("#tEstudios");
 
             if (contenedor) {
-                // Tabla de estudios de un paciente
-                //Cargar los datos en la tabla.
-                PAW.cargarScript("Estudios", "../assets/scripts/components/tableEstudios/cargarJson.js", () => {
-                        let estudios = new Estudios();
-                }); 
-            
                 //Inicializar las operaciones en la tabla
-                PAW.cargarScript("OpTabla", "../assets/scripts/components/tableEstudios/operacionesTabla.js", () => {
-                        let opTabla = new OpTabla("tEstudios");
+                PAW.cargarScript("Operaciones", "/assets/scripts/components/operacionesEstudios.js", () => {
+                        let opTabla = new Operaciones("tEstudios");
                 });
             }
 
@@ -74,6 +68,15 @@ class appPAW {
                 //Inicializar la interfaz de médicos
                 PAW.cargarScript("Medico", "assets/scripts/components/medicosInterface.js", () => {
                     let infoMedicos = new medicosInterface();
+                });
+            }
+
+            contenedor = document.querySelector(".salaEsperaContainer");
+
+            if (contenedor) {
+                //Inicializar la interfaz de la sala de espera
+                PAW.cargarScript("Sala de Espera", "assets/scripts/components/salaEspera.js", () => {
+                    let sala = new SalaEspera();
                 });
             }
         });
