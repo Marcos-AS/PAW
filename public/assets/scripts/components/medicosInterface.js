@@ -7,10 +7,14 @@ class medicosInterface {
             this.getTurnosDelDia(day); //le pasa nombre del dia de hoy
             let titulo = document.querySelector('h1');
             titulo.textContent += ': ' + day + ' ' + date; //setea el h1
-            this.seleccionarTurno();
+            this.botonesSeleccionarTurno();
             PAW.cargarStyles('assets/css/interfaces.css');
 
             //estado atendiendo, estado en espera
+            let btns = document.querySelectorAll("button");
+            btns.forEach(btn => {
+                btn.addEventListener("click", this.seleccionarTurno);
+            })
         })
     }
 
@@ -71,17 +75,20 @@ class medicosInterface {
         })
     }//end getTurnosDelDia
 
-    seleccionarTurno() {
+    botonesSeleccionarTurno() {
         let listas = document.querySelectorAll('.listaTurnos');
         listas.forEach(lista => {
             let items = lista.childElementCount;
             let item = lista.firstElementChild;
             for (let i=0; i<items; i++) {
-                var boton = PAW.nuevoElemento('button','Atender',{
-                    class: 'btnSeleccionarTurno'
+                var btn = PAW.nuevoElemento('button','Atender',{
+                    class: 'btnSeleccionarTurno',
+                    onclick: this.seleccionarTurno.bind(this)
                 })
-                item.insertAdjacentElement('afterend',boton);
-                item = boton.nextElementSibling;
+                //btn.onclick = this.seleccionarTurno;
+                item.insertAdjacentElement('afterend',btn);
+//                btn.addEventListener("click", this.seleccionarTurno(btn))
+                item = btn.nextElementSibling;
             }  
         })
     } //end seleccionarTurno
@@ -105,4 +112,11 @@ class medicosInterface {
         }
     } //end day2Name
 
+    seleccionarTurno(event) {
+        let btn = event.currentTarget;
+        let estado = PAW.nuevoElemento('p', 'Estado: atendiendo', {
+            class: 'turnoActivo'
+        })
+        btn.insertAdjacentElement('afterend',estado);
+    }
 }
