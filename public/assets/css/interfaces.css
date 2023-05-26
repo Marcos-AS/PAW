@@ -1,0 +1,22 @@
+.btnSeleccionarTurno {
+    display: inline;    
+}
+
+.sinTurnos + button {
+    display: none;
+}
+
+.listaTurnos li {
+    display: inline;
+}
+
+.listaTurnos li::before {
+    content: "\a";
+    white-space: pre;
+}
+
+.listaTurnos button {
+    margin: 1rem;
+}
+
+
