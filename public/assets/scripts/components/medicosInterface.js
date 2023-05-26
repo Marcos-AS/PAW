@@ -46,13 +46,18 @@ class medicosInterface {
                     if (turno.horas < 10) {
                         let hora = '0' + turno.horas;
                         if (turno.minutos == 0) {
-                            let minutos = turno.minutos.toString() + ' 0';
+                            let minutos = turno.minutos + '0';
                             item.textContent = hora + ':' + minutos;
                         } else {
                             item.textContent = hora + ':' + turno.minutos;
                         }
                     } else {
-                        item.textContent = turno.horas + ':' + turno.minutos;
+                        if (turno.minutos == 0) {
+                            let minutos = turno.minutos + '0';
+                            item.textContent = turno.horas + ':' + minutos;
+                        } else {
+                            item.textContent = turno.horas + ':' + turno.minutos;
+                        }
                     }
                     lista.appendChild(item);
                 } //end if
