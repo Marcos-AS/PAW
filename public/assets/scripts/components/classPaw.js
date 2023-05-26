@@ -29,4 +29,12 @@ class PAW {
    
        return elemento;
     }
+
+    static cargarStyles(href) {
+        let css = PAW.nuevoElemento("link", "", {
+            rel: "stylesheet",
+            href: href
+        });
+        document.head.appendChild(css);
+    }
 }
