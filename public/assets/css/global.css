@@ -18,6 +18,7 @@ header {
     position: relative;
     left: 0;
     z-index: 1;
+    float: left;
 }
 
 .icono {
@@ -199,39 +200,41 @@ footer p {
     color: white;
 }
 
+/*MEDIA PRINT-----------------*/
 @media print  {
   header  {
-      display: none;
+    display: none;
   }
   nav {
-      display: none;
+    display: none;
   }
   footer {
       display: none;
   }
-
+  
   a[href]:after {
-      content: " (" attr(href) ")";
+    content: " (" attr(href) ")";
   }
-
+  
 }
 
+/*MEDIA MAX-WIDTH 832px-----------------*/
 @media screen and (max-width: 832px) {
-
+  
   /* Estilos para el menú hamburguesa */
   
   .hambur {
     position: relative;
     height: 2.1rem;
   }
-
+  
   .hambur > h2 {
     position: relative;
     display: inline;
     font-size: 1.6rem;
     left: 1rem;
   }
-
+  
   .hamburguesa {
     position: absolute;
     top: 0;
@@ -280,7 +283,7 @@ footer p {
     left: auto;
   }
   
- .menu li:not(:last-child) {
+  .menu li:not(:last-child) {
     border-bottom: 0.2rem white solid;
   }
   
@@ -290,7 +293,7 @@ footer p {
     padding: 0.5rem;
     margin: 0;
   }
-
+  
   .menu li {
     background-color: rgb(2,82,85);
   }
@@ -334,22 +337,22 @@ footer p {
       height: auto;
       transition: all 0.3s ease-in-out;
     }
-  
-  .menu .dropdown-menu li {
+    
+    .menu .dropdown-menu li {
       margin: 10px 0;
       text-align: center;
       height: 2rem;
     }
-  
-  .menu .dropdown-menu li a {
+    
+    .menu .dropdown-menu li a {
       text-decoration: none;
       color: white;
       font-size: 18px;
       margin-top: 0px;
       margin-bottom: 0px;
     }
-  
-  .menu .dropdown-menu li p {
+    
+    .menu .dropdown-menu li p {
       text-decoration: none;
       color: rgb(2,82,85);
       font-size: 18px;
@@ -362,8 +365,8 @@ footer p {
       margin-top: -1px;
       margin-left: 0;
     }
-  
-  .menu .dropdown-menu.mostrar {
+    
+    .menu .dropdown-menu.mostrar {
       display: block;
       margin-top: 0rem;
       max-height: 500px;
@@ -372,32 +375,35 @@ footer p {
       margin: 0;
       list-style: none;
       flex-direction: column;
-  }
-  
-  .icono {
-    width: 50vw;
-  }
-
-  }
-  
-  @media screen and (width>832px) {
-    header {
-      float: left;
     }
-  }
-
+    
+    .icono {
+      width: 50vw;
+    }
+    
+  } /*END MEDIA MAX-WIDTH 832px*/
+  
+  /*MEDIA MAX-WIDTH 491px-----------------*/
   @media screen and (max-width: 491px) {
     
+    body {
+      font-size: 3vw;
+    }
+
+    button {
+      width: min-content;
+    }
+
     footer ul {
       width: 50%;
       text-align: center;  
     }
-
+    
     footer p {
       width: 50%;
       text-align: center;
     }
-
+    
     footer a {
       width: 100%;
       height: 3rem;
@@ -405,7 +411,8 @@ footer p {
       margin-top: 0.5rem;
     }
   }
-
+  
+  /*MEDIA DARK-----------------*/
   @media (prefers-color-scheme: dark) {
     body,
     .fLogin,

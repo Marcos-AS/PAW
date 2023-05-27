@@ -1,13 +1,45 @@
+h1, h2, .listaTurnos {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(135, 211, 226);
+    padding: 1rem 0;
+}
+
+.medicoInterface {
+    color: white;
+}
+
+
 .btnSeleccionarTurno {
     display: inline;    
 }
 
-.sinTurnos ~ button {
+.liSinTurnos ~ button {
     display: none;
+}
+
+.listaSinTurnos {
+    padding-bottom: 1rem;
+}
+
+.listaTurnos, .medicoInterface h2 {
+    background-color: rgb(0,157,218);
+}
+
+h2 {
+    padding: 1rem 0 0 1rem;
+}
+
+.listaTurnos {
+    border-bottom: 0.2rem solid white;
 }
 
 .listaTurnos li {
     display: inline;
+    font-size: larger;
 }
 
 .listaTurnos li::before {

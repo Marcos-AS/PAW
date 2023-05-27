@@ -78,12 +78,22 @@ class Operaciones {
         botonFiltrar.addEventListener('click', filtrarTabla);
       
         // Agregar elementos al contenedor de filtros
-        filtrosContainer.appendChild(document.createTextNode('Médico: '));
+        const labelMedico = document.createElement('label');
+        labelMedico.type = 'label';
+        labelMedico.textContent = 'Medico';
+        filtrosContainer.appendChild(labelMedico);
         filtrosContainer.appendChild(medicoFilter);
-        filtrosContainer.appendChild(document.createTextNode('Motivo: '));
+        const labelMotivo = document.createElement('label');
+        labelMotivo.type = 'label';
+        labelMotivo.textContent = 'Motivo';
+        filtrosContainer.appendChild(labelMotivo);
         filtrosContainer.appendChild(motivoFilter);
-        filtrosContainer.appendChild(document.createTextNode('Servicio: '));
+        const labelServicio = document.createElement('label');
+        labelServicio.type = 'label';
+        labelServicio.textContent = 'Servicio';
+        filtrosContainer.appendChild(labelServicio);
         filtrosContainer.appendChild(servicioFilter);
+
         filtrosContainer.appendChild(botonFiltrar);
       
         function crearSelectFiltro(rows, columnIndex, selectId, label) {
