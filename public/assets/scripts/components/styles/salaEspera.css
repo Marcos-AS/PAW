@@ -1,0 +1,46 @@
+.salaEsperaContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.turnoCard {
+    width: 250px;
+    height: 150px;
+    border: 3px solid #ffffff;
+    padding: 10px;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: rgb(0, 157, 218);
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.turnoCard .turno {
+    font-weight: bold;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.turnoCard .paciente, .estado, .horaLlegada {
+    color: white;
+    padding:5px;
+    font-weight: bold;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: rgb(0, 157, 218);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }

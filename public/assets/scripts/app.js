@@ -58,7 +58,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la interfaz de usuario
                 PAW.cargarScript("Paciente", "assets/scripts/components/userInterface.js", () => {
-                    let infoPaciente = new userInterface();
+                    let infoPaciente = new UserInterface();
                 });
             }
             
@@ -68,6 +68,15 @@ class appPAW {
                 //Inicializar la interfaz de médicos
                 PAW.cargarScript("Medico", "assets/scripts/components/medicosInterface.js", () => {
                     let infoMedicos = new medicosInterface();
+                });
+            }
+
+            contenedor = document.querySelector(".salaEsperaContainer");
+
+            if (contenedor) {
+                //Inicializar la interfaz de la sala de espera
+                PAW.cargarScript("Sala de Espera", "assets/scripts/components/salaEspera.js", () => {
+                    let sala = new SalaEspera();
                 });
             }
         });
