@@ -7,7 +7,7 @@ class Operaciones {
 
     // Cargar datos a traves de un JSON y ejecutar operaciones
     fetchEstudios() {
-        fetch('/assets/scripts/components/datosEstudios.json')
+        fetch('/assets/data/datosEstudios.json')
             .then(response => response.json())
             .then(data => {
             this.estudios = data;
