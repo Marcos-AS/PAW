@@ -1,4 +1,40 @@
-/*th {
+form {
+  padding: 1rem;
+}
+
+.sTable {
+  width: 100%; /* ajusta el ancho según tus necesidades */
+  height: max-content; /* ajusta la altura según tus necesidades */
+  overflow: scroll;
+}
+
+label {
+  display: inline-block;
+  font-weight: bold;
+}
+
+label, select {
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+#fFilter label,select {
+  padding: 0.4rem;
+}
+
+#fFilter button {
+  background-color: rgb(0, 157, 218);
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+th {
   text-align: center;
   cursor: pointer;
 }
@@ -43,3 +79,25 @@ table td {
   text-align: center;
   padding: 1.5rem;
 }
+
+/* Estilos para la parte móvil */
+
+@media (max-width: 600px) {
+  form {
+    padding: 1rem;
+  }
+  
+  table th,
+  table td {
+    padding: 5px;
+  }
+  
+  #fFilter label,select {
+    display: flex;
+  }
+
+  #fFilter button {
+    margin: 1rem;
+  }
+}
+

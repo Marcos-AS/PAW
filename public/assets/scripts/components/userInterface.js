@@ -19,9 +19,11 @@ class UserInterface {
           .then(() => {
             // Verificar si cambió la información relevante para el usuario
             if (this.hayCambiosRelevantes()) {
+              console.log("hola");
               // Reproducir alerta sonora
               this.reproducirAlerta();
             }
+
             // Mostrar la información del paciente
             this.mostrarInfoPaciente();
           })
@@ -57,14 +59,33 @@ class UserInterface {
         tiempoEspera.textContent = "Tiempo de espera promedio: " + this.pacientes.tiempoEstimadoEspera;
         this.contenedor.appendChild(tiempoEspera);
 
-        console.log(this.pacientes);
+        let acceptButton = document.createElement('button');
+        acceptButton.textContent = "Aceptar Turno";
+        this.contenedor.appendChild(acceptButton);
+
+        // Deshabilitar el botón si el turno actual es diferente al turno del usuario
+        if (this.pacientes.turnoEnAtencion !== this.pacientes.numeroTurno) {
+            acceptButton.disabled = true;
         }
-    
+
+        // Agregar evento de clic al botón
+        acceptButton.addEventListener("click", () => {
+          this.mostrarAlertaTurnoAceptado();
+        });
+
+        console.log(this.pacientes);
+    }
+
+    // Método para mostrar la alerta de turno aceptado
+    mostrarAlertaTurnoAceptado() {
+      alert("¡Turno aceptado! Gracias por confirmar tu turno.");
+    }
+
     hayCambiosRelevantes() {
         const turnoActualElement = this.contenedor.querySelector('p:nth-child(3)');
         if (turnoActualElement) {
-            const turnoActualActual = turnoActualElement.textContent;
-            const nuevoTurnoActual = "Turno actual: " + this.pacientes.turnoEnAtencion;
+            const turnoActualActual = this.pacientes.numeroTurno;
+            const nuevoTurnoActual = this.pacientes.turnoEnAtencion;
             return turnoActualActual == nuevoTurnoActual;
         }
         return false; // El elemento no existe, no hay cambios relevantes
