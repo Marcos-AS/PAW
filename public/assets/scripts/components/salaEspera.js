@@ -22,7 +22,7 @@
         .then(data => {
             this.turnos = data.turnos;
             console.log(this.turnos);
-        
+                   
             // Obtener el contenedor
             var contenedorSalaEspera = document.getElementsByClassName("salaEsperaContainer")[0];
 
@@ -69,6 +69,7 @@
 
             var horaLlegadaElemento = document.createElement("li");
             horaLlegadaElemento.innerHTML = "Hora de Llegada: " + turno.horaLlegada;
+            horaLlegadaElemento.className = "horaLlegada";
             turnoCard.appendChild(horaLlegadaElemento);
 
             var estadoElemento = document.createElement("li");
