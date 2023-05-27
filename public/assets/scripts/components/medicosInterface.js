@@ -4,16 +4,23 @@ class medicosInterface {
         .then(() => {
             let day = this.day2Name(new Date().getDay());
             let date = new Date().getDate();
-            this.getTurnosDelDia(day); //le pasa nombre del dia de hoy
+            this.getTurnosDelDia('Viernes'); //le pasa nombre del dia de hoy
             let titulo = document.querySelector('h1');
             titulo.textContent += ': ' + day + ' ' + date; //setea el h1
             this.botonesSeleccionarTurno();
             PAW.cargarStyles('assets/css/interfaces.css');
 
             //estado atendiendo, estado en espera
-            let btns = document.querySelectorAll("button");
+            //agrega evento click a los btns atender
+            let btns = document.querySelectorAll(".btnSeleccionarTurno");
             btns.forEach(btn => {
                 btn.addEventListener("click", this.seleccionarTurno);
+            })
+
+            //agrega evento click a los btns finalizar
+            btns = document.querySelectorAll(".btnFinalizarTurno");
+            btns.forEach(btn => {
+                btn.addEventListener("click", this.finTurno);
             })
         })
     }
@@ -27,10 +34,9 @@ class medicosInterface {
     } //end fetchEspecialistas
 
     getTurnosDelDia(dia) {
-        //PAW.nuevoElemento('h1','Turnos');
         this.especialistas.forEach(esp => { //para cada esp en el array de especialistas
             //muestra el nombre de cada medico en el html
-            let medico = esp.nombre + ' ' + esp.apellido;
+            let medico = esp.nombre + ' ' + esp.apellido + '. (Matrícula: ' + esp.matricula + ')';
             let title = PAW.nuevoElemento('h2',medico,{});
             document.body.appendChild(title);
             
@@ -74,24 +80,31 @@ class medicosInterface {
         })
     }//end getTurnosDelDia
 
+    //agrega botones al lado del horario
     botonesSeleccionarTurno() {
         let listas = document.querySelectorAll('.listaTurnos');
         listas.forEach(lista => {
             let items = lista.childElementCount;
             let item = lista.firstElementChild;
             for (let i=0; i<items; i++) {
+                //crea btn para marcar atender turno
                 var btn = PAW.nuevoElemento('button','Atender',{
-                    class: 'btnSeleccionarTurno',
+                    class: 'btnSeleccionarTurno'
                     //onclick: "this.seleccionarTurno()"
                 })
-                //btn.onclick = this.seleccionarTurno;
                 item.insertAdjacentElement('afterend',btn);
-//                btn.addEventListener("click", this.seleccionarTurno(btn))
-                item = btn.nextElementSibling;
+
+                //crea btn para marcar finalización turno
+                let btnFin = PAW.nuevoElemento('button', 'Marcar fin', {
+                    class: 'btnFinalizarTurno'
+                });
+                btnFin.disabled = true;
+                btn.insertAdjacentElement('afterend',btnFin);
+                item = btnFin.nextElementSibling;
             }  
         })
     } //end seleccionarTurno
-
+    
     day2Name(numDay) {
         switch (numDay) {
             case 1:
@@ -110,12 +123,42 @@ class medicosInterface {
                 return 'Domingo';
         }
     } //end day2Name
-
+                            
+    //agrega un p que informa estado del turno al hacer clic en los btns
     seleccionarTurno(event) {
         let btn = event.currentTarget;
+        btn.classList.remove('btnSeleccionarTurno');
+        btn.disabled = true;
+        btn.classList.add('btnAtendido');
         let estado = PAW.nuevoElemento('p', 'Estado: atendiendo', {
             class: 'turnoActivo'
         })
-        btn.insertAdjacentElement('afterend',estado);
+
+        let btnFin = btn.nextElementSibling;
+        btnFin.insertAdjacentElement('afterend',estado); //agrega el estado (p)
+        btnFin.disabled = false;        
+
+        //deshabilitar los botones atender de todos los turnos
+        let btns = btn.parentElement.querySelectorAll('.btnSeleccionarTurno');
+        btns.forEach(iBtn => {
+            iBtn.disabled = true;
+        })
+
+    }
+    
+    //evento del btn fin para cambiar el estado y tachar el horario
+    finTurno(event) {
+        let btnFin = event.target;
+        btnFin.disabled = true; //deshabilita btn fin
+        let item = btnFin.previousElementSibling.previousElementSibling;
+        item.classList.add('turnoTachado'); //tacha el horario
+        let estado = btnFin.nextElementSibling;
+        estado.textContent = 'Estado: turno finalizado'; //cambia el estado
+
+        //habilitar los botones atender de los demas turnos 
+        let btns = btnFin.parentElement.querySelectorAll('.btnSeleccionarTurno');
+        btns.forEach(iBtn => {
+            iBtn.disabled = false;
+        })
     }
 }
