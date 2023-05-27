@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/styles/portal-pacientes.css">    
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+    <script src="/assets/scripts/components/classPaw.js"></script>
+    <script src="/assets/scripts/app.js"></script>
 </head>
 <body>
     
     <?php require __DIR__ . '/../parts/header.view.php' ?>
     
-    <nav>
+    <nav class="menu">
         <ul>
             <li>
                 <a href="/portal-pacientes/perfil-usuario">Mi perfil</a>

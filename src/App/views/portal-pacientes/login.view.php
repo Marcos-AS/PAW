@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
-
+    <script src="/assets/scripts/components/classPaw.js"></script>
+    <script src="/assets/scripts/app.js"></script>
 </head>
 <body>
     
@@ -34,8 +35,6 @@
     </section>
 
     <?php include __DIR__ . '/../parts/footer.view.php' ?>
-
-    <script src="/assets/scripts/hamburguesa.js"></script>
 
 </body>
 </html>

@@ -16,7 +16,7 @@
     
     <?php require __DIR__ . '/../parts/header.view.php' ?>
 
-    <nav>
+    <nav class="menu">
         <ul>
             <li>
                 <a href="/portal-pacientes/perfil-usuario">Mi perfil</a>
