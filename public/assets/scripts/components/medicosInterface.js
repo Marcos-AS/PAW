@@ -31,8 +31,7 @@ class medicosInterface {
         this.especialistas.forEach(esp => { //para cada esp en el array de especialistas
             //muestra el nombre de cada medico en el html
             let medico = esp.nombre + ' ' + esp.apellido;
-            let title = document.createElement('h2');
-            title.textContent = medico;
+            let title = PAW.nuevoElemento('h2',medico,{});
             document.body.appendChild(title);
             
             //muestra los turnos de cada uno
@@ -83,7 +82,7 @@ class medicosInterface {
             for (let i=0; i<items; i++) {
                 var btn = PAW.nuevoElemento('button','Atender',{
                     class: 'btnSeleccionarTurno',
-                    onclick: this.seleccionarTurno.bind(this)
+                    //onclick: "this.seleccionarTurno()"
                 })
                 //btn.onclick = this.seleccionarTurno;
                 item.insertAdjacentElement('afterend',btn);
