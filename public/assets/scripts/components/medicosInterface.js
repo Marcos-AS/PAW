@@ -4,7 +4,7 @@ class medicosInterface {
         .then(() => {
             let day = this.day2Name(new Date().getDay());
             let date = new Date().getDate();
-            this.getTurnosDelDia('Viernes'); //le pasa nombre del dia de hoy
+            this.getTurnosDelDia('Martes'); //le pasa nombre del dia de hoy
             let titulo = document.querySelector('h1');
             titulo.textContent += ': ' + day + ' ' + date; //setea el h1
             this.botonesSeleccionarTurno();
@@ -35,10 +35,11 @@ class medicosInterface {
 
     getTurnosDelDia(dia) {
         this.especialistas.forEach(esp => { //para cada esp en el array de especialistas
+            let container = document.querySelector('.medicoInterface');
             //muestra el nombre de cada medico en el html
-            let medico = esp.nombre + ' ' + esp.apellido + '. (Matrícula: ' + esp.matricula + ')';
+            let medico = esp.nombre + ' ' + esp.apellido + ' (Matrícula: ' + esp.matricula + ')';
             let title = PAW.nuevoElemento('h2',medico,{});
-            document.body.appendChild(title);
+            container.appendChild(title);
             
             //muestra los turnos de cada uno
             let turnosTomados = esp.turnosTomados;
@@ -46,7 +47,7 @@ class medicosInterface {
             let lista = PAW.nuevoElemento('ul','', {
                 class: 'listaTurnos'
             })
-            document.body.appendChild(lista);
+            container.appendChild(lista);
 
             turnosTomados.forEach(turno => { //para cada turno en el array de turnos
                 if (turno.dia == dia) { //si coincide el dia param lo muestra en html
@@ -71,10 +72,11 @@ class medicosInterface {
                     lista.appendChild(item);
                 } //end if
             })//end turnosTomados.forEach
-            if (lista.childElementCount === 0) {
+            if (lista.childElementCount === 0) { //si no tiene turnos para hoy
                 let item = PAW.nuevoElemento('li','No registra turnos para el día de hoy', {
-                    class: "sinTurnos"
+                    class: "liSinTurnos"
                 })
+                lista.classList.add('listaSinTurnos');
                 lista.appendChild(item);
             }
         })
@@ -118,7 +120,7 @@ class medicosInterface {
             case 5:
                 return 'Viernes';
             case 6:
-                return 'Sabado';
+                return 'Sábado';
             case 7:
                 return 'Domingo';
         }
@@ -144,7 +146,7 @@ class medicosInterface {
             iBtn.disabled = true;
         })
 
-    }
+    } //end seleccionarTurno
     
     //evento del btn fin para cambiar el estado y tachar el horario
     finTurno(event) {
@@ -160,5 +162,5 @@ class medicosInterface {
         btns.forEach(iBtn => {
             iBtn.disabled = false;
         })
-    }
+    } //end finTurno
 }
