@@ -65,7 +65,7 @@
             <!--<label for="inputSelect">
                 Especialidad
                 <select name="inputSelect" id="profesionales">
-                <!--    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
+                    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
                     <option value="GINECOLOGIA">GINECOLOGIA</option>
                     <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option> 
                 </select> -->
@@ -92,7 +92,7 @@
             </label>
             <!--<label for="inputHorarios">
                 Horarios
-            <!--    <label for="opcion1">
+                <label for="opcion1">
                     10:30
                     <input type="radio" id="opcion1" required name="horario" value="10:30">
                 </label>
