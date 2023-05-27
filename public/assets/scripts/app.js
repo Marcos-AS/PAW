@@ -58,7 +58,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la interfaz de usuario
                 PAW.cargarScript("Paciente", "assets/scripts/components/userInterface.js", () => {
-                    let infoPaciente = new userInterface();
+                    let infoPaciente = new UserInterface();
                 });
             }
             
