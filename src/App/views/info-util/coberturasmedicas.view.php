@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://unpkg.com/browse/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/info-util.css">
-    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     <link rel="stylesheet" href="/assets/css/submenu.css">
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+    <script src="/assets/scripts/components/classPaw.js"></script>
+    <script src="/assets/scripts/app.js"></script>
 </head>
 <body>
 
@@ -51,9 +53,6 @@
     </section>
 
     <?php include __DIR__ . '/../parts/footer.view.php' ?>
-
-    <script src="/assets/scripts/hamburguesa.js"></script>
-    <script src="/assets/scripts/submenu.js"></script>
 
 </body>
 </html>

@@ -4,11 +4,12 @@ class appPAW {
         document.addEventListener("DOMContentLoaded", () => {
 
             //Inicializar la funcionalidad Menu
-		    PAW.cargarScript("PAW-Menu", "assets/scripts/components/hamburguesa.js", () => {	
+		    PAW.cargarScript("Hamburguesa", "../assets/scripts/components/hamburguesa.js", () => {	
+                    let hamburguesa = new Hamburguesa();
 			    });
-                
+
             //Inicializar la funcionalidad SubMenu
-            PAW.cargarScript("PAW-Menu", "assets/scripts/components/submenu.js", () => {	
+            PAW.cargarScript("Submenu", "../assets/scripts/components/submenu.js", () => {	
                 });
             
             let contenedor = document.querySelector(".carousel");

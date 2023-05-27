@@ -65,26 +65,9 @@ label > input[type="reset"]:hover {
 
 /* perfil usuario -------------------------*/
 
-nav {
-    position:absolute;
-    top: 8rem;
-}
-
-nav ul {
-    flex-direction: column;
-    height: 79vh;
-    width: 20vw;
-
-}
-
-nav, .datosPaciente {
-    display: inline-block;
-}
-
 .datosPaciente {
     position: relative;
     top: 2rem;
-    left: 23vw;
     width: 75vw;
 }
 
