@@ -56,7 +56,7 @@
                 </select>
             </label>
 
-            <p>¿A donde te avisamos?</p>
+            <p>¿A dónde te avisamos?</p>
             <label for="inputEmail">
                 Email
                 <input type="email" required name="email" id="inputEmail" autocomplete="on"/>
