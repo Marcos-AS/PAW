@@ -1,7 +1,7 @@
 class DragDrop {
   constructor(dropzoneId) {
     this.dropzone = dropzoneId.tagName ? dropzoneId : document.querySelector(dropzoneId);
-    console.log(this.dropzone);
+    //console.log(this.dropzone);
     if (this.dropzone) {
       this.imageContainer = document.createElement('div');
       this.imageContainer.classList.add("imageContainer");

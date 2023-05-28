@@ -24,32 +24,32 @@
             <legend>Datos del Paciente</legend>
             <label for="inputNombre">
                 Nombre
-                <input type="text" required name="nombre" />
+                <input type="text" required name="nombre" id="inputNombre"/>
             </label>
 
             <label for="inputApellido">
                 Apellido
-                <input type="text" required name="apellido" />
+                <input type="text" required name="apellido" id="inputApellido"/>
             </label>
 
             <label for="inputDni">
                 DNI
-                <input type="number" required name="dni" maxlength="8" minlength="7"/>
+                <input type="number" required name="dni" maxlength="8" minlength="7" id="inputDni"/>
             </label>
 
             <label for="inputDate">
                 Fecha de nacimiento
-                <input type="date" required name="fechanacimiento" />
+                <input type="date" required name="fechanacimiento" id="inputDate"/>
             </label>
 
             <label for="inputEdad">
                 Edad
-                <input type="number" required name="edad" />
+                <input type="number" required name="edad" id="inputEdad"/>
             </label>
 
             <label for="inputSelect">
                 Obra Social
-                <select name="inputSelect">
+                <select id="inputSelect">
                     <option value="IOMA">IOMA</option>
                     <option value="OSDE">OSDE</option>
                     <option value="ASIMRA">ASIMRA</option>
@@ -59,11 +59,11 @@
             <p>¿A donde te avisamos?</p>
             <label for="inputEmail">
                 Email
-                <input type="email" required name="email"/>
+                <input type="email" required name="email" id="inputEmail" autocomplete="on"/>
             </label>
             <label for="inputTelefono">
                 Telefono
-                <input type="tel" required name="telefono"/>
+                <input type="tel" required name="telefono" id="inputTelefono"/>
             </label>
         </fieldset>
 
@@ -78,22 +78,22 @@
                     <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option> 
                 </select> 
             </label>-->
-            <label for="inputSelect">
+            <label for="selectProfesionales">
                 Profesionales
                 <select id="selectProfesionales"></select>
-                <div id="agendaContainer"></div>
+                <div class="agendaContainer"></div>
             </label>
 
                 <!--    <option value="Juan Perez">Juan Perez</option>
                     <option value="Jose Fernandez">Jose Fernandez</option> -->
 
-            <label for="inputDate">
+            <label for="fechaSelect">
                 Fecha
                 <select id="fechaSelect"></select>
                 <!--<input type="date" required name="fecha" id="fechaInput" /> -->
             </label>
 
-            <label for="inputDate">
+            <label for="horarioSelect">
                 Horario
                 <select id="horarioSelect"></select>
                 <!--<input type="date" required name="fecha" id="fechaInput" /> -->
@@ -116,12 +116,12 @@
             </label>-->      
 
             <label for="inputSubmit">
-                <input type="submit" name="inputSubmit" value="Reservar"/>
+                <input type="submit" name="inputSubmit" value="Reservar" id="inputSubmit"/>
             </label>
         </fieldset>
 
         <label for="inputReset">
-            <input type="reset" name="inputReset">
+            <input type="reset" name="inputReset" id="inputReset">
         </label>
   </form>
 

@@ -1,18 +1,20 @@
 class Especialistas {
   constructor() {
     // Obtener el elemento select del formulario
-    this.agendaContainer = document.getElementById('agendaContainer');
-    this.fechaSelect = document.getElementById('fechaSelect');
-    this.horarioSelect = document.getElementById('horarioSelect');
+    this.agendaContainer = document.querySelector('#agendaContainer');
+    //console.log(this.agendaContainer);
+    this.fechaSelect = document.querySelector('#fechaSelect');
+    this.horarioSelect = document.querySelector('#horarioSelect');
 
-    const optionInicialFecha = document.createElement('option');
-    optionInicialFecha.value = '';
-    optionInicialFecha.textContent = 'Ingrese una fecha';
+    const optionInicialFecha = PAW.nuevoElemento('option', 'Ingrese una fecha', {
+      value: ''
+    })
+    //console.log(optionInicialFecha);
     fechaSelect.appendChild(optionInicialFecha);
 
-    const optionInicialHorario = document.createElement('option');
-    optionInicialHorario.value = '';
-    optionInicialHorario.textContent = 'Ingrese un horario';
+    const optionInicialHorario = PAW.nuevoElemento('option', 'Ingrese un horario', {
+      value: ''
+    })
     horarioSelect.appendChild(optionInicialHorario);
 
     // Deshabilitar los inputs de fecha y horario inicialmente
@@ -32,44 +34,95 @@ class Especialistas {
   } //end fetchEspecialistas
 
   initSelectMedico() {
-    const selectMedico = document.getElementById('selectProfesionales');
+    const selectMedico = document.querySelector('#selectProfesionales');
 
-    const optionInicial = document.createElement('option');
-    optionInicial.value = '';
-    optionInicial.textContent = 'Ingrese un profesional';
+    const optionInicial = PAW.nuevoElemento('option', 'Ingrese un profesional', {
+      value: ''
+    })
     selectMedico.appendChild(optionInicial);
 
+    //agrega una option por cada esp. del array json
     this.especialistas.forEach(medico => {
-      const option = document.createElement('option');
-      option.value = medico.matricula;
-      option.textContent = medico.nombre + ' ' + medico.apellido;
+      const option = PAW.nuevoElemento('option', medico.nombre + ' ' + medico.apellido, {
+        value: medico.matricula
+      })
       selectMedico.appendChild(option);
     });
 
     selectMedico.addEventListener('change', () => {
       const selectedMedico = selectMedico.value;
-      console.log(selectedMedico);
+      //console.log(selectedMedico);
 
       const today = new Date();
+      //maxDate es desde hoy a 7 días
       const maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
-      console.log(maxDate);
+      //console.log(maxDate);
 
-      const medicoSeleccionado = this.especialistas.find(medico => medico.matricula === selectedMedico);
-      console.log(medicoSeleccionado);
+      //busca en el array la matricula que coincida con el valor de la option seleccionada
+      const medicoSeleccionado = 
+        this.especialistas.find(medico => medico.matricula === selectedMedico);
+      //console.log(medicoSeleccionado);
 
+      //obtiene los dias que atiende cada esp.
+      //filter crea un array
       const diasHabilitados = medicoSeleccionado.diasQueAtiende.filter(dia => {
-        const fecha = this.getNextDayOfWeek(dia);
-        console.log(fecha);
+        const fecha = this.getNextDayOfWeek(dia); //obtiene tipo Date
         return fecha >= today && fecha <= maxDate;
-      });
+      }); //end filter
 
-      console.log(diasHabilitados);
+      console.log(diasHabilitados)
 
       const turnosDiponibles = this.obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
       //this.mostrarAgenda(turnosDiponibles);
       this.mostrarFechasDisponibles(turnosDiponibles);
-    });
+    }); //end addEventListener change
   } //end initSelectMedico
+
+    //retorna prox Date del dia (string) que le llega
+    getNextDayOfWeek(dayOfWeek) {
+      const today = new Date();
+      const currentDay = today.getDay(); //num de dia de la semana
+      const targetDay = this.getTargetDayOfWeek(dayOfWeek); //obtiene num de dia de la semana
+      const daysToAdd = (targetDay + 7 - currentDay) % 7; //(1+7-6) % 7 = 2
+
+      today.setDate(today.getDate() + daysToAdd); //cambia dia del mes 
+      today.setHours(0, 0, 0, 0);
+      return today;
+    } //end getNextDayOfWeek
+
+  // Aca obtenemos los turnos disponibles para cada especialista
+  obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado) {
+    const turnosDisponibles = [];
+    //console.log(diasHabilitados);
+    diasHabilitados.forEach(dia => {
+      const fecha = this.getNextDayOfWeek(dia); //Date
+      const horarioInicio = medicoSeleccionado.horarioInicio;
+      const horarioFinalizacion = medicoSeleccionado.horarioFinalizacion;
+      const duracionTurno = medicoSeleccionado.duracionTurno;
+    
+      const horarioActual = 
+          new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(),
+          horarioInicio.horas, horarioInicio.minutos); //
+      const horarioFin = new Date(fecha.getFullYear(), fecha.getMonth(),
+       fecha.getDate(), horarioFinalizacion.horas, horarioFinalizacion.minutos);
+    
+      while (horarioActual < horarioFin) {
+        const turno = {
+          dia: dia,
+          horas: horarioActual.getHours(),
+          minutos: horarioActual.getMinutes()
+        };
+        //console.log(turno);
+    
+        if (this.turnoEstaDisponible(turno, medicoSeleccionado.turnosTomados))
+          turnosDisponibles.push(turno);
+    
+        horarioActual.setTime(horarioActual.getTime() + duracionTurno * 60000);
+      }
+    });
+    //console.log(turnosDisponibles);
+    return turnosDisponibles;
+  } //end obtenerTurnosDisponibles
 
   mostrarFechasDisponibles(turnosDisponibles) {
     this.fechaSelect.innerHTML = '';
@@ -148,37 +201,6 @@ class Especialistas {
     this.agendaContainer.appendChild(tablaAgenda);
   } //end mostrarAgenda
 
-  // Aca obtenemos los turnos disponibles para cada especialista
-  obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado) {
-    const turnosDisponibles = [];
-    console.log(diasHabilitados);
-    diasHabilitados.forEach(dia => {
-      const fecha = this.getNextDayOfWeek(dia);
-      const horarioInicio = medicoSeleccionado.horarioInicio;
-      const horarioFinalizacion = medicoSeleccionado.horarioFinalizacion;
-      const duracionTurno = medicoSeleccionado.duracionTurno;
-    
-      const horarioActual = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horarioInicio.horas, horarioInicio.minutos);
-      const horarioFin = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horarioFinalizacion.horas, horarioFinalizacion.minutos);
-    
-      while (horarioActual < horarioFin) {
-        const turno = {
-          dia: dia,
-          horas: horarioActual.getHours(),
-          minutos: horarioActual.getMinutes()
-        };
-        console.log(turno);
-    
-        if (this.turnoEstaDisponible(turno, medicoSeleccionado.turnosTomados))
-          turnosDisponibles.push(turno);
-    
-        horarioActual.setTime(horarioActual.getTime() + duracionTurno * 60000);
-      }
-    });
-    console.log(turnosDisponibles);
-    return turnosDisponibles;
-  } //end obtenerTurnosDisponibles
-
   turnoEstaDisponible(turno, turnosTomados) {
     return !turnosTomados.some(turnoTomado => {
       return (
@@ -188,19 +210,8 @@ class Especialistas {
       );
     });
   } //end turnoEstaDisponible
-    
-  getNextDayOfWeek(dayOfWeek) {
-    const today = new Date();
-    const currentDay = today.getDay();
-    const targetDay = this.getTargetDayOfWeek(dayOfWeek);
-    console.log(targetDay);
-    const daysToAdd = (targetDay + 7 - currentDay) % 7;
 
-    today.setDate(today.getDate() + daysToAdd);
-    today.setHours(0, 0, 0, 0);
-    return today;
-  } //end getNextDayOfWeek
-
+  //retorna num de dia de la semana
   getTargetDayOfWeek(dayOfWeek) {
     const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     return days.indexOf(dayOfWeek);
