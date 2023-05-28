@@ -26,22 +26,27 @@
                 Nombre
                 <input type="text" required name="nombre" />
             </label>
+
             <label for="inputApellido">
                 Apellido
                 <input type="text" required name="apellido" />
             </label>
+
             <label for="inputDni">
                 DNI
                 <input type="number" required name="dni" maxlength="8" minlength="7"/>
             </label>
+
             <label for="inputDate">
                 Fecha de nacimiento
                 <input type="date" required name="fechanacimiento" />
             </label>
+
             <label for="inputEdad">
                 Edad
                 <input type="number" required name="edad" />
             </label>
+
             <label for="inputSelect">
                 Obra Social
                 <select name="inputSelect">
@@ -50,6 +55,7 @@
                     <option value="ASIMRA">ASIMRA</option>
                 </select>
             </label>
+
             <p>¿A donde te avisamos?</p>
             <label for="inputEmail">
                 Email
@@ -60,6 +66,8 @@
                 <input type="tel" required name="telefono"/>
             </label>
         </fieldset>
+
+
         <fieldset>
             <legend>Datos del Turno</legend>
             <!--<label for="inputSelect">
@@ -68,28 +76,29 @@
                     <option value="ODONTOLOGIA">ODONTOLOGIA</option>
                     <option value="GINECOLOGIA">GINECOLOGIA</option>
                     <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option> 
-                </select> -->
-            </label>
+                </select> 
+            </label>-->
             <label for="inputSelect">
                 Profesionales
-                <select id="selectProfesionales">
-                <!--    <option value="Juan Perez">Juan Perez</option>
-                    <option value="Jose Fernandez">Jose Fernandez</option> -->
-                </select>
+                <select id="selectProfesionales"></select>
                 <div id="agendaContainer"></div>
             </label>
+
+                <!--    <option value="Juan Perez">Juan Perez</option>
+                    <option value="Jose Fernandez">Jose Fernandez</option> -->
+
             <label for="inputDate">
                 Fecha
+                <select id="fechaSelect"></select>
                 <!--<input type="date" required name="fecha" id="fechaInput" /> -->
-                <select id="fechaSelect">
-                </select>
             </label>
+
             <label for="inputDate">
                 Horario
+                <select id="horarioSelect"></select>
                 <!--<input type="date" required name="fecha" id="fechaInput" /> -->
-                <select id="horarioSelect">
-                </select>
             </label>
+
             <!--<label for="inputHorarios">
                 Horarios
                 <label for="opcion1">
@@ -103,12 +112,14 @@
                 <label for="opcion3">
                     11:30
                     <input type="radio" id="opcion3" required name="horario" value="11:30">
-                </label> -->
-            </label>            
+                </label> 
+            </label>-->      
+
             <label for="inputSubmit">
                 <input type="submit" name="inputSubmit" value="Reservar"/>
             </label>
         </fieldset>
+
         <label for="inputReset">
             <input type="reset" name="inputReset">
         </label>

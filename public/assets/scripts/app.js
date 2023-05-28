@@ -32,7 +32,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la funcionalidad de mostrar especialistas (Punto 2)
                 PAW.cargarScript("Especialistas", "assets/scripts/components/especialistas.js", () => {
-                        let especialistas = new Especialistas();
+                        new Especialistas();
                 });
             }
 

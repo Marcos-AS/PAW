@@ -27,10 +27,9 @@ class Especialistas {
       .then(response => response.json())
       .then(data => {
         this.especialistas = data.especialistas;
-        console.log(this.especialistas);
         this.initSelectMedico();
       });
-  }
+  } //end fetchEspecialistas
 
   initSelectMedico() {
     const selectMedico = document.getElementById('selectProfesionales');
@@ -70,7 +69,7 @@ class Especialistas {
       //this.mostrarAgenda(turnosDiponibles);
       this.mostrarFechasDisponibles(turnosDiponibles);
     });
-  }
+  } //end initSelectMedico
 
   mostrarFechasDisponibles(turnosDisponibles) {
     this.fechaSelect.innerHTML = '';
@@ -108,7 +107,7 @@ class Especialistas {
 
       this.horarioSelect.disabled = false;
     });
-  }
+  } //end mostrarFechasDisponibles
   
   mostrarAgenda(turnosDisponibles) {
     this.agendaContainer.innerHTML = '';
@@ -147,7 +146,7 @@ class Especialistas {
     });
 
     this.agendaContainer.appendChild(tablaAgenda);
-  }
+  } //end mostrarAgenda
 
   // Aca obtenemos los turnos disponibles para cada especialista
   obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado) {
@@ -178,7 +177,7 @@ class Especialistas {
     });
     console.log(turnosDisponibles);
     return turnosDisponibles;
-  }
+  } //end obtenerTurnosDisponibles
 
   turnoEstaDisponible(turno, turnosTomados) {
     return !turnosTomados.some(turnoTomado => {
@@ -188,7 +187,7 @@ class Especialistas {
         turnoTomado.minutos === turno.minutos
       );
     });
-  }
+  } //end turnoEstaDisponible
     
   getNextDayOfWeek(dayOfWeek) {
     const today = new Date();
@@ -200,7 +199,7 @@ class Especialistas {
     today.setDate(today.getDate() + daysToAdd);
     today.setHours(0, 0, 0, 0);
     return today;
-  }
+  } //end getNextDayOfWeek
 
   getTargetDayOfWeek(dayOfWeek) {
     const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
