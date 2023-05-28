@@ -80,8 +80,9 @@
             </label>-->
             <label for="selectProfesionales">
                 Profesionales
-                <select id="selectProfesionales"></select>
-                <div class="agendaContainer"></div>
+                <select id="selectProfesionales">
+                    <option value="">Elija un profesional</option>
+                </select>
             </label>
 
                 <!--    <option value="Juan Perez">Juan Perez</option>
@@ -89,13 +90,17 @@
 
             <label for="fechaSelect">
                 Fecha
-                <select id="fechaSelect"></select>
+                <select id="fechaSelect" disabled>
+                    <option value="">Ingrese una fecha</option>
+                </select>
                 <!--<input type="date" required name="fecha" id="fechaInput" /> -->
             </label>
-
+            
             <label for="horarioSelect">
                 Horario
-                <select id="horarioSelect"></select>
+                <select id="horarioSelect" disabled>
+                    <option value="">Ingrese un horario</option>
+                </select>
                 <!--<input type="date" required name="fecha" id="fechaInput" /> -->
             </label>
 
