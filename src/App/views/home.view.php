@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+{% extends "base.php" %}
+
+{% block title %}Home{% endblock %}
+
+<!--<!DOCTYPE html>
 <html lang="es">
     <head>
         <title> Página de inicio </title>
@@ -16,9 +20,9 @@
     </head> 
     <body>
 
-        <?php require __DIR__ . '/./parts/header.view.php' ?>
+        <?php #require __DIR__ . '/./parts/header.view.php' ?>
 
-        <?php require __DIR__ . '/./parts/nav.view.php' ?>
+        <?php #require __DIR__ . '/./parts/nav.view.php' ?>
 
        <section class="carousel"></section>
        <section class="sBusqueda">
@@ -97,8 +101,8 @@
             </p>
         </section>
     
-        <?php require __DIR__ . '/./parts/footer.view.php' ?>
+        <?php #require __DIR__ . '/./parts/footer.view.php' ?>
         
     </body>
 
-</html>
+</html> -->

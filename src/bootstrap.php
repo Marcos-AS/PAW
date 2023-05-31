@@ -9,6 +9,8 @@ use Dotenv\Dotenv;
 use Paw\Core\Router;
 use Paw\Core\Request;
 use Paw\Core\Config;
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
 use Paw\Core\Database\ConnectionBuilder;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
@@ -28,6 +30,11 @@ $connection = $connectionBuilder-> make($config);
 $whoops = new \Whoops\Run;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops -> register();
+
+$loader = new FilesystemLoader(__DIR__ . '/App/views/');
+$twig = new Environment($loader, [
+    'cache' => '/path/to/compilation_cache',
+]);
 
 $request = new Request;
 

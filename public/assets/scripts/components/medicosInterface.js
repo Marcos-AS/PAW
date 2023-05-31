@@ -108,22 +108,9 @@ class medicosInterface {
     } //end seleccionarTurno
     
     day2Name(numDay) {
-        switch (numDay) {
-            case 1:
-                return 'Lunes';
-            case 2:
-                return 'Martes';
-            case 3:
-                return 'Miércoles';
-            case 4:
-                return 'Jueves';
-            case 5:
-                return 'Viernes';
-            case 6:
-                return 'Sábado';
-            case 7:
-                return 'Domingo';
-        }
+        const days = 
+        ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+        return days.indexOf(numDay-1);
     } //end day2Name
                             
     //agrega un p que informa estado del turno al hacer clic en los btns

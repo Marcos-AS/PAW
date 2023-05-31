@@ -24,75 +24,89 @@
             <legend>Datos del Paciente</legend>
             <label for="inputNombre">
                 Nombre
-                <input type="text" required name="nombre" />
+                <input type="text" required name="nombre" id="inputNombre"/>
             </label>
+
             <label for="inputApellido">
                 Apellido
-                <input type="text" required name="apellido" />
+                <input type="text" required name="apellido" id="inputApellido"/>
             </label>
+
             <label for="inputDni">
                 DNI
-                <input type="number" required name="dni" maxlength="8" minlength="7"/>
+                <input type="number" required name="dni" maxlength="8" minlength="7" id="inputDni"/>
             </label>
+
             <label for="inputDate">
                 Fecha de nacimiento
-                <input type="date" required name="fechanacimiento" />
+                <input type="date" required name="fechanacimiento" id="inputDate"/>
             </label>
+
             <label for="inputEdad">
                 Edad
-                <input type="number" required name="edad" />
+                <input type="number" required name="edad" id="inputEdad"/>
             </label>
+
             <label for="inputSelect">
                 Obra Social
-                <select name="inputSelect">
+                <select id="inputSelect">
                     <option value="IOMA">IOMA</option>
                     <option value="OSDE">OSDE</option>
                     <option value="ASIMRA">ASIMRA</option>
                 </select>
             </label>
-            <p>¿A donde te avisamos?</p>
+
+            <p>¿A dónde te avisamos?</p>
             <label for="inputEmail">
                 Email
-                <input type="email" required name="email"/>
+                <input type="email" required name="email" id="inputEmail" autocomplete="on"/>
             </label>
             <label for="inputTelefono">
                 Telefono
-                <input type="tel" required name="telefono"/>
+                <input type="tel" required name="telefono" id="inputTelefono"/>
             </label>
         </fieldset>
+
+
         <fieldset>
             <legend>Datos del Turno</legend>
             <!--<label for="inputSelect">
                 Especialidad
                 <select name="inputSelect" id="profesionales">
-                <!--    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
+                    <option value="ODONTOLOGIA">ODONTOLOGIA</option>
                     <option value="GINECOLOGIA">GINECOLOGIA</option>
                     <option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option> 
-                </select> -->
-            </label>
-            <label for="inputSelect">
+                </select> 
+            </label>-->
+            <label for="selectProfesionales">
                 Profesionales
                 <select id="selectProfesionales">
+                    <option value="">Elija un profesional</option>
+                </select>
+            </label>
+
                 <!--    <option value="Juan Perez">Juan Perez</option>
                     <option value="Jose Fernandez">Jose Fernandez</option> -->
-                </select>
-                <div id="agendaContainer"></div>
-            </label>
-            <label for="inputDate">
+
+            <label for="fechaSelect">
                 Fecha
-                <!--<input type="date" required name="fecha" id="fechaInput" /> -->
-                <select id="fechaSelect">
+                <select id="fechaSelect" disabled>
+                    <option value="">Ingrese una fecha</option>
                 </select>
+                <!--<input type="date" required name="fecha" id="fechaInput" /> -->
             </label>
-            <label for="inputDate">
+            
+            <label for="horarioSelect">
                 Horario
-                <!--<input type="date" required name="fecha" id="fechaInput" /> -->
-                <select id="horarioSelect">
+                <select id="horarioSelect" disabled>
+                    <option value="">Ingrese un horario</option>
                 </select>
+                <!--<input type="date" required name="fecha" id="fechaInput" /> -->
             </label>
+
             <!--<label for="inputHorarios">
                 Horarios
-            <!--    <label for="opcion1">
+                <label for="opcion1">
                     10:30
                     <input type="radio" id="opcion1" required name="horario" value="10:30">
                 </label>
@@ -103,14 +117,16 @@
                 <label for="opcion3">
                     11:30
                     <input type="radio" id="opcion3" required name="horario" value="11:30">
-                </label> -->
-            </label>            
+                </label> 
+            </label>-->      
+
             <label for="inputSubmit">
-                <input type="submit" name="inputSubmit" value="Reservar"/>
+                <input type="submit" name="inputSubmit" value="Reservar" id="inputSubmit"/>
             </label>
         </fieldset>
+
         <label for="inputReset">
-            <input type="reset" name="inputReset">
+            <input type="reset" name="inputReset" id="inputReset">
         </label>
   </form>
 
