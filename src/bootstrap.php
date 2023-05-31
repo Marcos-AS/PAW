@@ -9,6 +9,8 @@ use Monolog\Handler\StreamHandler;
 use Paw\Core\Router;
 use Paw\Core\Request;
 use Paw\Core\Config;
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
 //use Paw\Core\Database\ConnectionBuilder;
 
 $config = new Config;
@@ -23,6 +25,11 @@ $log -> pushHandler($handler);
 $whoops = new \Whoops\Run;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops -> register();
+
+$loader = new FilesystemLoader(__DIR__ . '/App/views/');
+$twig = new Environment($loader, [
+    'cache' => '/path/to/compilation_cache',
+]);
 
 $request = new Request;
 
