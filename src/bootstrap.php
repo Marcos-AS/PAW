@@ -4,21 +4,26 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-//use Dotenv\Dotenv;
+use Dotenv\Dotenv;
 
 use Paw\Core\Router;
 use Paw\Core\Request;
 use Paw\Core\Config;
-//use Paw\Core\Database\ConnectionBuilder;
+use Paw\Core\Database\ConnectionBuilder;
+
+$dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
+$dotenv -> load();
 
 $config = new Config;
 
 $log = new Logger('mvc-app');
-//$handler = new StreamHandler($config -> get("LOG_PATH"));
-//$handler -> setLevel($config -> get("LOG_LEVEL"));
-$handler = new StreamHandler('../logs/app.log');
-$handler -> setLevel(Monolog\Logger::DEBUG);
+$handler = new StreamHandler($config -> get("LOG_PATH"));
+$handler -> setLevel($config -> get("LOG_LEVEL"));
 $log -> pushHandler($handler);
+
+$connectionBuilder = new ConnectionBuilder;
+$connectionBuilder -> setLogger($log);
+$connection = $connectionBuilder-> make($config);
 
 $whoops = new \Whoops\Run;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
