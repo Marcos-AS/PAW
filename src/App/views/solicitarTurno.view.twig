@@ -1,0 +1,99 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}    
+    <link rel="stylesheet" href="/assets/css/solicitarTurno.css">
+{% endblock head %}
+
+{% block title %}Solicitar Turno{% endblock title %}
+
+{% block content %}
+<h2>Solicitud de Turno</h2>
+<form action="/solicitarTurno" method="post">
+    <fieldset>
+        <legend>Datos del Paciente</legend>
+        <label for="inputNombre">
+            Nombre
+            <input type="text" required name="nombre" id="inputNombre"/>
+        </label>
+
+        <label for="inputApellido">
+            Apellido
+            <input type="text" required name="apellido" id="inputApellido"/>
+        </label>
+
+        <label for="inputDni">
+            DNI
+            <input type="number" required name="dni" maxlength="8" minlength="7" id="inputDni"/>
+        </label>
+
+        <label for="inputDate">
+            Fecha de nacimiento
+            <input type="date" required name="fechanacimiento" id="inputDate"/>
+        </label>
+
+        <label for="inputEdad">
+            Edad
+            <input type="number" required name="edad" id="inputEdad"/>
+        </label>
+
+        <label for="inputSelect">
+            Obra Social
+            <select id="inputSelect">
+                <option value="IOMA">IOMA</option>
+                <option value="OSDE">OSDE</option>
+                <option value="ASIMRA">ASIMRA</option>
+            </select>
+        </label>
+
+        <p>¿A dónde te avisamos?</p>
+        <label for="inputEmail">
+            Email
+            <input type="email" required name="email" id="inputEmail" autocomplete="on"/>
+        </label>
+        <label for="inputTelefono">
+            Telefono
+            <input type="tel" required name="telefono" id="inputTelefono"/>
+        </label>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Datos del Turno</legend>
+
+        <label for="selectProfesionales">
+            Profesionales
+            <select id="selectProfesionales">
+                <option value="">Elija un profesional</option>
+            </select>
+        </label>
+        <label for="fechaSelect">
+            Fecha
+            <select id="fechaSelect" disabled>
+                <option value="">Ingrese una fecha</option>
+            </select>
+            <!--<input type="date" required name="fecha" id="fechaInput" /> -->
+        </label>
+        
+        <label for="horarioSelect">
+            Horario
+            <select id="horarioSelect" disabled>
+                <option value="">Ingrese un horario</option>
+            </select>
+        </label>
+
+        <label for="inputSubmit">
+            <input type="submit" name="inputSubmit" value="Reservar" id="inputSubmit"/>
+        </label>
+    </fieldset>
+
+    <label for="inputReset">
+        <input type="reset" name="inputReset" id="inputReset">
+    </label>
+</form>
+
+<div id="dropzone">
+    Arrastra y suelta archivos aquí   
+</div>
+
+{% endblock content %}

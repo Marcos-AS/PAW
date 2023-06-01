@@ -2,8 +2,9 @@
 
 namespace Paw\App\controllers;
 use Paw\Core\Controller;
-
 use Paw\App\models\Turno;
+
+include 'twig.php';
 
 class TurnoController extends Controller{
 
@@ -23,7 +24,13 @@ class TurnoController extends Controller{
     }
 
     public function solicitarTurno($procesado = false) {
-        require $this ->viewsDir . '/solicitarTurno.view.php';
+        $twig = new TwigClass();
+        echo $twig->renderTemp('solicitarTurno.view.twig', [
+            'menu' => $this->menu,
+            'subMenuInstitucional' => $this->subMenuInstitucional,
+            'subMenuInformacionUtil' => $this->subMenuInformacionUtil,
+        ]);
+        //require $this ->viewsDir . '/solicitarTurno.view.twig';
     }
 
 }

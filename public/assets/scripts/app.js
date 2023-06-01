@@ -5,12 +5,12 @@ class appPAW {
 
             //Inicializar la funcionalidad Menu
 		    PAW.cargarScript("Hamburguesa", "../assets/scripts/components/hamburguesa.js", () => {	
-                    let hamburguesa = new Hamburguesa();
-			    });
+                    new Hamburguesa();
+			});
 
             //Inicializar la funcionalidad SubMenu
             PAW.cargarScript("Submenu", "../assets/scripts/components/submenu.js", () => {	
-                });
+            });
             
             let contenedor = document.querySelector(".carousel");
 
@@ -23,7 +23,7 @@ class appPAW {
                         "/assets/imgs/3.jpg"
                     ];
                 
-                    const carousel = new Carousel(".carousel", images);
+                    new Carousel(".carousel", images);
                 });
             }
 
@@ -41,7 +41,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la funcionalidad de DragAndDrop (Punto 3)
                 PAW.cargarScript("DragDrop", "assets/scripts/components/dragdrop.js", () => {
-                        let dragdrop = new DragDrop("#dropzone");
+                        new DragDrop("#dropzone");
                 });
             }
             
@@ -50,7 +50,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar las operaciones en la tabla
                 PAW.cargarScript("Operaciones", "/assets/scripts/components/operacionesEstudios.js", () => {
-                        let opTabla = new Operaciones("tEstudios");
+                        new Operaciones("tEstudios");
                 });
             }
 
@@ -59,7 +59,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la interfaz de usuario
                 PAW.cargarScript("Paciente", "assets/scripts/components/userInterface.js", () => {
-                    let infoPaciente = new UserInterface();
+                    new UserInterface();
                 });
             }
             
@@ -68,7 +68,7 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la interfaz de médicos
                 PAW.cargarScript("Medico", "assets/scripts/components/medicosInterface.js", () => {
-                    let infoMedicos = new medicosInterface();
+                    new medicosInterface();
                 });
             }
 
@@ -77,8 +77,16 @@ class appPAW {
             if (contenedor) {
                 //Inicializar la interfaz de la sala de espera
                 PAW.cargarScript("Sala de Espera", "assets/scripts/components/salaEspera.js", () => {
-                    let sala = new SalaEspera();
+                    new SalaEspera();
                 });
+            }
+
+            contenedor = document.querySelector(".navAutoridades");
+            if (contenedor) {
+                //inicializar el nav de la sección autoridades
+                PAW.cargarScript("Autoridades", "/../assets/scripts/components/autoridades.js", () => {
+                    new Autoridades();
+                })
             }
         });
     }

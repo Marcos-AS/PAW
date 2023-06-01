@@ -1,6 +1,6 @@
-    class SalaEspera {
+class SalaEspera {
 
-        constructor() {
+    constructor() {
         // Crear el elemento <link>
         let css = PAW.nuevoElemento("link", "", {
             rel: "stylesheet",

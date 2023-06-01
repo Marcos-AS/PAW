@@ -4,7 +4,7 @@ class medicosInterface {
         .then(() => {
             let day = this.day2Name(new Date().getDay());
             let date = new Date().getDate();
-            this.getTurnosDelDia('Martes'); //le pasa nombre del dia de hoy
+            this.getTurnosDelDia(day); //le pasa nombre del dia de hoy
             let titulo = document.querySelector('h1');
             titulo.textContent += ': ' + day + ' ' + date; //setea el h1
             this.botonesSeleccionarTurno();
