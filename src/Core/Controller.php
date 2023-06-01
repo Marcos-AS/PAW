@@ -5,6 +5,8 @@ namespace Paw\Core;
 class Controller {
 
     public string $viewsDir;
+    public ?string $modelName = null;
+    public $model;
 
     public function __construct(){
         $this -> viewsDir = __DIR__  . '/../App/views/';
@@ -60,11 +62,19 @@ class Controller {
                 "name" => "Patologias y Tratamientos",
             ],
         ];
+
+        if(!is_null($this -> modelName)) {
+            $qb = new QueryBuilder($connection, $log);
+            $model = new $this -> modelName;
+            $model -> setQueryBuilder($qb);
+            $this -> setModel($model);
+        }
     }
 
-
-
-
+    
+    public function setModel(Model $model) {
+        $this -> model = $model;
+    }
 
 
 }

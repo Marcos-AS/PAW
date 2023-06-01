@@ -61,6 +61,11 @@ $router -> post('/guardar-estudio', 'EstudioController@guardarEstudio');
 $router -> get('/interfaz-usuario', 'PageController@UI');
 $router -> get('/interfaz-medicos', 'PageController@interfazMedicos');
 $router -> get('/sala-espera', 'PageController@salaEspera');
+$router -> get('/authors', 'AuthorsController@index');
+$router -> get('/author', 'AuthorsController@get');
+$router -> get('/author/edit', 'AuthorsController@edit');
+$router -> post('/author/edit', 'AuthorsController@set');
+
 
 /*$router -> get('/about', 'PageController@about');
 $router -> get('/services', 'PageController@services');

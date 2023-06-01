@@ -3,6 +3,7 @@
 namespace Paw\App\models;
 
 use Paw\Core\Model;
+use Paw\Core\Exceptions\InvalidValueFormatException;
 use Exception;
 
 class Autor extends Model {
@@ -16,14 +17,14 @@ class Autor extends Model {
 
     public function setNombre(string $nombre) {
         if (strlen($nombre) > 60) {
-            throw new Exception("El nombre del autor no debe ser mayor a 60 caracteres");
+            throw new InvalidValueFormatException("El nombre del autor no debe ser mayor a 60 caracteres");
         }
         $this -> fields["nombre"] = $nombre;
     }
 
     public function setEmail(string $email) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new Exception("Formato de email no válido");
+            throw new InvalidValueFormatException("Formato de email no válido");
         }
         $this -> fields["email"] = $email;
     }
