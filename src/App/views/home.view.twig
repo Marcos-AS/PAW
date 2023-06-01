@@ -50,11 +50,11 @@
         <label for="inputSubmit">
              <input type="submit" name="inputSubmit">
         </label> 
-        <?php //if ($procesado) : ?>
-        <div>
-            Su peticion fue procesada con exito.
-        </div>
-        <?php //endif; ?>               
+        {% if procesado %}    
+            <div>
+                Su peticion fue procesada con exito.
+            </div>
+        {% endif %}
     </form>
 </section>
 </section>

@@ -35,17 +35,14 @@ class UserController extends Controller {
 
     public function nuevoUsuario($procesado=false) {
         echo $this->twig->renderTemp('/portal-pacientes/nuevo-usuario.view.twig', $this->parts);
-        //require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
     }
 
     public function perfilUsuario() {
         echo $this->twig->renderTemp('/portal-pacientes/perfil-usuario.view.twig', $this->parts);
-        //require $this ->viewsDir . '/portal-pacientes/perfil-usuario.view.php';
     }
 
     public function recuperarPassword() {
         echo $this->twig->renderTemp('/portal-pacientes/recuperar-password.view.twig', $this->parts);
-        //require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
     }
 
     public function estudiosRealizados($procesado= false) {
@@ -54,7 +51,6 @@ class UserController extends Controller {
     
     public function historialTurnos() {
         echo $this->twig->renderTemp('/portal-pacientes/historial-turnos.view.twig', $this->parts);        
-        //require $this ->viewsDir . '/portal-pacientes/historial-turnos.view.php';
     }
 
 

@@ -59,11 +59,11 @@
     <label for="inputSubmit">
         <input type="submit" name="inputSubmit"/>
     </label>
-    <?php if ($procesado) : ?>
+    {% if procesado %}
         <div>
             Su peticion fue procesada con exito.
-        </div>
-    <?php endif; ?>
+        </div>        
+    {% endif %}
 </form>
 
 {% endblock content %}
