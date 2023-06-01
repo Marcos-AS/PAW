@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block title %}Perfil usuario{% endblock title %}
+
+{% block content %}
+<nav class="menu">
+    <ul>
+        <li>
+            <a href="/portal-pacientes/perfil-usuario">Mi perfil</a>
+        </li>
+        <li>
+            <a href="/portal-pacientes/historial-turnos">Historial de turnos</a>
+        </li>
+        <li>
+            <a href="/portal-pacientes/estudios-realizados">Estudios realizados</a>
+        </li>
+        <li>
+            <a href="#">Cerrar sesión</a>
+        </li>
+    </ul>
+</nav>
+
+<h2>¡Hola, Juan!</h2>
+<h3>Tus próximos turnos</h3>
+<a href="/solicitarTurno.html"> Reserva tu turno</a>
+<p>Turno 20/03 19:00 Cardiología: Dr. Juan Pérez (confirmado)</p>
+<p>Turno 27/03 19:00 Cardiología: Dr. Juan Pérez</p>
+
+{% endblock content %}

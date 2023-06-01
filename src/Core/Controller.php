@@ -1,12 +1,15 @@
 <?php
 
 namespace Paw\Core;
+include 'twig.php';
 
 class Controller {
 
     public string $viewsDir;
     public ?string $modelName = null;
     public $model;
+    protected $parts = ['menu', 'subMenuInstitucional', 'subMenuInformacionUtil'];
+    protected $twig;
 
     public function __construct(){
         $this -> viewsDir = __DIR__  . '/../App/views/';
@@ -62,6 +65,12 @@ class Controller {
                 "name" => "Patologias y Tratamientos",
             ],
         ];
+
+        $this->twig = new TwigClass();
+
+        $this->parts['menu'] = $this->menu;
+        $this->parts['subMenuInstitucional'] = $this->subMenuInstitucional;
+        $this->parts['subMenuInformacionUtil'] = $this->subMenuInformacionUtil;
 
         if(!is_null($this -> modelName)) {
             $qb = new QueryBuilder($connection, $log);

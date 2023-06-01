@@ -1,6 +1,6 @@
 <?php
 
-namespace Paw\App\controllers;
+namespace Paw\Core;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
@@ -11,7 +11,7 @@ class TwigClass {
     private $twig;
     
     public function __construct() {
-        $this->templatesDir = __DIR__ . '/../views';
+        $this->templatesDir = __DIR__ . '/../App/views';
         $this->loader = new FilesystemLoader($this->templatesDir);
         $this->twig = new Environment($this->loader, [
             'cache' => false,

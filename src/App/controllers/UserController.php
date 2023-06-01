@@ -17,7 +17,8 @@ class UserController extends Controller {
     }   
 
     public function inicioUsuario() {
-        require $this ->viewsDir . '/portal-pacientes/inicio-usuario.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/inicio-usuario.view.twig', $this->parts);
+        //require $this ->viewsDir . '/portal-pacientes/inicio-usuario.view.twig';
     }
 
     public function registroUsuario() {
@@ -33,23 +34,27 @@ class UserController extends Controller {
     }
 
     public function nuevoUsuario($procesado=false) {
-        require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/nuevo-usuario.view.twig', $this->parts);
+        //require $this ->viewsDir . '/portal-pacientes/nuevo-usuario.view.php';
     }
 
     public function perfilUsuario() {
-        require $this ->viewsDir . '/portal-pacientes/perfil-usuario.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/perfil-usuario.view.twig', $this->parts);
+        //require $this ->viewsDir . '/portal-pacientes/perfil-usuario.view.php';
     }
 
     public function recuperarPassword() {
-        require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/recuperar-password.view.twig', $this->parts);
+        //require $this ->viewsDir . '/portal-pacientes/recuperar-password.view.php';
     }
 
     public function estudiosRealizados($procesado= false) {
-        require $this ->viewsDir . '/portal-pacientes/estudios-realizados.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/estudios-realizados.view.twig', $this->parts);        
     }
-
+    
     public function historialTurnos() {
-        require $this ->viewsDir . '/portal-pacientes/historial-turnos.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/historial-turnos.view.twig', $this->parts);        
+        //require $this ->viewsDir . '/portal-pacientes/historial-turnos.view.php';
     }
 
 

@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/institucional.css">
+    <link rel="stylesheet" href="/assets/css/submenu.css">
+{% endblock head %}
+
+{% block title %}Valores{% endblock title %}
+    
+{% block content %}
+<nav class="nav-info-util">
+    <ul>
+        <li><a href="/institucional/autoridades"><p>Autoridades</p></a></li>
+        <li><a href="/institucional/historia"><p>Historia</p></a></li>
+        <li><a href="/institucional/mision"><p>Mision</p></a></li>
+        <li><a href="/institucional/valores"><p>Valores</p></a></li>
+    </ul>
+</nav>
+
+<nav class="breadcrumb">
+    <ul>
+        <li>
+            <a href="/home.html">Home</a>
+        </li>
+        <li>
+            <a href="/institucional/valores.html">Valores</a>
+        </li>
+    </ul>
+</nav>
+
+<h2>Valores</h2>
+<ol class="valores">
+    <li><p>Respeto a la vida, a la dignidad de la persona humana y a la libertad.</p></li>
+    <li><p>Profesionalismo.</p></li>
+    <li><p>Integridad.</p></li>
+    <li><p>Compromiso.</p></li>
+    <li><p>Espíritu de servicio y solidaridad.</p></li>
+    <li><p>Colaboración.</p></li>
+</ol>
+
+{% endblock content %}
