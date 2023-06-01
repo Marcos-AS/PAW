@@ -10,7 +10,7 @@ use App\Core\App;
  */
 function view($name, $data = [])
 {
-    $logger = App::get('logger');
+    $logger = App::get('mvc-app');
     $logger->debug('Datos en la vista', $data);
 
     return App::get('twig')->render("{$name}.php", $data);

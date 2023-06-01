@@ -4,11 +4,18 @@ namespace Paw\App\controllers;
 
 use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\Core\Controller;
+include 'twig.php';
 
 class PageController extends Controller{
 
     public function index($procesado= false) {
-        require $this ->viewsDir . 'home.view.php';
+        $twig = new TwigClass();
+        echo $twig->renderTemp('home.view.php.twig', [
+            'menu' => $this->menu,
+            'subMenuInstitucional' => $this->subMenuInstitucional,
+            'subMenuInformacionUtil' => $this->subMenuInformacionUtil,
+        ]);
+        //require $this ->viewsDir . 'home.view.php.twig';
     }
 
     public function autoridades() {
