@@ -17,7 +17,8 @@ class ConsultaController extends Controller{
     }
 
     public function index($procesado= false) {
-        require $this ->viewsDir . 'home.view.php';
+        echo $this->twig->renderTemp('home.view.twig', $this->parts);
+        //require $this ->viewsDir . 'home.view.php';
     }
 
 }

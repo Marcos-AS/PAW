@@ -1,5 +1,10 @@
 {% extends "base.twig" %}
 
+{% block head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/portal-pacientes.css">
+{% endblock head %}
+
 {% block title %}Perfil usuario{% endblock title %}
 
 {% block content %}

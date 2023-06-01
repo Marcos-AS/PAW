@@ -1,0 +1,54 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/profyesp.css">
+{% endblock head %}
+
+{% block title %}Profesionales y Especialidades{% endblock title %}
+
+{% block content %}
+
+<section class="profyesp">
+    <h2>Profesionales y Especialidades</h2>
+    <form action="servidor-ejemplo.com" method="get">
+        <label for="inputSearch"> Ingresa el nombre de la especialidad o profesional
+            <input type="search" name="inputSearch">
+        </label>
+        <a href="">
+            <i id="lupa" class="icono-search"></i>
+        </a>
+    </form>
+    <section class="sLetras">
+        <label class="letra" for="letra">
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+            <span>D</span>
+            <span>E</span>
+            <span>F</span>
+            <span>G</span>
+            <span>H</span>
+            <span>I</span>
+            <span>J</span>
+            <span>K</span>
+            <span>L</span>
+            <span>M</span>
+            <span>N</span>
+            <span>O</span>
+            <span>P</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>S</span>
+            <span>T</span>
+            <span>U</span>
+            <span>V</span>
+            <span>W</span>
+            <span>X</span>
+            <span>Y</span>
+            <span>Z</span>
+        </label>
+    </section>
+</section>
+
+{% endblock content %}

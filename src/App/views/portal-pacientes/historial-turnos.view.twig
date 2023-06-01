@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de turnos</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/styles/portal-pacientes.css">    
-    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
-    <script src="/assets/scripts/components/classPaw.js"></script>
-    <script src="/assets/scripts/app.js"></script>
-</head>
-<body>
-    
-    <?php require __DIR__ . '/../parts/header.view.php' ?>
-    
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/portal-pacientes.css">
+{% endblock head %}
+
+{% block title %}Historial de turnos{% endblock title %}
+
+{% block content %}
+
     <nav class="menu">
         <ul>
             <li>
@@ -80,8 +74,4 @@
         </tbody>
     </table>
 
-    <?php require __DIR__ . '/../parts/footer.view.php' ?>
-
-</body>
-</html>
-
+{% endblock content %}

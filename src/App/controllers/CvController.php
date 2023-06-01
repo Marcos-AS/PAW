@@ -22,7 +22,8 @@ class CvController extends Controller{
     }
 
     public function trabajaconnosotros($procesado= false) {
-        require $this ->viewsDir . '/trabajaconnosotros.view.php';
+        echo $this->twig->renderTemp('/trabajaconnosotros.view.twig', $this->parts);
+        //require $this ->viewsDir . '/trabajaconnosotros.view.php';
     }
 
 

@@ -31,7 +31,8 @@ public function guardarEstudio()
     }
 
     public function estudiosRealizados($procesado= false) {
-        require $this ->viewsDir . '/portal-pacientes/estudios-realizados.view.php';
+        echo $this->twig->renderTemp('/portal-pacientes/estudios-realizados.view.twig', $this->parts);
+        //require $this ->viewsDir . '/portal-pacientes/estudios-realizados.view.php';
     }
 
 }
