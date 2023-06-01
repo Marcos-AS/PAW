@@ -9,39 +9,36 @@
                             <i id="desplegable1" class="icono-caretDown" aria-hidden="true"></i>
                         </span>
                     </a>
+                    {% if item.name == 'Institucional' %}
+                        <ul class="dropdown-menu sub-menu">
+                            {% for submenuItem in subMenuInstitucional %}
+                                <li>
+                                    <a href="{{ submenuItem.href }}">
+                                        {{ submenuItem.name}}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if item.name == 'Informacion Util' %}
+                        <ul class="dropdown-menu sub-menu">
+                            {% for submenuItem in subMenuInformacionUtil %}
+                                <li>
+                                    <a href="{{ submenuItem.href }}">
+                                        {{ submenuItem.name}}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
             {% else %}
                 <li class="dropdown">
                     <a href="{{ item.href }}">
                         {{ item.name }}
                     </a>
-                </li>    
+                </li>
             {% endif %}
-
-            {% if item.name == 'Institucional' %}
-                <ul class="dropdown-menu sub-menu">
-                    {% for submenuItem in subMenuInstitucional %}
-                    <li>
-                        <a href="{{ submenuItem.href }}">
-                            {{ submenuItem.name}}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-
-            {% if item.name == 'Informacion Util' %}
-                <ul class="dropdown-menu sub-menu">
-                    {% for submenuItem in subMenuInformacionUtil %}
-                    <li>
-                        <a href="{{ submenuItem.href }}">
-                            {{ submenuItem.name}}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-
         {% endfor %}
     </ul>
 </nav>
