@@ -58,11 +58,11 @@
                 <input type="submit" name="inputSubmit" value="Aceptar"/>
             </label>
         </form>
-        <?php if ($procesado) : ?>
+        {% if procesado %}            
             <div>
                 Usuario registrado con exito.
             </div>
-        <?php endif; ?>
+        {% endif %}
     </section>
     
 {% endblock content %}
