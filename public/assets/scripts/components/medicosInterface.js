@@ -3,7 +3,6 @@ class medicosInterface {
         this.fetchEspecialistas()
         .then(() => {
             let day = this.day2Name(new Date().getDay());
-            console.log(day);
             let date = new Date().getDate();
             this.getTurnosDelDia(day); //le pasa nombre del dia de hoy
             let titulo = document.querySelector('h1');
@@ -110,7 +109,7 @@ class medicosInterface {
     
     day2Name(numDay) {
         const days = 
-        ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+        ['','Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
         return days[numDay];
     } //end day2Name
                             
