@@ -34,10 +34,22 @@ class QueryBuilder {
         return $this->pdo;
     }
 
-    public function insert() {
-
+    public function insert($table, $data) {
+        $columns = implode(', ', array_keys($data));
+        $placeholders = ':' . implode(', :', array_keys($data));
+        
+        $query = "insert INTO $table ($columns) VALUES ($placeholders)";
+        $statement = $this->pdo->prepare($query);
+        
+        foreach ($data as $key => $value) {
+            $statement->bindValue(":$key", $value);
+        }
+        
+        $statement->execute();
+        return $this->pdo->lastInsertId();
     }
-
+    
+    
     public function update() {
 
     }

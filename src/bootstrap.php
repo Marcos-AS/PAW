@@ -22,9 +22,9 @@ $handler -> setLevel($config -> get("LOG_LEVEL"));
 $log -> pushHandler($handler);
 
 //COMENTADO PARA PROBAR PAGINA
-// $connectionBuilder = new ConnectionBuilder;
-// $connectionBuilder -> setLogger($log);
-// $connection = $connectionBuilder-> make($config);
+ $connectionBuilder = new ConnectionBuilder;
+ $connectionBuilder -> setLogger($log);
+ $connection = $connectionBuilder-> make($config);
 
 $whoops = new \Whoops\Run;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
