@@ -6,6 +6,9 @@ use PDO;
 use Monolog\Logger;
 
 class QueryBuilder {
+
+    private $pdo;
+    private $logger;
     
     public function __construct(PDO $pdo, Logger $logger) {
         $this -> pdo = $pdo;
@@ -13,9 +16,6 @@ class QueryBuilder {
     }
 
     public function select($table, $params = []) {
-        // WHERE id = 1 AND nombre = 'pepe'
-        // WHERE id = ?
-        // WHERE id = :id
         $where = " 1 = 1";
         if (isset($params['id'])) {
             $where = " id = :id ";
@@ -34,21 +34,29 @@ class QueryBuilder {
         return $this->pdo;
     }
 
-    public function insert($table, $data) {
-        $columns = implode(', ', array_keys($data));
-        $placeholders = ':' . implode(', :', array_keys($data));
-        
-        $query = "insert INTO $table ($columns) VALUES ($placeholders)";
-        $statement = $this->pdo->prepare($query);
-        
-        foreach ($data as $key => $value) {
-            $statement->bindValue(":$key", $value);
-        }
-        
-        $statement->execute();
-        return $this->pdo->lastInsertId();
-    }
+    public function insert($table, $object) {
+        $columns = [];
+        $placeholders = [];
+        $values = [];
     
+        foreach ($object->fields as $key => $value) {
+            $columns[] = $key;
+            $placeholders[] = ':' . $key;
+            $values[':' . $key] = $value;
+        }
+    
+        $columnString = implode(', ', $columns);
+        $placeholderString = implode(', ', $placeholders);
+    
+        $query = "INSERT INTO $table ($columnString) VALUES ($placeholderString)";
+        $statement = $this->pdo->prepare($query);
+    
+        foreach ($values as $placeholder => $value) {
+            $statement->bindValue($placeholder, $value);
+        }
+        var_dump($statement);
+        $statement->execute();
+    }
     
     public function update() {
 

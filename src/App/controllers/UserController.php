@@ -1,13 +1,16 @@
 <?php
 
 namespace Paw\App\controllers;
+
 use Paw\Core\Controller;
-
 use Paw\App\models\Login;
+use Paw\App\models\UsersCollection;
 use Paw\App\models\Paciente;
-
+use Paw\Core\Database\QueryBuilder;
 
 class UserController extends Controller {
+
+    public ?string $modelName = UsersCollection::class;
 
     public function loginValidar() {
         $login = new Login;
@@ -30,6 +33,9 @@ class UserController extends Controller {
         $usuario -> setPassword($_POST['password']);
         $usuario -> setTelefono($_POST['telefono']);
         $usuario -> setObraSocial($_POST['obraSocial']);
+
+        $this -> model -> set($usuario);
+
         $this -> nuevoUsuario(true);
     }
 
