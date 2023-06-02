@@ -32,10 +32,9 @@ class UsersCollection extends Model {
     public function set($paciente) {
         $nombreObraSocial = $paciente->fields['obraSocial'];
         $obraSocial = $this-> queryBuilder -> select('obrasocial', $nombreObraSocial);
-        
         if ($obraSocial === null) {
-            // Manejar el caso en el que la obra social no se encontró en la base de datos
-            // Puedes lanzar una excepción, mostrar un mensaje de error, etc.
+             // Manejar el caso en el que la obra social no se encontró en la base de datos
+             // Puedes lanzar una excepción, mostrar un mensaje de error, etc.
         }
     
         $obraSocialId = $obraSocial[0]['id'];

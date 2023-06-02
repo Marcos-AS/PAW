@@ -17,8 +17,7 @@ class Turno {
         "obraSocial" => null,
         "email" => null,
         "telefono" => null,
-        "especialidad" => null,
-        "profesional" => null,
+        "especialista" => null,
         "fecha" => null,
         "horario" => null,
     ];
@@ -31,7 +30,6 @@ class Turno {
             throw new InvalidValueFormatException("El nombre no debe contener números");
         }
         $this -> fields["nombre"] = $nombre;
-
     }
 
     public function setApellido(string $apellido) {
@@ -94,10 +92,18 @@ class Turno {
     }
 
     public function setHorario(string $hora) {
-        if (!strtotime($hora) || strtotime($hora) < time()) {
-            throw new InvalidValueFormatException("El horario debe ser válido");
-        }
+        // if (!strtotime($hora) || strtotime($hora) < time()) {
+        //     throw new InvalidValueFormatException("El horario debe ser válido");
+        // }
         $this -> fields["horario"] = $hora;
+    }
+
+    public function setEspecialista(string $esp) {
+        $this -> fields["especialista"] = $esp;
+    }
+    
+    public function setObraSocial(string $obra) {
+        $this -> fields["obraSocial"] = $obra;
     }
 
     public function set(array $values) {

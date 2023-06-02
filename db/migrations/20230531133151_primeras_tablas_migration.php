@@ -26,8 +26,8 @@ final class PrimerasTablasMigration extends AbstractMigration
     
     $tableProfesional = $this->table('profesional', ['id' => false, 'primary_key' => 'matricula']);
     $tableProfesional->addColumn('matricula', 'biginteger', ['null' => false])
-        ->addColumn('nombre', 'string', ['limit' => 60])
-        ->addColumn('apellido', 'string', ['limit' => 60])
+        ->addColumn('nombreApellido', 'string', ['limit' => 60])
+        //->addColumn('apellido', 'string', ['limit' => 60])
         ->create();
 
     $tableEspecialidad = $this->table('especialidad', ['id' => false, 'primary_key' => 'id']);
@@ -51,18 +51,22 @@ final class PrimerasTablasMigration extends AbstractMigration
         ->addForeignKey('obrasocial_id', 'obrasocial', 'id', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
         ->create();
     
-        $tableTurno = $this->table('turno');
-        $tableTurno->addColumn('dni', 'biginteger')
-            ->addColumn('especialidad_id', 'biginteger')
-            ->addColumn('profesional_id', 'biginteger')
-            ->addColumn('obrasocial_id', 'biginteger')
-            ->addColumn('fecha', 'date', ['null' => false])
-            ->addColumn('horario', 'time', ['null' => false])
-            ->addForeignKey('dni', 'paciente', 'dni', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
-            ->addForeignKey('obrasocial_id', 'obrasocial', 'id', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
-            ->addForeignKey('profesional_id', 'profesional', 'matricula', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
-            ->addForeignKey('especialidad_id', 'especialidad', 'id', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
-            ->create();
+    $tableTurno = $this->table('turno');
+    $tableTurno->addColumn('dni', 'biginteger')
+        ->addColumn('nombre', 'string')
+        ->addColumn('apellido', 'string')
+        ->addColumn('fechanacimiento', 'date')
+        ->addColumn('edad', 'integer')
+        ->addColumn('telefono', 'biginteger')
+        ->addColumn('email', 'string')
+        ->addColumn('profesional_id', 'biginteger')
+        ->addColumn('obrasocial_id', 'biginteger')
+        ->addColumn('fecha', 'date', ['null' => false])
+        ->addColumn('horario', 'time', ['null' => false])
+//        ->addForeignKey('dni', 'paciente', 'dni', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
+        ->addForeignKey('obrasocial_id', 'obrasocial', 'id', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
+        ->addForeignKey('profesional_id', 'profesional', 'matricula', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
+        ->create();
         
 
     /*$tableTasks = $this->table('tasks');

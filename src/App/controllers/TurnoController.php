@@ -3,8 +3,11 @@
 namespace Paw\App\controllers;
 use Paw\Core\Controller;
 use Paw\App\models\Turno;
+use Paw\App\models\TurnosCollection;
 
 class TurnoController extends Controller{
+
+    public ?string $modelName = TurnosCollection::class;
 
     public function solicitarTurnoValidar() {
         $turno = new Turno();
@@ -15,10 +18,14 @@ class TurnoController extends Controller{
         $turno -> setEdad($_POST['edad']);
         $turno -> setEmail($_POST['email']);
         $turno -> setTelefono($_POST['telefono']);
+        $turno -> setObraSocial($_POST['obraSocial']);
+        $turno -> setEspecialista($_POST['especialista']);
         $turno -> setFecha($_POST['fecha']);
         $turno -> setHorario($_POST['horario']);
         
-        $this -> solicitarTurno(true);
+        $this->model->set($turno);
+
+        $this->solicitarTurno(true);
     }
 
     public function solicitarTurno($procesado = false) {

@@ -54,7 +54,7 @@ class QueryBuilder {
         foreach ($values as $placeholder => $value) {
             $statement->bindValue($placeholder, $value);
         }
-        var_dump($statement);
+        
         $statement->execute();
     }
     

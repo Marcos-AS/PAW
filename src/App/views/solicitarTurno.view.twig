@@ -39,7 +39,7 @@
 
         <label for="inputSelect">
             Obra Social
-            <select id="inputSelect">
+            <select id="inputSelect" name="obraSocial">
                 <option value="IOMA">IOMA</option>
                 <option value="OSDE">OSDE</option>
                 <option value="ASIMRA">ASIMRA</option>
@@ -63,13 +63,13 @@
 
         <label for="selectProfesionales">
             Profesionales
-            <select id="selectProfesionales">
+            <select id="selectProfesionales" name="especialista">
                 <option value="">Elija un profesional</option>
             </select>
         </label>
         <label for="fechaSelect">
             Fecha
-            <select id="fechaSelect" disabled>
+            <select id="fechaSelect" name="fecha" disabled>
                 <option value="">Ingrese una fecha</option>
             </select>
             <!--<input type="date" required name="fecha" id="fechaInput" /> -->
@@ -77,7 +77,7 @@
         
         <label for="horarioSelect">
             Horario
-            <select id="horarioSelect" disabled>
+            <select id="horarioSelect" name="horario" disabled>
                 <option value="">Ingrese un horario</option>
             </select>
         </label>
