@@ -2,6 +2,8 @@
 
 namespace Paw\Core;
 include 'twig.php';
+use Paw\Core\Database\QueryBuilder;
+use Paw\Core\Model;
 
 class Controller {
 
@@ -12,6 +14,7 @@ class Controller {
     protected $twig;
 
     public function __construct(){
+        global $connection, $log;
         $this -> viewsDir = __DIR__  . '/../App/views/';
         @$this -> menu = [
             [
