@@ -65,10 +65,6 @@
             Profesionales
             <select id="selectProfesionales" name="especialista">
                 <option value="">Elija un profesional</option>
-            {% for profesional in profesionales %}
-                var_dump(profesional);
-                <option value="{{profesional.matricula}}">{{ profesional.fields.apellido }}, {{ profesional.fields.nombre }}</option>
-            {% endfor %}
             </select>
         </label>
         <label for="fechaSelect">
@@ -76,7 +72,6 @@
             <select id="fechaSelect" name="fecha" disabled>
                 <option value="">Ingrese una fecha</option>
             </select>
-            <!--<input type="date" required name="fecha" id="fechaInput" /> -->
         </label>
         
         <label for="horarioSelect">

@@ -15,21 +15,39 @@ class QueryBuilder {
         $this -> logger = $logger;
     }
 
-    public function select($table, $params = []) {
-        $where = " 1 = 1";
-        if (isset($params['id'])) {
-            $where = " id = :id ";
-        }
-        $query = "select * from {$table} where {$where}";
-        $sentencia = $this -> pdo -> prepare($query);
-        if (isset($params['id'])) {
-            $sentencia -> bindValue(":id", $params['id']);
-        }
-        $sentencia -> setFetchMode(PDO::FETCH_ASSOC);
-        $sentencia -> execute();
-        return $sentencia -> fetchAll();
-    }
+    // public function select($table, $params = []) {
+    //     $where = " 1 = 1";
+    //     if (isset($params['id'])) {
+    //         $where = " id = :id ";
+    //     }
+    //     $query = "select * from {$table} where {$where}";
+    //     $sentencia = $this -> pdo -> prepare($query);
+    //     if (isset($params['id'])) {
+    //         $sentencia -> bindValue(":id", $params['id']);
+    //     }
+    //     $sentencia -> setFetchMode(PDO::FETCH_ASSOC);
+    //     $sentencia -> execute();
+    //     var_dump($sentencia);
+    //     return $sentencia -> fetchAll();
+    // }
 
+    public function select($table, $params = []) {
+        $where = "1 = 1";
+        $bindings = [];
+    
+        foreach ($params as $column => $value) {
+            $where .= " AND $column = :$column";
+            $bindings[":$column"] = $value;
+        }
+    
+        $query = "SELECT * FROM $table WHERE $where";
+        $statement = $this->pdo->prepare($query);
+        $statement->execute($bindings);
+    
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
     public function getPdo() {
         return $this->pdo;
     }

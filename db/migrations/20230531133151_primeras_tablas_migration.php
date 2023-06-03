@@ -81,6 +81,9 @@ final class PrimerasTablasMigration extends AbstractMigration
         ->addForeignKey('obrasocial_id', 'obrasocial', 'id', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
         ->addForeignKey('profesional_id', 'profesional', 'matricula', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
         ->create();
+
+    //$tableProfesional->addForeignKey('dia', 'profesional_dia', 'dia', ['delete' => 'CASCADE', 'update' => 'CASCADE']);
+
         
 
     /*$tableTasks = $this->table('tasks');
@@ -90,5 +93,5 @@ final class PrimerasTablasMigration extends AbstractMigration
         ->addColumn('created', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
         ->addForeignKey('autor', 'autor', 'id')
         ->create(); */
-    }
+    }    
 }

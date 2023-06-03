@@ -30,24 +30,26 @@ class TurnoController extends Controller{
 
     public function solicitarTurno($procesado = false) {
         $profesionales = $this->model->getProfesionales();
-        print_r($profesionales);
         $data = array_merge($this->parts, ['profesionales' => $profesionales]);
         echo $this->twig->renderTemp('solicitarTurno.view.twig', $data);
         //require $this ->viewsDir . '/solicitarTurno.view.twig';
     }
 
     public function obtenerEspecialistas() {
-
         $profesionales = $this->model->getProfesionales();
-        $especialistas = array(); // Array para almacenar los especialistas
         foreach ($profesionales as $profesional) {
-            $especialista = $profesional->fields; // Utiliza directamente el array 'fields' del objeto Profesional
+            $dias = [];
+            $especialista = $profesional->fields; 
+            $dias[] = $this->model->getDiasQueAtiende($profesional->fields['matricula']);
+            $especialista['diasQueAtiende'] = $dias;
             $especialistas[] = $especialista;
         }
-        
         header('Content-Type: application/json');
-        echo json_encode($especialistas, JSON_UNESCAPED_UNICODE);
-        
+        echo $json = json_encode($especialistas, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function obtenerDiasQueAtiende() {
+
     }
 
 }

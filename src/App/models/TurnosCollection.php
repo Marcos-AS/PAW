@@ -45,15 +45,19 @@ class TurnosCollection extends Model {
     }
 
     public function getProfesionales() {
-        $profesionales = $this -> queryBuilder -> select('profesional');
+        $profesionales = $this->queryBuilder->select('profesional'); 
         $profesionalesCollection = [];
         foreach ($profesionales as $profesional) {
             $newProfesional = new Profesional;
             $newProfesional -> set($profesional);
             $profesionalesCollection[] = $newProfesional;
         }
-    
+        //print_r($profesionalesCollection);
     return $profesionalesCollection;
+    }
+    
+    public function getDiasQueAtiende($matricula) {
+        return $dias = $this->queryBuilder->select('profesional_dia', ['matricula' => $matricula]);
     }
 
 }

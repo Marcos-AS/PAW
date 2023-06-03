@@ -26,6 +26,9 @@ final class InsertMigration extends AbstractMigration
             ],
             [
                 'nombre' => 'OSDE'
+            ],
+            [
+                'nombre' => 'ASIMRA'
             ]
         ])->saveData();
 
@@ -64,6 +67,14 @@ final class InsertMigration extends AbstractMigration
                 'horario_inicio' => '13:00:00',
                 'horario_fin' => '18:00:00',
                 'duracion_turno' => 30
+            ],
+            [
+                'matricula' => 20202,
+                'nombre' => 'Tekuro',
+                'apellido' => 'Lakria',
+                'horario_inicio' => '10:00:00',
+                'horario_fin' => '14:00:00',
+                'duracion_turno' => 25
             ]
         ])->saveData();
 
@@ -80,6 +91,30 @@ final class InsertMigration extends AbstractMigration
             [
                 'matricula' => 3737,
                 'dia' => 'Jueves',
+            ],
+            [
+                'matricula' => 2222,
+                'dia' => 'Martes',
+            ],
+            [
+                'matricula' => 2222,
+                'dia' => 'Jueves',
+            ],
+            [
+                'matricula' => 2222,
+                'dia' => 'Viernes',
+            ],
+            [
+                'matricula' => 20202,
+                'dia' => 'Lunes',
+            ],
+            [
+                'matricula' => 20202,
+                'dia' => 'Jueves',
+            ],
+            [
+                'matricula' => 20202,
+                'dia' => 'Viernes',
             ]
         ])->saveData();
         

@@ -14,33 +14,35 @@ class Especialistas {
     return fetch('/especialistas')
       .then(response => response.json())
       .then(data => {
-        this.especialistas = data.especialistas;
-        console.log(data);
+        this.especialistas = data;
       });
   } // end fetchEspecialistas */
 
   initSelectMedico() {
     const selectMedico = document.querySelector('#selectProfesionales');
 
+    console.log(this.especialistas)
     //agrega una option por cada esp. del array json
-   /* this.especialistas.forEach(medico => {
+    this.especialistas.forEach(medico => {
       const option = PAW.nuevoElemento('option', medico.nombre + ' ' + medico.apellido, {
         value: medico.matricula
       })
       selectMedico.appendChild(option);
-    }); */
+    }); 
 
     selectMedico.addEventListener('change', () => {
       this.fechaSelect.disabled = false;
-    /*  const selectedMedico = selectMedico.value;
+      const selectedMedico = selectMedico.value;
       //busca en el array el medico por la matricula
       const medicoSeleccionado = 
-        this.especialistas.find(medico => medico.matricula === selectedMedico); 
+        this.especialistas.find(medico => medico.matricula.toString() === selectedMedico.toString()); 
       const diasHabilitados = medicoSeleccionado.diasQueAtiende; //dias que atiende cada esp.
+      console.log(medicoSeleccionado)
+      console.log(diasHabilitados)
       const turnosDiponibles = 
         this.obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
       //this.mostrarAgenda(turnosDiponibles);
-      this.mostrarFechasDisponibles(turnosDiponibles); */
+      this.mostrarFechasDisponibles(turnosDiponibles);
     }); //end addEventListener change
   } // end initSelectMedico
 
@@ -184,43 +186,4 @@ class Especialistas {
     return fecha.toLocaleDateString('es-AR', opcionesFecha);
   } // end obtenerFechaFormateada
 
-  /*mostrarAgenda(turnosDisponibles) {
-    this.agendaContainer.innerHTML = '';
-
-    const tablaAgenda = document.createElement('table');
-    tablaAgenda.classList.add('agendaTable');
-
-    const encabezado = tablaAgenda.createTHead();
-    const filaEncabezado = encabezado.insertRow();
-    const encabezados = ['Fecha', 'Horario'];
-    encabezados.forEach(encabezado => {
-      const celdaEncabezado = document.createElement('th');
-      celdaEncabezado.textContent = encabezado;
-      filaEncabezado.appendChild(celdaEncabezado);
-    });
-
-    turnosDisponibles.forEach(turno => {
-      const filaTurno = tablaAgenda.insertRow();
-      const celdaFecha = filaTurno.insertCell();
-      const celdaHorario = filaTurno.insertCell();
-
-      const fechaTurno = this.getNextDayOfWeek(turno.dia);
-      const fechaFormateada = this.obtenerFechaFormateada(fechaTurno);
-
-      celdaFecha.textContent = fechaFormateada;
-      celdaHorario.textContent = turno.horas.toString().padStart(2, '0') + ':' + turno.minutos.toString().padStart(2, '0');
-
-      filaTurno.addEventListener('click', function() {
-        const celdas = document.getElementsByClassName('agendaTable')[0].getElementsByTagName('tr');
-        for (let i = 0; i < celdas.length; i++) {
-          celdas[i].classList.remove('selected');
-        }
-
-        this.classList.add('selected');
-      });
-    });
-
-   this.agendaContainer.appendChild(tablaAgenda);
-  } //end mostrarAgenda
-  // */
 }  
