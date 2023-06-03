@@ -33,6 +33,17 @@ final class PrimerasTablasMigration extends AbstractMigration
         ->addColumn('duracion_turno', 'integer')
         ->create();
 
+    $tableDia = $this->table('dia', ['id' => false, 'primary_key' => 'dia']);
+    $tableDia->addColumn('dia', 'string', ['null' => false])
+        ->create();
+
+    $tableProfesionalDia = $this->table('profesional_dia', ['id' => false, 'primary_key' => ['matricula', 'dia']]);
+    $tableProfesionalDia->addColumn('matricula', 'biginteger', ['null' => false])
+        ->addColumn('dia', 'string', ['limit' => 10, 'null' => false])
+        ->addForeignKey('matricula', 'profesional', 'matricula', ['delete' => 'CASCADE', 'update' => 'CASCADE'])
+        ->addForeignKey('dia', 'dia', 'dia', ['delete' => 'CASCADE', 'update' => 'CASCADE'])
+        ->create();
+
     $tableEspecialidad = $this->table('especialidad', ['id' => false, 'primary_key' => 'id']);
     $tableEspecialidad->addColumn('id', 'biginteger', ['identity' => true])
         ->addColumn('descripcion', 'string', ['limit' => 60])

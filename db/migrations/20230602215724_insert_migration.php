@@ -29,6 +29,23 @@ final class InsertMigration extends AbstractMigration
             ]
         ])->saveData();
 
+        $this->table('dia')->insert([
+            [
+                'dia' => 'Lunes'
+            ],
+            [
+                'dia' => 'Martes'
+            ],
+            [
+                'dia' => 'Miercoles'
+            ],
+            [
+                'dia' => 'Jueves'
+            ],
+            [
+                'dia' => 'Viernes'
+            ],
+        ])->saveData();
         
         // Insertar datos en la tabla 'profesional'
         $this->table('profesional')->insert([
@@ -50,5 +67,21 @@ final class InsertMigration extends AbstractMigration
             ]
         ])->saveData();
 
+        // Insertar datos en la tabla 'profesional_dia'
+        $this->table('profesional_dia')->insert([
+            [
+                'matricula' => 3737,
+                'dia' => 'Lunes',
+            ],
+            [
+                'matricula' => 3737,
+                'dia' => 'Martes',
+            ],
+            [
+                'matricula' => 3737,
+                'dia' => 'Jueves',
+            ]
+        ])->saveData();
+        
     }
 }

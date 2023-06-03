@@ -4,17 +4,18 @@ class Especialistas {
     this.fechaSelect = document.querySelector('#fechaSelect');
     this.horarioSelect = document.querySelector('#horarioSelect');
 
-  //  this.fetchEspecialistas()
-  //  .then(() => {
+    this.fetchEspecialistas()
+    .then(() => {
       this.initSelectMedico();
-  //    })
+      })
   }
 
- /* fetchEspecialistas() {
-    return fetch('assets/data/especialistas.json')
+  fetchEspecialistas() {
+    return fetch('/especialistas')
       .then(response => response.json())
       .then(data => {
         this.especialistas = data.especialistas;
+        console.log(data);
       });
   } // end fetchEspecialistas */
 

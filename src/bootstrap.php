@@ -65,6 +65,7 @@ $router -> get('/authors', 'AuthorsController@index');
 $router -> get('/author', 'AuthorsController@get');
 $router -> get('/author/edit', 'AuthorsController@edit');
 $router -> post('/author/edit', 'AuthorsController@set');
+$router -> get('/especialistas', 'TurnoController@obtenerEspecialistas');
 
 
 /*$router -> get('/about', 'PageController@about');
