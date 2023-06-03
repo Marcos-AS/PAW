@@ -29,7 +29,10 @@ class TurnoController extends Controller{
     }
 
     public function solicitarTurno($procesado = false) {
-        echo $this->twig->renderTemp('solicitarTurno.view.twig', $this->parts);
+        $profesionales = $this->model->getProfesionales();
+        print_r($profesionales);
+        $data = array_merge($this->parts, ['profesionales' => $profesionales]);
+        echo $this->twig->renderTemp('solicitarTurno.view.twig', $data);
         //require $this ->viewsDir . '/solicitarTurno.view.twig';
     }
 

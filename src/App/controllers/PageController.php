@@ -13,6 +13,7 @@ class PageController extends Controller{
     }
 
     public function autoridades() {
+        
         echo $this->twig->renderTemp('/institucional/autoridades.view.twig', $this->parts);
     }
 

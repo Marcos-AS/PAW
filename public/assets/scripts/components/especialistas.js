@@ -4,33 +4,34 @@ class Especialistas {
     this.fechaSelect = document.querySelector('#fechaSelect');
     this.horarioSelect = document.querySelector('#horarioSelect');
 
-    this.fetchEspecialistas()
-    .then(() => {
+  //  this.fetchEspecialistas()
+  //  .then(() => {
       this.initSelectMedico();
-    })
+  //    })
   }
 
-  fetchEspecialistas() {
+ /* fetchEspecialistas() {
     return fetch('assets/data/especialistas.json')
       .then(response => response.json())
       .then(data => {
         this.especialistas = data.especialistas;
       });
-  } // end fetchEspecialistas
+  } // end fetchEspecialistas */
 
   initSelectMedico() {
     const selectMedico = document.querySelector('#selectProfesionales');
 
     //agrega una option por cada esp. del array json
-    this.especialistas.forEach(medico => {
+   /* this.especialistas.forEach(medico => {
       const option = PAW.nuevoElemento('option', medico.nombre + ' ' + medico.apellido, {
         value: medico.matricula
       })
       selectMedico.appendChild(option);
-    });
+    }); */
 
     selectMedico.addEventListener('change', () => {
-      const selectedMedico = selectMedico.value;
+      this.fechaSelect.disabled = false;
+    /*  const selectedMedico = selectMedico.value;
       //busca en el array el medico por la matricula
       const medicoSeleccionado = 
         this.especialistas.find(medico => medico.matricula === selectedMedico); 
@@ -38,7 +39,7 @@ class Especialistas {
       const turnosDiponibles = 
         this.obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
       //this.mostrarAgenda(turnosDiponibles);
-      this.mostrarFechasDisponibles(turnosDiponibles);
+      this.mostrarFechasDisponibles(turnosDiponibles); */
     }); //end addEventListener change
   } // end initSelectMedico
 

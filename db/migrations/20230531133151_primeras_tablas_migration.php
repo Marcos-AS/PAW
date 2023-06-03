@@ -26,8 +26,11 @@ final class PrimerasTablasMigration extends AbstractMigration
     
     $tableProfesional = $this->table('profesional', ['id' => false, 'primary_key' => 'matricula']);
     $tableProfesional->addColumn('matricula', 'biginteger', ['null' => false])
-        ->addColumn('nombreApellido', 'string', ['limit' => 60])
-        //->addColumn('apellido', 'string', ['limit' => 60])
+        ->addColumn('nombre', 'string', ['limit' => 60])
+        ->addColumn('apellido', 'string', ['limit' => 60])
+        ->addColumn('horario_inicio', 'time')
+        ->addColumn('horario_fin', 'time')
+        ->addColumn('duracion_turno', 'integer')
         ->create();
 
     $tableEspecialidad = $this->table('especialidad', ['id' => false, 'primary_key' => 'id']);

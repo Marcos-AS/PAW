@@ -56,7 +56,7 @@ class Turno {
         /*if (!strtotime($fechaNac) || strtotime($fechaNac) < date('Y-m-d')) {
             throw new InvalidValueFormatException("La fecha debe ser válida");
         } */
-        $this -> fields["fecha"] = $fechaNac;
+        $this -> fields["fechaNacimiento"] = $fechaNac;
     }
 
     public function setEdad(int $edad) {
