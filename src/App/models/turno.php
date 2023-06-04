@@ -14,10 +14,10 @@ class Turno {
         "dni" => null,
         "fechaNacimiento" => null,
         "edad" => null,
-        "obraSocial" => null,
+        "obrasocial_id" => null,
         "email" => null,
         "telefono" => null,
-        "especialista" => null,
+        "profesional_id" => null,
         "fecha" => null,
         "horario" => null,
     ];
@@ -83,7 +83,7 @@ class Turno {
         $this -> fields["telefono"] = $tel;
     }
 
-    public function setFecha(string $fecha) {
+    public function setFecha($fecha) {
         /*if (!strtotime($fecha) || strtotime($fecha) < date('Y-m-d')) {
             var_dump(strtotime($fecha));
             throw new InvalidValueFormatException("La fecha debe ser válida");
@@ -99,11 +99,11 @@ class Turno {
     }
 
     public function setEspecialista(string $esp) {
-        $this -> fields["especialista"] = $esp;
+        $this -> fields["profesional_id"] = $esp;
     }
     
     public function setObraSocial(string $obra) {
-        $this -> fields["obraSocial"] = $obra;
+        $this -> fields["obrasocial_id"] = $obra;
     }
 
     public function set(array $values) {

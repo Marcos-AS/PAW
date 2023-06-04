@@ -52,7 +52,7 @@ $router -> get('/sala-espera', 'PageController@salaEspera');
 $router -> get('/solicitarTurno', 'TurnoController@solicitarTurno');
 $router -> post('/solicitarTurno', 'TurnoController@solicitarTurnoValidar');
 $router -> get('/especialistas', 'TurnoController@obtenerEspecialistas');
-$router -> get('/esp-dias', 'TurnoController@obtenerDiasQueAtiende');
+$router -> get('/obrasSociales', 'TurnoController@obtenerObrasSociales');
 
 $router -> post('/trabajaconnosotros', 'CvController@trabajaconnosotrosValidar');
 

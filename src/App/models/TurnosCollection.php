@@ -13,35 +13,30 @@ class TurnosCollection extends Model {
 
     public function set($turno) {
         
-        $esp = $turno->fields['especialista'];
-        $espRow = $this-> queryBuilder -> select('profesional', $esp);
-        if ($espRow === null) {
-             // Manejar el caso en el que la obra social no se encontró en la base de datos
-             // Puedes lanzar una excepción, mostrar un mensaje de error, etc.
-        }
-
-        $espId = $espRow[0]['matricula'];
-        $turno->fields['profesional_id'] = $espId;
-        unset($turno->fields['especialista']); // Eliminar el campo "especialista"
-
-        $nombreObraSocial = $turno->fields['obraSocial'];
-        $obraSocial = $this-> queryBuilder -> select('obrasocial', $nombreObraSocial);
-        if ($obraSocial === null) {
-             // Manejar el caso en el que la obra social no se encontró en la base de datos
-             // Puedes lanzar una excepción, mostrar un mensaje de error, etc.
-        }
-        $obraSocialId = $obraSocial[0]['id'];
-        $turno->fields['obrasocial_id'] = $obraSocialId;
-        unset($turno->fields['obraSocial']); // Eliminar el campo "obraSocial"
-
         $dateString = $turno->fields['fecha'];
-        // Removemos el día de la semana y los espacios en blanco
-        $dateString = str_replace("lunes, ", "", $dateString);
-        // Convertimos el formato de la fecha utilizando strtotime
-        $date = date("Y-m-d", strtotime($dateString));
+        // Eliminamos el día de la semana y los espacios en blanco
+        $dateString = preg_replace("/^[a-záéíóúñü]+,\s*/i", "", $dateString);
+
+        // Convertimos la cadena en un objeto de tipo DateTime
+        $date = DateTime::createFromFormat("j/n/Y", $dateString);
+
+        // Obtenemos la fecha formateada en el formato deseado
+        $formattedDate = date_format($date, "Y-m-d");
         
-        $turno->setFecha($date);
-        $this->queryBuilder->insert($this->table, $turno);
+        $turno->setFecha($formattedDate);
+
+        try {
+            $this->queryBuilder->insert($this->table, $turno);
+        } catch (DatabaseException $e) {
+            // Manejar el error de la base de datos, mostrar mensaje, registrar, etc.
+            echo "Ocurrió un error al insertar el turno: " . $e->getMessage();
+        } catch (InvalidDataException $e) {
+            // Manejar el error de datos inválidos, mostrar mensaje, registrar, etc.
+            echo "Los datos del turno son inválidos: " . $e->getMessage();
+        } catch (InvalidValueFormatException $e) {
+            // Manejar el error de formato de valor inválido, mostrar mensaje, registrar, etc.
+            echo "El formato de un valor proporcionado es inválido: " . $e->getMessage();
+        }
     }
 
     public function getProfesionales() {
@@ -57,7 +52,22 @@ class TurnosCollection extends Model {
     }
     
     public function getDiasQueAtiende($matricula) {
-        return $dias = $this->queryBuilder->select('profesional_dia', ['matricula' => $matricula]);
+        return $this->queryBuilder->select('profesional_dia', ['matricula' => $matricula]);
+    }
+
+    public function getTurnosTomados($matricula) {
+        return $this->queryBuilder->select('turno', ['profesional_id' => $matricula]);
+    }
+
+    public function getObrasSociales() {
+        $obrasSociales = $this->queryBuilder->select('obrasocial'); 
+        $obrasSocialesCollection = [];
+        foreach ($obrasSociales as $obraSocial) {
+            $newObraSocial = new ObraSocial;
+            $newObraSocial -> set($obraSocial);
+            $obrasSocialesCollection[] = $newObraSocial;
+        }
+        return $obrasSocialesCollection;
     }
 
 }

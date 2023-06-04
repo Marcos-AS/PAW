@@ -117,6 +117,21 @@ final class InsertMigration extends AbstractMigration
                 'dia' => 'Viernes',
             ]
         ])->saveData();
+
+        // Insertar datos en la tabla 'turno'
+        $this->table('turno')->insert([
+            [
+                'dni' => 1,
+                'apellido' => 'Santangelo',
+                'fechanacimiento' => '2000-05-30',
+                'telefono' => '2346592222',
+                'email' => 'marcosas@gmail.com',
+                'profesional_id' => 3737,
+                'obrasocial_id' => 1,
+                'fecha' => '2023-06-08',
+                'horario' => '10:00:00'
+            ]
+        ])->saveData();
         
     }
 }

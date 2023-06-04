@@ -88,6 +88,14 @@ class appPAW {
                     new Autoridades();
                 })
             }
+
+            contenedor = document.querySelector(".obraSocial");
+            if (contenedor) {
+                //inicializar el nav de la sección autoridades
+                PAW.cargarScript("Obras Sociales", "/../assets/scripts/components/obrasSociales.js", () => {
+                    new ObrasSociales();
+                })
+            }
         });
     }
 }

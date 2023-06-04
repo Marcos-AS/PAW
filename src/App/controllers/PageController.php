@@ -8,6 +8,17 @@ use Paw\Core\Controller;
 class PageController extends Controller{
     
     public function index($procesado= false) {
+        session_start();
+
+        // Cerrar Sesion
+        $cerrarSesion = isset($_GET['sesion']);
+        $haySesion = session_status() == PHP_SESSION_ACTIVE;
+        if ($cerrarSesion && $haySesion) {
+            $_SESSION = [];
+            setcookie(session_name(), '', time() - 10000);
+            session_destroy();
+        }
+
         echo $this->twig->renderTemp('home.view.twig', $this->parts);
         //require $this ->viewsDir . 'home.view.php.twig';
     }
@@ -50,9 +61,16 @@ class PageController extends Controller{
     }
 
     public function login() {
-        echo $this->twig->renderTemp('/portal-pacientes/login.view.twig', $this->parts);
-    }
+        session_start();
+        $hayLogin = isset($_SESSION['login']) && !empty($_SESSION['login']);
+        $dni = '';
 
+        if ($hayLogin) {
+            $dni = $_SESSION['login'];
+        }
+        echo $this->twig->renderTemp('/portal-pacientes/login.view.twig', ['hayLogin' => $hayLogin, 'dni' => $dni]);
+    }
+    
     public function UI() {
         echo $this->twig->renderTemp('/turnosUserInterface.view.twig', $this->parts);
     }

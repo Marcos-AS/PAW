@@ -8,7 +8,20 @@ class Especialistas {
     .then(() => {
       this.initSelectMedico();
       })
+    this.fetchObrasSociales()
+    .then(() => {
+      this.cargarObrasSociales();
+      })
   }
+
+  fetchObrasSociales() {
+    return fetch('/obrasSociales')
+      .then(response => response.json())
+      .then(data => {
+        this.obrasSociales = data;
+        console.log(this.obrasSociales);
+      });
+  } // end fetchEspecialistas */
 
   fetchEspecialistas() {
     return fetch('/especialistas')
@@ -17,6 +30,17 @@ class Especialistas {
         this.especialistas = data;
       });
   } // end fetchEspecialistas */
+
+  cargarObrasSociales() {
+    const selectObraSocial = document.querySelector('.obraSocial');
+    console.log(selectObraSocial);
+    this.obrasSociales.forEach(obraSocial => {
+      const option = PAW.nuevoElemento('option',  obraSocial.nombre, {
+        value: obraSocial.id
+      })
+      selectObraSocial.appendChild(option);
+    }); 
+  }
 
   initSelectMedico() {
     const selectMedico = document.querySelector('#selectProfesionales');
@@ -36,11 +60,11 @@ class Especialistas {
       //busca en el array el medico por la matricula
       const medicoSeleccionado = 
         this.especialistas.find(medico => medico.matricula.toString() === selectedMedico.toString()); 
-      const diasHabilitados = medicoSeleccionado.diasQueAtiende; //dias que atiende cada esp.
-      console.log(medicoSeleccionado)
+        const diasHabilitados = medicoSeleccionado.diasQueAtiende.map(objeto => objeto.dia);
+        console.log(medicoSeleccionado)
       console.log(diasHabilitados)
-      const turnosDiponibles = 
-        this.obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
+      const turnosDiponibles = this.obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado);
+      console.log(turnosDiponibles);
       //this.mostrarAgenda(turnosDiponibles);
       this.mostrarFechasDisponibles(turnosDiponibles);
     }); //end addEventListener change
@@ -50,18 +74,17 @@ class Especialistas {
 
   obtenerTurnosDisponibles(diasHabilitados, medicoSeleccionado) {
     const turnosDisponibles = [];
-    const horarioInicio = medicoSeleccionado.horarioInicio;
-    const horarioFinalizacion = medicoSeleccionado.horarioFinalizacion;
-    const duracionTurno = medicoSeleccionado.duracionTurno;
-    
+    const horarioInicio = medicoSeleccionado.horario_inicio;
+    const horarioFinalizacion = medicoSeleccionado.horario_fin;
+    const duracionTurno = medicoSeleccionado.duracion_turno;
     diasHabilitados.forEach(dia => {
       const fecha = this.getNextDayOfWeek(dia); //Date
-      const horarioActual = 
-          new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(),
-          horarioInicio.horas, horarioInicio.minutos); 
-      const horarioFin = new Date(fecha.getFullYear(), fecha.getMonth(),
-       fecha.getDate(), horarioFinalizacion.horas, horarioFinalizacion.minutos);
-    
+      const [horasInicio, minutosInicio, segundosInicio] = horarioInicio.split(":").map(Number);
+      const [horasFin, minutosFin, segundosFin] = horarioFinalizacion.split(":").map(Number);
+      const horarioActual = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horasInicio, minutosInicio, segundosInicio);
+      const horarioFin = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), horasFin, minutosFin, segundosFin);
+      console.log(horarioActual);
+      console.log(horarioFin);
       while (horarioActual < horarioFin) {
         const turno = {
           dia: dia,
@@ -69,7 +92,6 @@ class Especialistas {
           minutos: horarioActual.getMinutes()
         };
     
-
         if (this.turnoEstaDisponible(turno, medicoSeleccionado.turnosTomados))
           turnosDisponibles.push(turno);        
         horarioActual.setTime(horarioActual.getTime() + duracionTurno * 60000);
@@ -103,11 +125,21 @@ class Especialistas {
   // revisa si turno coincide con algún turnoTomado
 
   turnoEstaDisponible(turno, turnosTomados) {
+    const nombresDiasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
     return !turnosTomados.some(turnoTomado => {
+      const fechaPartes = turnoTomado.fecha.split("-");
+      const year = parseInt(fechaPartes[0], 10);
+      const month = parseInt(fechaPartes[1], 10) - 1; // Los meses en JavaScript van de 0 a 11
+      const day = parseInt(fechaPartes[2], 10);
+      const fecha = new Date(year, month, day);
+      const diaSemana = nombresDiasSemana[fecha.getDay()];
+      const [horas, minutos] = turnoTomado.horario.split(":").map(Number);
+      console.log(diaSemana,horas,minutos);
       return (
-        turnoTomado.dia === turno.dia &&
-        turnoTomado.horas === turno.horas &&
-        turnoTomado.minutos === turno.minutos
+        diaSemana === turno.dia &&
+        horas === turno.horas &&
+        minutos === turno.minutos
       );
     });
   } // end turnoEstaDisponible
@@ -136,6 +168,7 @@ class Especialistas {
     //agrega fechas
     turnosDisponibles.forEach(turno => {
       const fechaTurno = this.getNextDayOfWeek(turno.dia);
+      console.log("FECHA_TURNO" + fechaTurno)
       const fechaFormateada = this.obtenerFechaFormateada(fechaTurno);
 
       //si no está en el array de fechasDispo, la agrega al array y agrega option al select
@@ -159,7 +192,7 @@ class Especialistas {
       for (let index = this.horarioSelect.childElementCount-1; index >= 0; index--) {
         this.horarioSelect.removeChild(this.horarioSelect.childNodes[index]);
       }
-
+      
       const fechaSeleccionada = fechaSelect.value;
       const horariosTurno = turnosDisponibles.filter(turno => {
         const fechaTurno = this.obtenerFechaFormateada(this.getNextDayOfWeek(turno.dia));

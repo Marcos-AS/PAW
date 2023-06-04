@@ -16,6 +16,11 @@ class UserController extends Controller {
         $login = new Login;
         $login -> setDni($_POST['dni']);
         $login -> setPassword($_POST['password']);
+        session_start();
+        $_SESSION['logueado'] = true;
+        if (isset($_POST['dni'])) {
+            $_SESSION['login'] = $_POST['dni'];
+        }
         $this -> inicioUsuario();
     }   
 
@@ -58,6 +63,5 @@ class UserController extends Controller {
     public function historialTurnos() {
         echo $this->twig->renderTemp('/portal-pacientes/historial-turnos.view.twig', $this->parts);        
     }
-
 
 }
