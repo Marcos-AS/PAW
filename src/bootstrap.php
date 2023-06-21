@@ -10,6 +10,8 @@ use Paw\Core\Router;
 use Paw\Core\Request;
 use Paw\Core\Config;
 use Paw\Core\Database\ConnectionBuilder;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
 $dotenv -> load();
@@ -26,8 +28,8 @@ $connectionBuilder = new ConnectionBuilder;
 $connectionBuilder -> setLogger($log);
 $connection = $connectionBuilder-> make($config);
 
-$whoops = new \Whoops\Run;
-$whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops = new Run;
+$whoops -> pushHandler(new PrettyPageHandler);
 $whoops -> register();
 
 $request = new Request;
