@@ -27,7 +27,7 @@ class DragDrop {
     e.preventDefault();
   }
 
-  dragleave(e) {
+  dragleave() {
     this.dropzone.classList.remove('dragover');
   }
 
