@@ -77,10 +77,10 @@ class Paciente {
 
     public function setTelefono($telefono) {
         $pattern = '/[a-zA-Z]/';
-        if (preg_match($pattern, $tel)) {
+        if (preg_match($pattern, $telefono)) {
             throw new InvalidValueFormatException("Formato de telefono no valido");
         }
-        $this -> fields["telefono"] = $tel;
+        $this -> fields["telefono"] = $telefono;
     }
 
     public function setObraSocial($obraSocial) {

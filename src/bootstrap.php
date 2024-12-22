@@ -23,7 +23,7 @@ $handler = new StreamHandler($config -> get("LOG_PATH"));
 $handler -> setLevel($config -> get("LOG_LEVEL"));
 $log -> pushHandler($handler);
 
-//COMENTADO PARA PROBAR PAGINA
+//COMENTAR PARA PROBAR PAGINA
 $connectionBuilder = new ConnectionBuilder;
 $connectionBuilder -> setLogger($log);
 $connection = $connectionBuilder-> make($config);

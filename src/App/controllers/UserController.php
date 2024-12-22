@@ -26,7 +26,6 @@ class UserController extends Controller {
 
     public function inicioUsuario() {
         echo $this->twig->renderTemp('/portal-pacientes/inicio-usuario.view.twig', $this->parts);
-        //require $this ->viewsDir . '/portal-pacientes/inicio-usuario.view.twig';
     }
 
     public function registroUsuario() {
